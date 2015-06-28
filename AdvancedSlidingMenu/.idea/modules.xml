@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HBstore2/HBstore2.iml" filepath="$PROJECT_DIR$/HBstore2/HBstore2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HBstoreV2.iml" filepath="$PROJECT_DIR$/HBstoreV2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demoslidemenu/demoslidemenu.iml" filepath="$PROJECT_DIR$/demoslidemenu/demoslidemenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libHkmCheck/libHkmCheck.iml" filepath="$PROJECT_DIR$/libHkmCheck/libHkmCheck.iml" />
+      <module fileurl="file://$PROJECT_DIR$/processButtonHkm/processButtonHkm.iml" filepath="$PROJECT_DIR$/processButtonHkm/processButtonHkm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/slidingmenulib/slidingmenulib.iml" filepath="$PROJECT_DIR$/slidingmenulib/slidingmenulib.iml" />
+    </modules>
+  </component>
+</project>

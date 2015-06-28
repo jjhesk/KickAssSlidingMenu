@@ -1,0 +1,24 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="statusMargin">0dp</dimen>
+    <dimen name="userSpace">164dp</dimen>
+    <dimen name="photoMarginTop">16dp</dimen>
+
+    <dimen name="sectionNormalHeight">48dp</dimen>
+    <dimen name="sectionIconHeight">24dp</dimen>
+    <dimen name="sectionListTextMainMargin">24dp</dimen>
+    <dimen name="sectionIconWidth">24dp</dimen>
+    <dimen name="sectionSize">14sp</dimen>
+    <dimen name="sectionNotificationSize">14sp</dimen>
+    <dimen name="labelSize">14sp</dimen>
+    <dimen name="sectionSquareIconSize">24dp</dimen>
+    <dimen name="sectionRowMarginHorizontal">16dp</dimen>
+    <dimen name="sectionRowSubListMarginHorizontal">32dp</dimen>
+    <!-- match_parent = -1dp / wrap_content = -2dp -->
+    <dimen name="drawerWidth">100dp</dimen>
+
+
+</resources>

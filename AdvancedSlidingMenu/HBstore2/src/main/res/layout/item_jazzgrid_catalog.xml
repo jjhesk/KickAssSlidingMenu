@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:pixlui="http://schemas.android.com/apk/com.neopixl.pixlui"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/jazz_item_height"
+    android:background="@color/common_background">
+
+    <ImageView
+        android:scaleType="centerInside"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imagevi"
+        android:layout_gravity="center_horizontal" />
+
+    <com.neopixl.pixlui.components.textview.TextView
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/description"
+        android:textSize="@dimen/jazz_item_font_size"
+        android:text="game of toy \n is in here we are"
+        pixlui:typeface="Montserrat-Bold.ttf"
+        android:textColor="@color/text_color_dark"
+        android:textAllCaps="true"
+    /><!--
+    android:paddingBottom="@dimen/single_upper_text_padding_vertical"-->
+    <com.neopixl.pixlui.components.textview.TextView
+        android:textAllCaps="true"
+        pixlui:typeface="Montserrat-Regular.ttf"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/price_tag"
+        android:textSize="@dimen/jazz_item_font_size"
+        android:text="$99.99 USD"
+        android:textColor="@color/text_color_price"
+
+
+        />
+    <!--
+        android:paddingTop="@dimen/single_upper_text_padding_vertical"
+        android:textColor="@color/text_color_price"
+        android:layout_marginBottom="@dimen/jazz_item_margin_bottom"
+    -->
+
+</LinearLayout>

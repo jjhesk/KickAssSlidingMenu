@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="hkm_anim_part_1_n_2">400</integer>
+    <integer name="hkm_anim_part_1">150</integer>
+    <integer name="hkm_anim_part_2">250</integer>
+    <fraction name="hkm_scale_small">80%</fraction>
+    <fraction name="hkm_scale_full">100%</fraction>
+</resources>

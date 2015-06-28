@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="main_background">#ff1a1c19</color>
+    <color name="second_grey_bg">#ff79777b</color>
+    <color name="primary_pref">#ff3388cd</color>
+    <color name="primary_pref_v2">#ff006fbb</color>
+    <color name="not_pref_v2">#ffab3749</color>
+    <color name="second_pref">#ffc2c0c4</color>
+    <color name="second_pref_v2">#ffAAAAAA</color>
+
+</resources>

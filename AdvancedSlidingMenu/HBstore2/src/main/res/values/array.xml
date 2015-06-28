@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="top_menu">
+        <item>BAG</item>
+        <item>WISHLIST</item>
+        <item>LOGIN</item>
+        <item>REGISTER</item>
+    </array>
+
+    <array name="button_menu">
+        <item>HOME</item>
+        <item>NEW ARRIVALS</item>
+        <item>BAGS</item>
+        <item>ME</item>
+    </array>
+
+</resources>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">demoSlideMenu</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_settings2">Settings2</string>
+    <string name="action_settings3">Settings3</string>
+    <string name="action_settings4">Settings4</string>
+</resources>

@@ -1,0 +1,128 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'com.jakewharton.hugo'
+//apply plugin: 'com.neenbedankt.android-apt'
+//apply plugin: 'com.parse'
+repositories {
+    maven { url 'http://dl.bintray.com/madcyph3r/maven/' }
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    maven { url "http://dl.bintray.com/jjhesk/maven" }
+}
+android {
+
+    def configConstants = new Properties()
+    def Props = file("applaunch.properties")
+    if (Props.exists()) {
+        Props.withInputStream {
+            stream -> configConstants.load(stream)
+        }
+    }
+
+    signingConfigs {
+        appdeploykey {
+            storeFile file('/Users/hesk/Documents/certs/ghesk.keystore')
+        }
+    }
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "com.hb.hkm.hypebeaststore"
+        minSdkVersion 17
+        targetSdkVersion 22
+        versionCode 10
+        versionName "0.2.99"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        applicationVariants.all { variant ->
+            variant.outputs.each { output ->
+                def date = new Date();
+                def formattedDate = date.format('yyyyMMddHHmmss')
+                output.outputFile = new File(output.outputFile.parent,
+                        output.outputFile.name.replace("-release", "HBStore-" + formattedDate + "-v" + defaultConfig.versionName)
+                        //for Debug use output.outputFile = new File(output.outputFile.parent,
+                        //                             output.outputFile.name.replace("-debug", "-" + formattedDate)
+                )
+            }
+        }
+
+    }
+
+    productFlavors {
+        default_package {
+            applicationId "com.hkm.hypebeaststore"
+            versionName defaultConfig.versionName
+            //signingConfig signingConfigs.appdeploykey
+
+            buildConfigField "String", "PARSE_APPLICATION_ID", "\"${configConstants.PARSE_APPLICATION_ID}\""
+            buildConfigField "String", "PARSE_CLIENT_KEY", "\"${configConstants.PARSE_CLIENT_KEY}\""
+            buildConfigField "String", "DISQUS_API_KEY", "\"${configConstants.DISQUS_API_KEY}\""
+            buildConfigField "String", "DISQUS_SECRET", "\"${configConstants.DISQUS_SECRET}\""
+            buildConfigField "String", "GOOGLE_TRACKER", "\"${configConstants.GOOGLE_TRACKER}\""
+            buildConfigField "String", "DFP_INTER_ID", "\"${configConstants.DFP_INTER_ID}\""
+            buildConfigField "String", "DFP_LIST_UNIT_ID", "\"${configConstants.DFP_LIST_UNIT_ID}\""
+        }
+        nativehome {
+            applicationId "com.hb.storev2"
+            versionName defaultConfig.versionName
+           // signingConfig signingConfigs.appdeploykey
+
+            buildConfigField "String", "PARSE_APPLICATION_ID", "\"${configConstants.PARSE_APPLICATION_ID}\""
+            buildConfigField "String", "PARSE_CLIENT_KEY", "\"${configConstants.PARSE_CLIENT_KEY}\""
+            buildConfigField "String", "DISQUS_API_KEY", "\"${configConstants.DISQUS_API_KEY}\""
+            buildConfigField "String", "DISQUS_SECRET", "\"${configConstants.DISQUS_SECRET}\""
+            buildConfigField "String", "GOOGLE_TRACKER", "\"${configConstants.GOOGLE_TRACKER}\""
+            buildConfigField "String", "DFP_INTER_ID", "\"${configConstants.DFP_INTER_ID}\""
+            buildConfigField "String", "DFP_LIST_UNIT_ID", "\"${configConstants.DFP_LIST_UNIT_ID}\""
+        }
+    }
+    lintOptions {
+        disable 'MissingPrefix'
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: '../libs', include: ['*.jar'])
+    compile 'com.android.support:support-annotations:22.2.0'
+    compile 'com.android.support:support-v13:22.2.0'
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.google.code.gson:gson:2.3.1'
+    compile 'com.squareup.okhttp:okhttp:2.2.0'
+    compile 'org.ocpsoft.prettytime:prettytime:3.2.7.Final'
+    compile 'com.squareup.picasso:picasso:2.5.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.2.0'
+    compile 'io.realm:realm-android:0.80.0'
+    compile project(':libHkmCheck')
+    compile 'org.lucasr.twowayview:twowayview:0.1.4'
+    compile 'com.twotoasters.jazzylistview:library:1.2.1'
+    //exclude module: 'support-v4'
+    compile 'org.jsoup:jsoup:1.8.1'
+    //compile 'com.github.traex.expandablelayout:library:1.2.2'
+    //compile 'com.lsjwzh:materialloadingprogressbar:0.5.3-RELEASE'
+    //  see changelog
+    compile 'com.marshalchen.ultimaterecyclerview:library:0.3.6'
+    compile 'it.sephiroth.android.library.imagezoom:imagezoom:+'
+    compile 'com.sothree.slidinguppanel:library:3.0.0'
+    compile 'com.github.chrisbanes.photoview:library:1.2.3'
+    //swipe on the side
+    compile project(':slidingmenulib')
+    // compile project(':hbstoredataprovider')
+    compile 'com.hkm:advancedmaterialtabs:1.0.1@aar'
+    compile 'ToolBarLib:advancedtoolbar:0.2.20'
+    //custom font support
+    compile project(':processButtonHkm')
+   // compile 'com.daimajia.swipelayout:library:1.1.8@aar'
+    //presistent data storage
+
+}
+
+
+task listJars << {
+    configurations.compile.each { File file -> println file.name }
+}

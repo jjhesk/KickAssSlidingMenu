@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HB Store</string>
+    <string name="store_name">HB Store</string>
+    <string name="hello_world">HAHAHHA</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_okay_filter">Start Filtering</string>
+    <string name="action_clear_filter">Clear Filter</string>
+    <string name="wish_list">My Wishlist</string>
+    <string name="hb_login">Login Hybebeast</string>
+    <string name="label_field_1">DESCRIPTION</string>
+    <string name="label_field_2">SIZE</string>
+    <string name="label_field_3">TERMS</string>
+    <string name="button_1">Add to Bag</string>
+    <string name="button_2">Add to Wish List</string>
+    <string name="button_3">View Cart</string>
+    <string name="button_login">Login</string>
+    <string name="button_register">Registration</string>
+    <string name="button_added_wish">Remove from the Wish List</string>
+    <string name="wait_button">Processing</string>
+    <string name="error_button">Error from process</string>
+    <string name="reg_notice">By signing up. You agree to our Terms of Use and Privacy Policy</string>
+
+    <string name="loginandregister">Login / Register</string>
+    <string name="newarrivals">New Arrivals</string>
+    <string name="backinstock">Back In Stock</string>
+    <string name="brands">Brands</string>
+    <string name="clothing">Clothing</string>
+    <string name="accessories">Accessories</string>
+    <string name="shoes">Shoes</string>
+    <string name="homeandtech">Home &amp; Tech</string>
+    <string name="grooming">Grooming</string>
+    <string name="print">Print</string>
+    <string name="giftcards">Gift Cards</string>
+    <string name="sale">Sale</string>
+</resources>

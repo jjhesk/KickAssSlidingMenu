@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SlidingMenu">
+        <attr name="sxm_mode">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+        <attr name="sxm_viewAbove" format="reference" />
+        <attr name="sxm_viewBehind" format="reference" />
+        <attr name="sxm_behindOffset" format="dimension" />
+        <attr name="sxm_behindWidth" format="dimension" />
+        <attr name="sxm_behindScrollScale" format="float" />
+        <attr name="sxm_touchModeAbove">
+            <enum name="margin" value="0" />
+            <enum name="fullscreen" value="1" />
+            <enum name="none" value="2" />
+        </attr>
+        <attr name="sxm_touchModeBehind">
+            <enum name="margin" value="0" />
+            <enum name="fullscreen" value="1" />
+            <enum name="none" value="2" />
+        </attr>
+        <attr name="sxm_shadowDrawable" format="reference" />
+        <attr name="sxm_shadowWidth" format="dimension" />
+        <attr name="sxm_fadeEnabled" format="boolean" />
+        <attr name="sxm_fadeDegree" format="float" />
+        <attr name="sxm_selectorEnabled" format="boolean" />
+        <attr name="sxm_selectorDrawable" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="MaterialRippleLayout">
+        <attr name="mrlsxm_rippleColor" format="color" localization="suggested" />
+        <attr name="mrlsxm_rippleDimension" format="dimension" localization="suggested" />
+        <attr name="mrlsxm_rippleOverlay" format="boolean" localization="suggested" />
+        <attr name="mrlsxm_rippleAlpha" format="float" localization="suggested" />
+        <attr name="mrlsxm_rippleDuration" format="integer" localization="suggested" />
+        <attr name="mrlsxm_rippleFadeDuration" format="integer" localization="suggested" />
+        <attr name="mrlsxm_rippleHover" format="boolean" localization="suggested" />
+        <attr name="mrlsxm_rippleBackground" format="color" localization="suggested" />
+        <attr name="mrlsxm_rippleDelayClick" format="boolean" localization="suggested" />
+        <attr name="mrlsxm_ripplePersistent" format="boolean" localization="suggested" />
+        <attr name="mrlsxm_rippleInAdapter" format="boolean" localization="suggested" />
+        <attr name="mrlsxm_rippleRoundedCorners" format="dimension" localization="suggested" />
+    </declare-styleable>
+
+    <declare-styleable name="MaterialPlain">
+        <attr name="mrlsxm_touch_normal" format="reference" />
+        <attr name="mrlsxm_touch_press" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="MenuBuildHelper">
+        <attr name="autoDarkStatusBar" format="boolean" />
+        <attr name="accountStyle" format="reference" />
+        <attr name="actionBarOverlay" format="boolean" />
+        <attr name="actionBarOverlayAlpha" format="float" />
+        <attr name="belowToolbar" format="boolean" />
+        <attr name="drawerType" format="integer" />
+        <attr name="drawerWidth" format="dimension" />
+        <attr name="drawerColor" format="color" />
+        <attr name="dividerStrokeWidth" format="dimension" />
+        <attr name="drawerActionBarStyle" format="reference" />
+        <attr name="dividerColor" format="color" />
+        <attr name="labelColor" format="color" />
+        <attr name="sectionStyle" format="reference" />
+        <attr name="staticToolbarBackground" format="boolean" />
+        <attr name="subheaderStyle" format="reference" />
+        <attr name="multipaneSupport" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="MaterialSection">
+        <attr name="sectionColorIcon" format="color" />
+        <attr name="sectionColorText" format="color" />
+        <attr name="sectionColorNotification" format="color" />
+        <attr name="sectionBackgroundColorPressed" format="color" />
+        <attr name="sectionBackgroundColorSelected" format="color" />
+        <attr name="sectionBackgroundColor" format="color" />
+        <attr name="sectionOnPressHighLightColor" format="color" />
+        <attr name="sectionRippleColor" format="color" />
+        <attr name="section_item_layout" format="reference" />
+        <!-- section divider will be using OnPress color -->
+        <attr name="sectionDivider" format="boolean" />
+    </declare-styleable>
+</resources>
