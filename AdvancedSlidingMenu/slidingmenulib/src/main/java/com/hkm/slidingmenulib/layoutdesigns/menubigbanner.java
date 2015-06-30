@@ -1,8 +1,7 @@
-package com.hkm.slidingmenulib.menubannerbig;
+package com.hkm.slidingmenulib.layoutdesigns;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
@@ -23,7 +22,7 @@ import java.util.List;
 /**
  * Created by hesk on 29/6/15.
  */
-public abstract class menubigbanner extends Fragment {
+public abstract class menubigbanner<adapter extends midUltimateAdapter> extends Fragment {
 
     public static String TAG = "bigmenubanner";
     public UltimateRecyclerView listview_layout;
@@ -41,6 +40,8 @@ public abstract class menubigbanner extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.content_fragment_image_list, container, false);
     }
+
+    protected abstract adapter getAdatperWithdata();
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -62,7 +63,6 @@ public abstract class menubigbanner extends Fragment {
 
     protected abstract void onClickItem(final String route);
 
-    protected abstract udp getAdatperWithdata();
 
     public class datab {
         String image_url;
