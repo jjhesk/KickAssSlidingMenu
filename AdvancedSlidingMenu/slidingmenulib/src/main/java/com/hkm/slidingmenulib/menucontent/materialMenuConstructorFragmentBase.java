@@ -41,17 +41,24 @@ public abstract class materialMenuConstructorFragmentBase<ListSection extends Ma
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binder = new MaterialDrawerContainer(LAYOUT_DRAWER.STICKY_UP);
+        binder = new MaterialDrawerContainer(getLayoutId());
         return binder.init(inflater.inflate(binder.getLayout(), container, false));
+    }
+
+    protected LAYOUT_DRAWER getLayoutId() {
+        return LAYOUT_DRAWER.STICKY_UP;
     }
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
         if (savedInstanceState == null) {
             try {
-                helperNav = MenuBuildHelper.with(getActivity());
-                helperNav.setChangeClickListener(this, this);
+
+                helperNav = MenuBuildHelper
+                        .with(getActivity())
+                        .andBinder(binder)
+                        .setChangeClickListener(this, this);
                 configurationMenu(helperNav.newMENU());
-                helperNav.createNewMenu(binder);
+                helperNav.createNewMenu();
                 configurationNavigation(helperNav);
             } catch (Exception e) {
                 Log.d(TAG, e.getMessage());

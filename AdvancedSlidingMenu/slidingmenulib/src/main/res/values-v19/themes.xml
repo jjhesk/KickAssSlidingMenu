@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="defaultShowTimeSlidingMenuTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--   <item name="background">@drawable/actionbar_bg_hb_logo</item>-->
+        <item name="indeterminateProgressStyle">@style/Widget.AppCompat.ProgressBar</item>
+        <item name="elevation">0dp</item>
+        <item name="drawerColor">@color/bright_foreground_disabled_material_dark</item>
+        <item name="belowToolbar">false</item>
+        <item name="labelColor">#afafaf</item>
+        <item name="multipaneSupport">false</item>
+        <item name="autoDarkStatusBar">true</item>
+        <item name="actionBarOverlay">false</item>
+        <item name="actionBarOverlayAlpha">1.0</item>
+        <item name="drawerActionBarStyle">@null</item>
+        <item name="sectionStyle">@style/MaterialSectionTheme.Light</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
 
     <style name="MaterialNavigationDrawerTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="drawerColor">#111</item>

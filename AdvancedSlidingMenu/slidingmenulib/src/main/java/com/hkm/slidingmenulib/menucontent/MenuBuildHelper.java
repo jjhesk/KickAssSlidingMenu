@@ -17,6 +17,8 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.hkm.slidingmenulib.Util.LockableScrollView;
+import com.hkm.slidingmenulib.Util.Utils;
 import com.hkm.slidingmenulib.menucontent.containers.MaterialDrawerContainer;
 import com.hkm.slidingmenulib.menucontent.sectionPlate.MaterialDevisor;
 import com.hkm.slidingmenulib.menucontent.sectionPlate.MaterialImageLabel;
@@ -42,6 +44,7 @@ public class MenuBuildHelper<Fragment, customTextView extends TextView, ListSect
     private internalChangeInFragment fragmentChangeListener;
     private MaterialMenu menu;
     private LinearLayout itemMenuHolder, items;
+    private MaterialDrawerContainer binder;
     private int
             backPattern,
             drawerHeaderType,
@@ -74,9 +77,13 @@ public class MenuBuildHelper<Fragment, customTextView extends TextView, ListSect
         backPattern = n;
     }
 
+    public MenuBuildHelper andBinder(MaterialDrawerContainer viewBinder) {
+        this.binder = viewBinder;
+        return this;
+    }
 
-    public void createNewMenu(MaterialDrawerContainer inflatedViewGroup) {
-        initLayouts(inflatedViewGroup);
+    public void createNewMenu() {
+        initLayouts(this.binder);
     }
 
     /**
@@ -101,13 +108,14 @@ public class MenuBuildHelper<Fragment, customTextView extends TextView, ListSect
         return menu = new MaterialMenu();
     }
 
-    public void setChangeClickListener(MaterialSectionChangeListener l1, MaterialSectionOnClickListener l2) {
+    public MenuBuildHelper setChangeClickListener(MaterialSectionChangeListener l1, MaterialSectionOnClickListener l2) {
         try {
             this.changeListener = l1;
             this.clickListener = l2;
         } catch (Exception e) {
             Log.d(TAG, "failed to cast type into listeners");
         }
+        return this;
     }
 
     private MaterialDrawerContainer mcontainerdrawer;
@@ -135,7 +143,6 @@ public class MenuBuildHelper<Fragment, customTextView extends TextView, ListSect
 
         this.itemMenuHolder = binder.itemMenuHolder;
         this.items = binder.items;
-        this.mcontainerdrawer = binder;
         renderMenu();
     }
 
@@ -158,7 +165,7 @@ public class MenuBuildHelper<Fragment, customTextView extends TextView, ListSect
 
         if (!fromStart && ((drawerHeaderType == materialMenuConstructorFragmentBase.DRAWERHEADER_HEADITEMS &&
                 sectionList.get(startIndex) instanceof MaterialSection) || (drawerHeaderType != materialMenuConstructorFragmentBase.DRAWERHEADER_HEADITEMS))) {
-            MaterialSection newSection = (MaterialSection) sectionList.get(startIndex);
+            final MaterialSection newSection = (MaterialSection) sectionList.get(startIndex);
             if ((newSection.getTarget() == MaterialSection.TARGET_FRAGMENT)) {
                 currentSection = newSection;
                 currentSection.select();
@@ -173,7 +180,7 @@ public class MenuBuildHelper<Fragment, customTextView extends TextView, ListSect
 
         } else if (!fromStart && drawerHeaderType != materialMenuConstructorFragmentBase.DRAWERHEADER_HEADITEMS) {
 
-            MaterialSection newSection = (MaterialSection) sectionList.get(startIndex);
+            final MaterialSection newSection = (MaterialSection) sectionList.get(startIndex);
 
             if ((newSection.getTarget() == MaterialSection.TARGET_FRAGMENT)) {
                 currentSection = newSection;
@@ -215,16 +222,16 @@ public class MenuBuildHelper<Fragment, customTextView extends TextView, ListSect
         List<Object> sectionList = menu.getItems();
         for (int i = 0; i < sectionList.size(); i++) {
             if (sectionList.get(i) instanceof MaterialSection) {
-                MaterialSection section = (MaterialSection) sectionList.get(i);
+                final MaterialSection section = (MaterialSection) sectionList.get(i);
                 addSection(section, getContainer(section.isBottom()));
             } else if (sectionList.get(i) instanceof MaterialDevisor) {
-                MaterialDevisor devisor = (MaterialDevisor) sectionList.get(i);
+                final MaterialDevisor devisor = (MaterialDevisor) sectionList.get(i);
                 addDevisor(devisor, getContainer(devisor.isBottom()));
             } else if (sectionList.get(i) instanceof MaterialLabel) {
-                MaterialLabel label = (MaterialLabel) sectionList.get(i);
+                final MaterialLabel label = (MaterialLabel) sectionList.get(i);
                 addLabel(label, getContainer(label.isBottom()));
             } else if (sectionList.get(i) instanceof MaterialImageLabel) {
-                MaterialImageLabel imagelabel = (MaterialImageLabel) sectionList.get(i);
+                final MaterialImageLabel imagelabel = (MaterialImageLabel) sectionList.get(i);
                 addLabelImage(imagelabel, getContainer(
                         imagelabel.isBottom()
                 ));
@@ -235,7 +242,7 @@ public class MenuBuildHelper<Fragment, customTextView extends TextView, ListSect
         // unselect all items
         for (int i = 0; i < sectionList.size(); i++) {
             if (sectionList.get(i) instanceof MaterialSection) {
-                MaterialSection section = (MaterialSection) sectionList.get(i);
+                final MaterialSection section = (MaterialSection) sectionList.get(i);
                 section.unSelect();
             }
         }
@@ -255,23 +262,19 @@ public class MenuBuildHelper<Fragment, customTextView extends TextView, ListSect
      * @param label the material label
      */
     private void addLabel(MaterialLabel label, LinearLayout location) {
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) (48 * displayDensity));
-        location.addView(label.getView(), params);
+        location.addView(label.getView(), Utils.genVerticalLayoutParam(48, displayDensity));
     }
 
     private void addLabelImage(MaterialImageLabel section, LinearLayout location) {
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, section.getHeight(displayDensity));
-        location.addView(section.getView(), params);
+        location.addView(section.getView(), Utils.genVerticalLayoutParam(section.getHeight(displayDensity)));
     }
 
     private void addSection(MaterialSection section, LinearLayout location) {
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) (48 * displayDensity));
-        location.addView(section.getView(), params);
+        location.addView(section.getView(), Utils.genVerticalLayoutParam(48, displayDensity));
     }
 
     private void addDevisor(MaterialDevisor md, LinearLayout location) {
-        LinearLayout.LayoutParams separator = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, md.getHeight(displayDensity));
-        location.addView(md.init(activity, separator));
+        location.addView(md.init(activity, Utils.genVerticalLayoutParam(md.getHeight(displayDensity))));
     }
 
     /**
@@ -428,13 +431,13 @@ public class MenuBuildHelper<Fragment, customTextView extends TextView, ListSect
         return newListSectionInternal(title, list, menu.getItems().size(), menu);
     }
 
-    private MaterialSection newListSectionInternal(String title, ListSection sectionList, final int position, final MaterialMenu menu) {
+    private MaterialSection newListSectionInternal(final String title, final ListSection sectionList, int position, final MaterialMenu menu) {
         final MaterialSection sec = new MaterialSection(
                 MaterialSection.TARGET_LISTVIEW,
                 false, changeListener,
                 sectionList);
-        ((ListSection) sec.getPlateSection()).setDensity(displayDensity);
-        ((ListSection) sec.getPlateSection()).setScrollContainer(mcontainerdrawer.getScrollView());
+        sectionList.setDensity(displayDensity);
+        sectionList.setScrollContainer(binder.getScrollView());
         additionalSection(sec);
         sec.setFillIconColor(false);
         sec.setTitle(title);
@@ -551,7 +554,7 @@ public class MenuBuildHelper<Fragment, customTextView extends TextView, ListSect
      * @param refreshMenu AKA
      * @return AKA
      */
-    private MaterialSection newSectionInternal(String title, Bitmap icon, boolean bottom, MaterialMenu menu, int position, boolean refreshMenu) {
+    private MaterialSection newSectionInternal(final String title, final Bitmap icon, final boolean bottom, final MaterialMenu menu, final int position, final boolean refreshMenu) {
         MaterialSection section = new MaterialSection(MaterialSection.TARGET_CLICK, bottom, changeListener, new MaterialSectionBind<customTextView>());
         additionalSection(section);
         section.setIcon(icon);
@@ -585,7 +588,9 @@ public class MenuBuildHelper<Fragment, customTextView extends TextView, ListSect
      * @param refreshMenu AKA
      * @return AKA
      */
-    public MaterialSection newSection(String title, Bitmap icon, Fragment target, boolean bottom, MaterialMenu menu, int position, boolean refreshMenu) {
+    public MaterialSection newSection(final String title, final Bitmap icon, final Fragment target,
+                                      final boolean bottom, final MaterialMenu menu, final int position,
+                                      final boolean refreshMenu) {
 
         MaterialSection section = new MaterialSection(MaterialSection.TARGET_FRAGMENT, bottom, changeListener, new MaterialSectionBind<customTextView>());
 
@@ -626,19 +631,14 @@ public class MenuBuildHelper<Fragment, customTextView extends TextView, ListSect
      * @param refreshMenu AKA
      * @return AKA
      */
-    public MaterialSection newSection(String title, Bitmap icon, Intent target, boolean bottom, MaterialMenu menu, int position, boolean refreshMenu) {
-
-
+    public MaterialSection newSection(final String title, final Bitmap icon, final Intent target, final boolean bottom, final MaterialMenu menu, final int position, final boolean refreshMenu) {
         MaterialSection section = new MaterialSection(MaterialSection.TARGET_ACTIVITY, bottom, changeListener, new MaterialSectionBind<customTextView>());
-
-
         section.setOnClickListener(clickListener);
         section.setIcon(icon);
         section.setTitle(title);
         section.setTarget(target);
         //section.setPosition(menu.getItems().size());
         menu.addItem(section, position);
-
         if (refreshMenu)
             reloadMenu();
 
@@ -690,7 +690,7 @@ public class MenuBuildHelper<Fragment, customTextView extends TextView, ListSect
      * @param refreshMenu will refresh the menu on display
      * @return the object of the MaterialSection
      */
-    protected MaterialSection newSection(String title, Fragment target, boolean bottom, MaterialMenu menu, int position, boolean refreshMenu) {
+    protected MaterialSection newSection(final String title, final Fragment target, final boolean bottom, MaterialMenu menu, final int position, final boolean refreshMenu) {
         MaterialSection section = new MaterialSection(MaterialSection.TARGET_FRAGMENT, false, changeListener, new MaterialSectionBind<customTextView>());
         additionalSection(section);
         section.setTitle(title);
@@ -704,7 +704,7 @@ public class MenuBuildHelper<Fragment, customTextView extends TextView, ListSect
     }
 
 
-    public MaterialSection newSection(@StringRes int title, Fragment target, MaterialMenu menu) {
+    public MaterialSection newSection(final @StringRes int title, final Fragment target, final MaterialMenu menu) {
         final String mtitle = activity.getResources().getString(title);
         return newSection(mtitle, target, false, menu);
     }
@@ -734,7 +734,7 @@ public class MenuBuildHelper<Fragment, customTextView extends TextView, ListSect
      * @return AKA
      */
     @SuppressLint("ResourceAsDrawable")
-    protected MaterialSection newIconSection(String title, Fragment fragment, @DrawableRes int DrawableIcon, MaterialMenu menu, boolean bottom) {
+    protected MaterialSection newIconSection(final String title, final Fragment fragment, final @DrawableRes int DrawableIcon, final MaterialMenu menu, final boolean bottom) {
         //Drawable icon = activity.getResources().getDrawable(DrawableIcon);
         MaterialSection section = new MaterialSection(MaterialSection.TARGET_CLICK, bottom, changeListener, new MaterialSectionBind<customTextView>(DrawableIcon));
         section.setOnClickListener(clickListener);

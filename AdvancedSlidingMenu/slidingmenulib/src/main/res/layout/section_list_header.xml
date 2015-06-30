@@ -22,12 +22,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="0dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="false"
+            android:focusable="false"
             android:orientation="horizontal"
             android:padding="0dp">
-
+            <!-- android:foreground="?android:attr/selectableItemBackground"
+            -->
             <TextView
                 android:id="@+id/section_text"
                 android:layout_width="match_parent"
@@ -63,7 +63,8 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/sectionRowMarginHorizontal"
-                android:scaleType="fitXY" />
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_action_right" />
         </RelativeLayout>
 
     </com.hkm.slidingmenulib.menucontent.containers.MaterialRippleLayout>

@@ -8,34 +8,29 @@
     android:choiceMode="singleChoice"
     android:divider="@android:color/transparent">
 
-    <ScrollView
+    <com.hkm.slidingmenulib.Util.LockableScrollView
         android:id="@+id/scrollviewcomponent"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_above="@+id/separator"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true">
 
-        <RelativeLayout
+
+        <!--this is the upper menu-->
+        <LinearLayout
+            android:id="@+id/items"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical" />
 
-            <!--this is the upper menu-->
-            <LinearLayout
-                android:id="@+id/items"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:orientation="vertical" />
-        </RelativeLayout>
-    </ScrollView>
-
+    </com.hkm.slidingmenulib.Util.LockableScrollView>
 
     <LinearLayout
         android:id="@+id/bottom_sections"
@@ -44,7 +39,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical" />
 
     <View
         android:id="@+id/separator"

@@ -23,36 +23,40 @@
     <View
         android:id="@+id/separator"
         android:layout_width="match_parent"
-        android:layout_height="2dip"
+        android:layout_height="1dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_below="@id/top_sections"
         android:background="?android:attr/listDivider" />
     <!-- this is the bottom menu section -->
 
-    <ScrollView
+    <com.hkm.slidingmenulib.Util.LockableScrollView
         android:id="@+id/scrollviewcomponent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentBottom="false"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@id/separator">
 
-        <RelativeLayout
+
+        <!--this is the upper menu-->
+        <LinearLayout
+            android:id="@+id/items"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentRight="false"
+            android:layout_alignParentTop="false"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical" />
 
-            <!--this is the upper menu-->
-            <LinearLayout
-                android:id="@+id/items"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
-                android:orientation="vertical" />
-        </RelativeLayout>
-    </ScrollView>
+    </com.hkm.slidingmenulib.Util.LockableScrollView>
+    <!-- this is the LinearLayout -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sectionNormalHeight"
+        android:layout_below="@id/scrollviewcomponent" />
 </RelativeLayout>

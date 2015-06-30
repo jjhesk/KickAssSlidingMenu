@@ -1,12 +1,13 @@
 package com.hkm.slidingmenulib.menucontent.containers;
 
+import android.annotation.SuppressLint;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.hkm.slidingmenulib.R;
+import com.hkm.slidingmenulib.Util.LockableScrollView;
 import com.hkm.slidingmenulib.menucontent.LAYOUT_DRAWER;
 import com.hkm.slidingmenulib.menucontent.scrolli;
 
@@ -17,7 +18,7 @@ public class MaterialHeadedDrawerContainer extends MaterialDrawerContainer imple
     public LinearLayout background_gradient;
     public ImageView background_switcher, current_back_item_background, current_head_item_photo, second_head_item_photo, third_head_item_photo, user_transition, user_switcher;
     public TextView current_head_item_title, current_head_item_sub_title;
-    private ScrollView scrollor;
+    private LockableScrollView scrollor;
 
     public MaterialHeadedDrawerContainer(LAYOUT_DRAWER layout_type) {
         super(layout_type);
@@ -27,6 +28,7 @@ public class MaterialHeadedDrawerContainer extends MaterialDrawerContainer imple
         return R.layout.layout_drawer_headed;
     }
 
+    @SuppressLint("WrongViewCast")
     public View init(View inflat) {
         super.init(inflat);
         background_gradient = (LinearLayout) inflat.findViewById(R.id.background_gradient);
@@ -39,12 +41,12 @@ public class MaterialHeadedDrawerContainer extends MaterialDrawerContainer imple
         user_switcher = (ImageView) inflat.findViewById(R.id.user_switcher);
         current_head_item_title = (TextView) inflat.findViewById(R.id.current_head_item_title);
         current_head_item_sub_title = (TextView) inflat.findViewById(R.id.current_head_item_sub_title);
-        scrollor = (ScrollView) inflat.findViewById(R.id.scrollviewcomponent);
+        scrollor = (LockableScrollView) inflat.findViewById(R.id.scrollviewcomponent);
         return inflat;
     }
 
     @Override
-    public ScrollView getScrollView() {
+    public LockableScrollView getScrollView() {
         return scrollor;
     }
 }

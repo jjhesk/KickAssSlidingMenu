@@ -10,6 +10,4 @@ public interface ImaterialBinder {
     int getLayout();
 
     View init(View view);
-
-
 }

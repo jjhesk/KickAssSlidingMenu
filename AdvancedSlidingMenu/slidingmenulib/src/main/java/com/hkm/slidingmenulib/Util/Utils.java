@@ -8,6 +8,8 @@ import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 public class Utils {
 
@@ -116,5 +118,15 @@ public class Utils {
             return (res.getDisplayMetrics().widthPixels / res.getDisplayMetrics().density) >= 600;
 
         }
+    }
+
+    public static LinearLayout.LayoutParams genVerticalLayoutParam(final int height_dp, float density) {
+        final LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) (height_dp * density));
+        return params;
+    }
+
+    public static LinearLayout.LayoutParams genVerticalLayoutParam(final int height_pixel) {
+        final LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height_pixel);
+        return params;
     }
 }

@@ -67,7 +67,7 @@ public class MaterialSection<Fragment, SectionModel extends ImaterialBinder> imp
 
     private String title;
     private String fragmentTitle;
-    private SectionModel mSectionmodel;
+    private final SectionModel mSectionmodel;
     private Fragment targetFragment;
     private Intent targetIntent;
 
@@ -75,11 +75,12 @@ public class MaterialSection<Fragment, SectionModel extends ImaterialBinder> imp
 
     private Context ctx;
 
-    public MaterialSection(int target, boolean sticky, MaterialSectionChangeListener changeListener, SectionModel iOBject) {
+    public MaterialSection(final int target, final boolean sticky, final
+    MaterialSectionChangeListener changeListener, final SectionModel mSectionmodel) {
         this.targetType = target;
         this.sticky = sticky;
         this.changeListener = changeListener;
-        this.mSectionmodel = iOBject;
+        this.mSectionmodel = mSectionmodel;
         isSelected = false;
         hasSectionColor = false;
         hasColorDark = false;
@@ -281,7 +282,6 @@ public class MaterialSection<Fragment, SectionModel extends ImaterialBinder> imp
         return hasColorDark;
     }
 
-
     public int getSectionColorDark() {
         return colorDark;
     }
@@ -290,7 +290,6 @@ public class MaterialSection<Fragment, SectionModel extends ImaterialBinder> imp
         setSectionColor(color);
         hasColorDark = true;
         this.colorDark = colorDark;
-
         return this;
     }
 
@@ -376,7 +375,7 @@ public class MaterialSection<Fragment, SectionModel extends ImaterialBinder> imp
             return fragmentTitle;
     }
 
-    public void setFragmentTitle(String fragmentTitle) {
+    public void setFragmentTitle(final String fragmentTitle) {
         this.fragmentTitle = fragmentTitle;
     }
 

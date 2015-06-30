@@ -26,7 +26,6 @@ public class MaterialLabel implements ImaterialBinder {
         this.label = label;
         this.bottom = bottom;
         this.ctx = ctx;
-
     }
 
     public String getLabel() {

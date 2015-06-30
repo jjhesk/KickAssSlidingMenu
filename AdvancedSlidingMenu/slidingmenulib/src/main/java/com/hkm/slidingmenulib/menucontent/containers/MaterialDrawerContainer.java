@@ -4,10 +4,10 @@ import android.annotation.SuppressLint;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.hkm.slidingmenulib.R;
+import com.hkm.slidingmenulib.Util.LockableScrollView;
 import com.hkm.slidingmenulib.menucontent.ImaterialBinder;
 import com.hkm.slidingmenulib.menucontent.LAYOUT_DRAWER;
 import com.hkm.slidingmenulib.menucontent.scrolli;
@@ -25,7 +25,7 @@ public class MaterialDrawerContainer<T extends TextView> implements ImaterialBin
     public ImageView background_switcher, current_back_item_background, current_head_item_photo, second_head_item_photo, third_head_item_photo, user_transition, user_switcher;
     public T current_head_item_title, current_head_item_sub_title;
     public LAYOUT_DRAWER drawerType;
-    private ScrollView scrollor;
+    private LockableScrollView scrollor;
 
     public MaterialDrawerContainer(LAYOUT_DRAWER layout_type) {
         drawerType = layout_type;
@@ -42,19 +42,19 @@ public class MaterialDrawerContainer<T extends TextView> implements ImaterialBin
             case STICKY_UP:
                 itemMenuHolder = (LinearLayout) inflat.findViewById(R.id.top_sections);
                 items = (LinearLayout) inflat.findViewById(R.id.items);
-                scrollor = (ScrollView) inflat.findViewById(R.id.scrollviewcomponent);
+                scrollor = (LockableScrollView) inflat.findViewById(R.id.scrollviewcomponent);
                 return inflat;
 
             case STICKY_BOTTOM:
                 itemMenuHolder = (LinearLayout) inflat.findViewById(R.id.bottom_sections);
                 items = (LinearLayout) inflat.findViewById(R.id.items);
-                scrollor = (ScrollView) inflat.findViewById(R.id.scrollviewcomponent);
+                scrollor = (LockableScrollView) inflat.findViewById(R.id.scrollviewcomponent);
                 return inflat;
 
             case PROFILE_HEAD:
                 itemMenuHolder = (LinearLayout) inflat.findViewById(R.id.bottom_sections);
                 items = (LinearLayout) inflat.findViewById(R.id.items);
-                scrollor = (ScrollView) inflat.findViewById(R.id.scrollviewcomponent);
+                scrollor = (LockableScrollView) inflat.findViewById(R.id.scrollviewcomponent);
 
                 background_gradient = (LinearLayout) inflat.findViewById(R.id.background_gradient);
                 background_switcher = (ImageView) inflat.findViewById(R.id.background_switcher);
@@ -77,7 +77,8 @@ public class MaterialDrawerContainer<T extends TextView> implements ImaterialBin
     }
 
 
-    public ScrollView getScrollView() {
+    public LockableScrollView getScrollView() {
+        //todo: make sure to fix the  {LAYOUT_DRAWER} when it is on the custom layout. There will be an error when it is chosend to be in custom layout
         return scrollor;
     }
 

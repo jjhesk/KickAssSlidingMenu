@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -14,12 +15,17 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.DimenRes;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.LayoutRes;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
+import android.view.Surface;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
@@ -201,6 +207,7 @@ public class SlidingMenu extends RelativeLayout {
         this(context, attrs, 0);
     }
 
+
     /**
      * Instantiates a new SlidingMenu.
      *
@@ -290,7 +297,9 @@ public class SlidingMenu extends RelativeLayout {
         if (selectorRes != -1)
             setSelectorDrawable(selectorRes);
         ta.recycle();
+
     }
+
 
     /**
      * Attaches the SlidingMenu to an entire Activity
@@ -353,7 +362,7 @@ public class SlidingMenu extends RelativeLayout {
      *
      * @param res the new content
      */
-    public void setContent(int res) {
+    public void setContent(final @LayoutRes int res) {
         setContent(LayoutInflater.from(getContext()).inflate(res, null));
     }
 
@@ -382,7 +391,7 @@ public class SlidingMenu extends RelativeLayout {
      *
      * @param res the new content
      */
-    public void setMenu(int res) {
+    public void setMenu(final @LayoutRes int res) {
         setMenu(LayoutInflater.from(getContext()).inflate(res, null));
     }
 
@@ -410,7 +419,7 @@ public class SlidingMenu extends RelativeLayout {
      *
      * @param res the new content
      */
-    public void setSecondaryMenu(int res) {
+    public void setSecondaryMenu(final @LayoutRes int res) {
         setSecondaryMenu(LayoutInflater.from(getContext()).inflate(res, null));
     }
 
@@ -609,7 +618,7 @@ public class SlidingMenu extends RelativeLayout {
      * @param resID The dimension resource id to be set as the behind offset.
      *              The menu, when open, will leave this width margin on the right of the screen.
      */
-    public void setBehindOffsetRes(int resID) {
+    public void setBehindOffsetRes(final @DimenRes int resID) {
         int i = (int) getContext().getResources().getDimension(resID);
         setBehindOffset(i);
     }
@@ -628,7 +637,7 @@ public class SlidingMenu extends RelativeLayout {
      *
      * @param resID The dimension resource id to be set as the above offset.
      */
-    public void setAboveOffsetRes(int resID) {
+    public void setAboveOffsetRes(final @DimenRes int resID) {
         int i = (int) getContext().getResources().getDimension(resID);
         setAboveOffset(i);
     }
@@ -662,7 +671,7 @@ public class SlidingMenu extends RelativeLayout {
      * @param res The dimension resource id to be set as the behind width offset.
      *            The menu, when open, will open this wide.
      */
-    public void setBehindWidthRes(int res) {
+    public void setBehindWidthRes(final @DimenRes int res) {
         int i = (int) getContext().getResources().getDimension(res);
         setBehindWidth(i);
     }
@@ -761,7 +770,7 @@ public class SlidingMenu extends RelativeLayout {
      *
      * @param resId the resource ID of the new shadow drawable
      */
-    public void setShadowDrawable(int resId) {
+    public void setShadowDrawable(final @DrawableRes int resId) {
         setShadowDrawable(getContext().getResources().getDrawable(resId));
     }
 
@@ -779,7 +788,7 @@ public class SlidingMenu extends RelativeLayout {
      *
      * @param resId the resource ID of the new shadow drawable
      */
-    public void setSecondaryShadowDrawable(int resId) {
+    public void setSecondaryShadowDrawable(final @DrawableRes int resId) {
         setSecondaryShadowDrawable(getContext().getResources().getDrawable(resId));
     }
 
@@ -797,7 +806,7 @@ public class SlidingMenu extends RelativeLayout {
      *
      * @param resId The dimension resource id to be set as the shadow width.
      */
-    public void setShadowWidthRes(int resId) {
+    public void setShadowWidthRes(final @DimenRes int resId) {
         setShadowWidth((int) getResources().getDimension(resId));
     }
 
@@ -852,7 +861,7 @@ public class SlidingMenu extends RelativeLayout {
      *
      * @param res a resource ID for the selector drawable
      */
-    public void setSelectorDrawable(int res) {
+    public void setSelectorDrawable(final @DrawableRes int res) {
         mViewBehind.setSelectorBitmap(BitmapFactory.decodeResource(getResources(), res));
     }
 
@@ -1004,13 +1013,9 @@ public class SlidingMenu extends RelativeLayout {
     @SuppressLint("NewApi")
     @Override
     protected boolean fitSystemWindows(Rect insets) {
-        int leftPadding = insets.left;
-        int rightPadding = insets.right;
-        int topPadding = insets.top;
-        int bottomPadding = insets.bottom;
         if (!mActionbarOverlay) {
             Log.v(TAG, "setting padding!");
-            setPadding(leftPadding, topPadding, rightPadding, bottomPadding);
+            setExtendPadding(insets);
         }
         return true;
     }
@@ -1036,4 +1041,70 @@ public class SlidingMenu extends RelativeLayout {
         }
     }
 
+    /**
+     * support the newest API lilpops with the new navigation bar. fixed bug when used in lollipop
+     *
+     * @return the fixed height from the bar menu
+     */
+
+
+    @Override
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public WindowInsets onApplyWindowInsets(WindowInsets insets) {
+        if (mActionbarOverlay) return insets.consumeSystemWindowInsets();
+
+        Rect rect = new Rect(
+                insets.getSystemWindowInsetLeft(),
+                insets.getSystemWindowInsetTop(),
+                insets.getSystemWindowInsetRight(),
+                insets.getSystemWindowInsetBottom()
+        );
+
+        setExtendPadding(rect);
+
+        return insets.consumeSystemWindowInsets();
+    }
+
+    private void setExtendPadding(Rect rect) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            WindowManager manager = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
+            switch (manager.getDefaultDisplay().getRotation()) {
+                case Surface.ROTATION_90:
+                    rect.right += getNavBarWidth();
+                    break;
+                case Surface.ROTATION_180:
+                    rect.top += getNavBarHeight();
+                    break;
+                case Surface.ROTATION_270:
+                    rect.left += getNavBarWidth();
+                    break;
+                default:
+                    rect.bottom += getNavBarHeight();
+            }
+        }
+
+        setPadding(rect.left, rect.top, rect.right, rect.bottom);
+    }
+
+    private int getNavBarWidth() {
+        return getNavBarDimen("navigation_bar_width");
+    }
+
+    private int getNavBarHeight() {
+        return getNavBarDimen("navigation_bar_height");
+    }
+
+    private int getNavBarDimen(String resourceString) {
+        Resources r = getResources();
+        int id = r.getIdentifier(resourceString, "dimen", "android");
+        if (id > 0) {
+            return r.getDimensionPixelSize(id);
+        } else {
+            return 0;
+        }
+    }
+
+    /*
+    END BUG FIX
+     */
 }
