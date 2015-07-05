@@ -45,13 +45,15 @@ public class MaterialListSection<TD, CustomTextView extends TextView, RenderBind
         mstatusShown = false;
     }
 
+    private int submenu_item_height = 0, containerTHeight = 0;
+    private int DURATION = 900;
+    private ValueAnimator anim;
+    private float mdensity;
+
     @Override
     public int getLayout() {
         return R.layout.section_list_header;
     }
-
-    private int submenu_item_height = 0, containerTHeight = 0;
-
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -79,9 +81,6 @@ public class MaterialListSection<TD, CustomTextView extends TextView, RenderBind
         }
         return view;
     }
-
-
-    private float mdensity;
 
     public void setDensity(final float density) {
         this.mdensity = density;
@@ -119,9 +118,6 @@ public class MaterialListSection<TD, CustomTextView extends TextView, RenderBind
         }
         return this;
     }
-
-    private int DURATION = 900;
-    private ValueAnimator anim;
 
     private void animateIndicator(final boolean open) {
         if (animate_indicator) {

@@ -4,8 +4,12 @@ import android.app.Fragment;
 
 import com.hkm.slidingmenulib.gestured.SlidingMenu;
 import com.hkm.slidingmenulib.layoutdesigns.app.SlidingAppCompactActivity;
+import com.hkm.slidingmenulib.menucontent.LAYOUT_DRAWER;
+import com.hypebeast.demoslidemenu.pages.SubItem;
 import com.hypebeast.demoslidemenu.pages.mainpageDemo;
 import com.hypebeast.demoslidemenu.pages.menupageDemo;
+
+import java.util.List;
 
 
 public class MainActivityDemo extends SlidingAppCompactActivity<Fragment> {

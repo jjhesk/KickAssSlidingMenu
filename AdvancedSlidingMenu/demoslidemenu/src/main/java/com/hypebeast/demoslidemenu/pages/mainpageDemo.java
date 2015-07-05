@@ -17,5 +17,4 @@ public class mainpageDemo extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.activity_main, container, false);
     }
-
 }
