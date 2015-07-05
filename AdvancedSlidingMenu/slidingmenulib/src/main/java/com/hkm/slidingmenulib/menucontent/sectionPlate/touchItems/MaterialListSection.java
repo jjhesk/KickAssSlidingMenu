@@ -6,7 +6,6 @@ import android.annotation.SuppressLint;
 import android.content.res.Resources;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -200,7 +199,7 @@ public class MaterialListSection<TD, CustomTextView extends TextView, RenderBind
         anim.start();
     }
 
-    public static class RenderViewBindAdapter<TD> extends midUltimateAdapter<TD, RowBinder> {
+    public static class RenderViewBindAdapter<TD> extends easyAdapter<TD, RowBinder> {
 
         public static RenderViewBindAdapter newInstance(List<?> list) {
             return new RenderViewBindAdapter(list);

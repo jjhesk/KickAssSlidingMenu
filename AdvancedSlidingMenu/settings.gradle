@@ -1,1 +1,1 @@
-include ':HBstore2', ':libHkmCheck', ':processButtonHkm', ':slidingmenulib', ':demoslidemenu'
+include ':slidingmenulib', ':demoslidemenu'

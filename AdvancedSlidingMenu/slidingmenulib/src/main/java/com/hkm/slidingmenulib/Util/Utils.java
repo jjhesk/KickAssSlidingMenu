@@ -1,5 +1,7 @@
 package com.hkm.slidingmenulib.Util;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -8,10 +10,42 @@ import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.hkm.slidingmenulib.layoutdesigns.singleDetailPost;
+
 public class Utils {
+
+
+    /**
+     * start the single page with full route URL
+     *
+     * @param route the full url
+     * @param ctx   the resource context
+     */
+    public static <T extends singleDetailPost> void routeSinglePage(String route, Context ctx, Class<T> clazz) {
+        Intent n = new Intent(ctx, clazz);
+        final Bundle b = new Bundle();
+        b.putInt(singleDetailPost.Method, singleDetailPost.REQUEST_METHOD_FULL_URL);
+        b.putString(singleDetailPost.requestURL, route);
+        ctx.startActivity(n);
+    }
+
+    /**
+     * start the single page with post id
+     *
+     * @param pid the post ID
+     * @param ctx the resource context
+     */
+    public static <T extends singleDetailPost> void routeSinglePage(int pid, Context ctx, Class<T> clazz) {
+        Intent n = new Intent(ctx, clazz);
+        final Bundle b = new Bundle();
+        b.putInt(singleDetailPost.Method, singleDetailPost.REQUEST_METHOD_POST_ID);
+        b.putInt(singleDetailPost.PID, pid);
+        ctx.startActivity(n);
+    }
 
     public static int getDrawerWidth(Resources res, int ownDP) {
         if (ownDP == 0) {

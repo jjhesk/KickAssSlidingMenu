@@ -3,7 +3,7 @@ package com.hypebeast.demoslidemenu;
 import android.app.Fragment;
 
 import com.hkm.slidingmenulib.gestured.SlidingMenu;
-import com.hkm.slidingmenulib.gestured.app.SlidingAppCompactActivity;
+import com.hkm.slidingmenulib.layoutdesigns.app.SlidingAppCompactActivity;
 import com.hypebeast.demoslidemenu.pages.mainpageDemo;
 import com.hypebeast.demoslidemenu.pages.menupageDemo;
 
@@ -13,7 +13,7 @@ public class MainActivityDemo extends SlidingAppCompactActivity<Fragment> {
 
     @Override
     protected int getDefaultMainActivityLayoutId() {
-        return BODY_LAYOUT.actionbar.getResID();
+        return SlidingAppCompactActivity.BODY_LAYOUT.actionbar.getResID();
     }
 
     @Override
