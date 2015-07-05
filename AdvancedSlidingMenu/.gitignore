@@ -5,3 +5,40 @@
 .DS_Store
 /build
 /captures
+
+
+
+# key info:
+ultimateandroid.jks
+keystore.properties
+gradleinfo.properties
+# Android generated
+bin/
+gen/
+
+# Ant
+build.xml
+local.properties
+
+
+# Maven
+target/
+pom.xml.*
+release.properties
+
+
+
+# Eclipse
+.classpath
+.project
+.externalToolBuilders/
+.apt_generated/
+
+
+# Ignore Gradle GUI config
+gradle-app.setting
+manifest-merger-release-report.txt
+*.apk
+
+.gradle
+build/
