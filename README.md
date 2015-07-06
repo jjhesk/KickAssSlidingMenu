@@ -3,12 +3,6 @@ I am bringing it back from the good old project sliding menu in the Android Stud
 
 ![scn1](scn/device-2015-06-30-110654.png)
 
-## Apps whom use this lib
-
-
-
-## 
-
 ## Installations
 Please check with supported repo mavens
 
@@ -18,7 +12,6 @@ Please check with supported repo mavens
 repositories { maven {  url "https://jitpack.io"  }}
 dependencies { compile 'com.github.jjhesk:BringItBackAdvanceSlidingMenu:vX.XX'}
 ```
-
 ###Bintray Remote 
  ![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg) 
 ```gradle
@@ -29,8 +22,23 @@ dependencies { compile 'com.hkm.slidingmenulib:com.hkm.slidingmenulib:1.5.2@aar'
 ###Thanks
 * Use sliding menu from  [SlidingMenu](https://github.com/jfeinstein10/SlidingMenu)
 
-
-
+## Apps whom use this lib
+* [Foursquare][15]
+* [LinkedIn][19]
+* [Zappos][20]
+* [Rdio][8]
+* [Evernote Food][18]
+* [Plume][4]
+* [VLC for Android][5]
+* [ESPN ScoreCenter][14]
+* [MLS MatchDay][16]
+* [9GAG][17]
+* [Wunderlist 2][13]
+* [The Verge][6]
+* [MTG Familiar][9]
+* [Mantano Reader][10]
+* [Falcon Pro (BETA)][12]
+* [MW3 Barracks][11]
 License
 --------
 
@@ -47,3 +55,25 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+
+[1]: http://twitter.com/slidingmenu
+[2]: http://actionbarsherlock.com/
+[3]: https://play.google.com/store/apps/details?id=com.zappos.android&hl=en
+[4]: https://play.google.com/store/apps/details?id=com.levelup.touiteur&hl=en
+[5]: https://play.google.com/store/apps/details?id=org.videolan.vlc.betav7neon
+[6]: https://play.google.com/store/apps/details?id=com.verge.android
+[7]: http://bit.ly/TWejze
+[8]: https://play.google.com/store/apps/details?id=com.rdio.android.ui
+[9]: https://play.google.com/store/apps/details?id=com.gelakinetic.mtgfam
+[10]: https://play.google.com/store/apps/details?id=com.mantano.reader.android
+[11]: https://play.google.com/store/apps/details?id=com.phonegap.MW3BarracksFree
+[12]: http://forum.xda-developers.com/showthread.php?p=34361296
+[13]: http://bit.ly/xs1sMN
+[14]: https://play.google.com/store/apps/details?id=com.espn.score_center
+[15]: https://play.google.com/store/apps/details?id=com.joelapenna.foursquared
+[16]: https://play.google.com/store/apps/details?id=com.mlssoccer
+[17]: https://play.google.com/store/apps/details?id=com.ninegag.android.app
+[18]: https://play.google.com/store/apps/details?id=com.evernote.food
+[19]: https://play.google.com/store/apps/details?id=com.linkedin.android
+[20]: https://play.google.com/store/apps/details?id=com.zappos.android
