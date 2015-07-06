@@ -1,5 +1,5 @@
 # BringItBackAdvanceSlidingMenu 
-[![maven](https://img.shields.io/github/tag/jjhesk/BringItBackAdvanceSlidingMenu.svg?label=maven)][23] [![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg) ][21]
+[![maven](https://img.shields.io/github/tag/jjhesk/BringItBackAdvanceSlidingMenu.svg?label=maven)][23] [![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg) ][21] [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)][24]
 
 Master: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg)][22]
 
@@ -86,3 +86,4 @@ License
 [21]: https://bintray.com/jjhesk/maven/slidingmenulib/_latestVersion
 [22]: https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu
 [23]: https://jitpack.io/#jjhesk/BringItBackAdvanceSlidingMenu/
+[24]: https://www.apache.org/licenses/LICENSE-2.0
