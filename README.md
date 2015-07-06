@@ -32,7 +32,7 @@ dependencies { compile 'com.hkm.slidingmenulib:slidingmenulib:1.5.2'}
 * Use Picasso Image library from [Picasso][27]
 
 
-## Apps whom use this lib
+## Apps whom use this lib also adapted from this technology
 * [Foursquare][15]
 * [LinkedIn][19]
 * [Zappos][20]
