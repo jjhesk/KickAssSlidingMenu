@@ -1,5 +1,10 @@
 # BringItBackAdvanceSlidingMenu 
-[![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg)][22] [![maven](https://img.shields.io/github/tag/jjhesk/BringItBackAdvanceSlidingMenu.svg?label=maven)][23] [![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg) ][21]
+[![maven](https://img.shields.io/github/tag/jjhesk/BringItBackAdvanceSlidingMenu.svg?label=maven)][23] [![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg) ][21] [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)][24]
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-BringItBackAdvanceSlidingMenu-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/2099)
+
+Master: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg)][22]
+
+BranchV1: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=V1)][22]
 
 I am bringing it back from the good old project sliding menu in the Android Studio. It will be an alternative to the google promoted Drawer Layout.
 
@@ -82,3 +87,4 @@ License
 [21]: https://bintray.com/jjhesk/maven/slidingmenulib/_latestVersion
 [22]: https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu
 [23]: https://jitpack.io/#jjhesk/BringItBackAdvanceSlidingMenu/
+[24]: https://www.apache.org/licenses/LICENSE-2.0
