@@ -27,7 +27,10 @@ dependencies { compile 'com.hkm.slidingmenulib:slidingmenulib:1.5.2'}
 ```
 
 ###Thanks
-* Use sliding menu from  [SlidingMenu](https://github.com/jfeinstein10/SlidingMenu)
+* Use sliding menu from  [SlidingMenu][26]
+* Use embeded advanced recyclerview from [UltimateRecyclerView][25]
+* Use Picasso Image library from [Picasso][27]
+
 
 ## Apps whom use this lib
 * [Foursquare][15]
@@ -88,3 +91,6 @@ License
 [22]: https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu
 [23]: https://jitpack.io/#jjhesk/BringItBackAdvanceSlidingMenu/
 [24]: https://www.apache.org/licenses/LICENSE-2.0
+[25]: https://github.com/cymcsg/UltimateRecyclerView
+[26]: https://github.com/jfeinstein10/SlidingMenu
+[27]: https://github.com/square/picasso
