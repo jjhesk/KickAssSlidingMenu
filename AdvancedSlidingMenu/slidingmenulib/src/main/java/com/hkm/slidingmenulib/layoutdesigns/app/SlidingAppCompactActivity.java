@@ -328,7 +328,8 @@ public abstract class SlidingAppCompactActivity<Frag> extends SlidingAppCompactA
         public static boolean isToolbarOn(final @LayoutRes int id) {
             final @LayoutRes int toolbarLayoutId1 = BODY_LAYOUT.actionbar.getResID();
             final @LayoutRes int toolbarLayoutId2 = BODY_LAYOUT.overlayactionbar.getResID();
-            return toolbarLayoutId1 == id || id == toolbarLayoutId2;
+            final @LayoutRes int toolbarLayoutId3 = BODY_LAYOUT.singelsimple.getResID();
+            return toolbarLayoutId1 == id || id == toolbarLayoutId2 || toolbarLayoutId3 == id;
         }
     }
 

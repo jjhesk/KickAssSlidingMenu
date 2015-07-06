@@ -25,11 +25,12 @@ public class Utils {
      * @param route the full url
      * @param ctx   the resource context
      */
-    public static <T extends singleDetailPost> void routeSinglePage(String route, Context ctx, Class<T> clazz) {
+    public static <T extends singleDetailPost> void routeSinglePage(final String route, final Context ctx, final Class<T> clazz) {
         Intent n = new Intent(ctx, clazz);
         final Bundle b = new Bundle();
         b.putInt(singleDetailPost.Method, singleDetailPost.REQUEST_METHOD_FULL_URL);
         b.putString(singleDetailPost.requestURL, route);
+        n.putExtras(b);
         ctx.startActivity(n);
     }
 
@@ -39,11 +40,12 @@ public class Utils {
      * @param pid the post ID
      * @param ctx the resource context
      */
-    public static <T extends singleDetailPost> void routeSinglePage(int pid, Context ctx, Class<T> clazz) {
+    public static <T extends singleDetailPost> void routeSinglePage(final int pid, final Context ctx, final Class<T> clazz) {
         Intent n = new Intent(ctx, clazz);
         final Bundle b = new Bundle();
         b.putInt(singleDetailPost.Method, singleDetailPost.REQUEST_METHOD_POST_ID);
         b.putInt(singleDetailPost.PID, pid);
+        n.putExtras(b);
         ctx.startActivity(n);
     }
 
