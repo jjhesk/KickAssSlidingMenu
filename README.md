@@ -1,4 +1,5 @@
-# BringItBackAdvanceSlidingMenu [ ![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg) ](https://bintray.com/jjhesk/maven/slidingmenulib/_latestVersion) [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg)](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu)
+# BringItBackAdvanceSlidingMenu 
+[![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg)][22] [![maven](https://img.shields.io/github/tag/jjhesk/BringItBackAdvanceSlidingMenu.svg?label=maven)][23] [![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg) ][21]
 I am bringing it back from the good old project sliding menu in the Android Studio. It will be an alternative to the google promoted Drawer Layout.
 
 ![scn1](scn/device-2015-06-30-110654.png)
@@ -7,7 +8,7 @@ I am bringing it back from the good old project sliding menu in the Android Stud
 Please check with supported repo mavens
 
 ###jitpack remote
-[![maven](https://img.shields.io/github/tag/jjhesk/BringItBackAdvanceSlidingMenu.svg?label=maven)](https://jitpack.io/#jjhesk/BringItBackAdvanceSlidingMenu/)
+[![maven](https://img.shields.io/github/tag/jjhesk/BringItBackAdvanceSlidingMenu.svg?label=maven)][23]
 ```gradle
 repositories { maven {  url "https://jitpack.io"  }}
 dependencies { compile 'com.github.jjhesk:BringItBackAdvanceSlidingMenu:vX.XX'}
@@ -77,3 +78,6 @@ License
 [18]: https://play.google.com/store/apps/details?id=com.evernote.food
 [19]: https://play.google.com/store/apps/details?id=com.linkedin.android
 [20]: https://play.google.com/store/apps/details?id=com.zappos.android
+[21]: https://bintray.com/jjhesk/maven/slidingmenulib/_latestVersion
+[22]: https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu
+[23]: https://jitpack.io/#jjhesk/BringItBackAdvanceSlidingMenu/
