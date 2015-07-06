@@ -18,7 +18,7 @@ dependencies { compile 'com.github.jjhesk:BringItBackAdvanceSlidingMenu:vX.XX'}
  ![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg) 
 ```gradle
 repositories { maven {  url "http://dl.bintray.com/jjhesk/maven"  }}
-dependencies { compile 'com.hkm.slidingmenulib:com.hkm.slidingmenulib:1.5.2@aar'}
+dependencies { compile 'com.hkm.slidingmenulib:slidingmenulib:1.5.2'}
 ```
 
 ###Thanks
