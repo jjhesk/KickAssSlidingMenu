@@ -1,5 +1,6 @@
 package com.hkm.slidingmenulib.Util;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -9,12 +10,17 @@ import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.ViewGroup;
+import android.webkit.MimeTypeMap;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.hkm.slidingmenulib.layoutdesigns.singleDetailPost;
+
+import java.io.File;
 
 public class Utils {
 
@@ -165,4 +171,6 @@ public class Utils {
         final LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height_pixel);
         return params;
     }
+
+
 }
