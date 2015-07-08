@@ -8,6 +8,28 @@ BranchV1: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidin
 
 I am bringing it back from the good old project sliding menu in the Android Studio. It will be an alternative to the google promoted Drawer Layout.
 
+##Features
+- [x] slide in and slide out options
+- [x] building external fragment swapping support for both v4 and v13
+- [x] precoded fragment support templates
+- [x] precoded fragment menu
+- [x] precoded treeview fragment menu
+- [x] profile view menu
+- [x] fully slacky support menu layout implementations and customizations
+
+###v1.5.5
+- [x] precoded treeview fragment menu
+
+###v1.5.2
+- [x] slide in and slide out options
+- [x] building external fragment swapping support for both v4 and v13
+- [x] precoded fragment support templates
+- [x] precoded fragment menu
+- [x] profile view menu
+- [x] fully slacky support menu layout implementations and customizations
+
+##Coding support
+Please visit out wiki page for more [tutorial informations][28]
 ![scn1](scn/device-2015-06-30-110654.png)
 
 ## Installations
@@ -94,3 +116,4 @@ License
 [25]: https://github.com/cymcsg/UltimateRecyclerView
 [26]: https://github.com/jfeinstein10/SlidingMenu
 [27]: https://github.com/square/picasso
+[28]: https://github.com/jjhesk/BringItBackAdvanceSlidingMenu/wiki
