@@ -1,5 +1,5 @@
 # BringItBackAdvanceSlidingMenu 
-[![maven](https://img.shields.io/github/tag/jjhesk/BringItBackAdvanceSlidingMenu.svg?label=maven)][23] [![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg) ][21] [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)][24]
+[![maven](https://img.shields.io/github/tag/jjhesk/BringItBackAdvanceSlidingMenu.svg?label=maven)][23]![jitpack](https://img.shields.io/github/release/jjhesk/BringItBackAdvanceSlidingMenu.svg?label=JitPack)[![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg) ][21] [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)][24]
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-BringItBackAdvanceSlidingMenu-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/2099)[![Android Gems](http://www.android-gems.com/badge/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=master)](http://www.android-gems.com/lib/jjhesk/BringItBackAdvanceSlidingMenu)
 
 Master: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg)][22]
