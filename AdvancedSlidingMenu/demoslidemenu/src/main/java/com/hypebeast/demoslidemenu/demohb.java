@@ -1,21 +1,17 @@
 package com.hypebeast.demoslidemenu;
 
 import android.app.Fragment;
-import android.view.MenuItem;
 
 import com.hkm.slidingmenulib.gestured.SlidingMenu;
 import com.hkm.slidingmenulib.layoutdesigns.app.SlidingAppCompactActivity;
-import com.hkm.slidingmenulib.menucontent.LAYOUT_DRAWER;
-import com.hypebeast.demoslidemenu.helpr.fastb;
-import com.hypebeast.demoslidemenu.pages.SubItem;
 import com.hypebeast.demoslidemenu.pages.mainpageDemo;
 import com.hypebeast.demoslidemenu.pages.menupageDemo;
+import com.hypebeast.demoslidemenu.pages.treemenu;
 
-import java.util.List;
-
-
-public class MainActivityDemo extends SlidingAppCompactActivity<Fragment> {
-
+/**
+ * Created by hesk on 10/7/15.
+ */
+public class demohb extends SlidingAppCompactActivity<Fragment> {
 
     @Override
     protected int getDefaultMainActivityLayoutId() {
@@ -23,8 +19,8 @@ public class MainActivityDemo extends SlidingAppCompactActivity<Fragment> {
     }
 
     @Override
-    protected menupageDemo getFirstMenuFragment() {
-        return new menupageDemo();
+    protected treemenu getFirstMenuFragment() {
+        return new treemenu();
     }
 
 
@@ -50,15 +46,4 @@ public class MainActivityDemo extends SlidingAppCompactActivity<Fragment> {
         sm.invalidate();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        final int t = item.getItemId();
-        if (t != android.R.id.home) {
-            fastb.startfromSelectionMenu(t, this, null);
-            return super.onOptionsItemSelected(item);
-        } else {
-            toggle();
-            return true;
-        }
-    }
 }
