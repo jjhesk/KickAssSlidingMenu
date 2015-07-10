@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.hkm.slidingmenulib.R;
-import com.hkm.slidingmenulib.menucontent.treelist.ExpAdapter;
-import com.hkm.slidingmenulib.menucontent.treelist.OnScrollToListener;
+import com.hkm.slidingmenulib.advancedtreeview.ExpAdapter;
+import com.hkm.slidingmenulib.advancedtreeview.OnScrollToListener;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
 import com.squareup.picasso.Picasso;
 

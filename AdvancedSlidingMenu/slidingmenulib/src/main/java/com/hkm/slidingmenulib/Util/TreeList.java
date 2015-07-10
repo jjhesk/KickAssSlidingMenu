@@ -8,8 +8,8 @@ import android.util.Log;
 import android.webkit.MimeTypeMap;
 import android.widget.Toast;
 
-import com.hkm.slidingmenulib.menucontent.treelist.ExpAdapter;
-import com.hkm.slidingmenulib.menucontent.treelist.ItemData;
+import com.hkm.slidingmenulib.advancedtreeview.ExpAdapter;
+import com.hkm.slidingmenulib.advancedtreeview.ExpandableItemData;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -30,20 +30,20 @@ public class TreeList {
      * @param treeDepth treedepth
      * @return the list object
      */
-    public static List<ItemData> getChildrenByPath(String path, int treeDepth) {
+    public static List<ExpandableItemData> getChildrenByPath(String path, int treeDepth) {
         treeDepth++;
         try {
-            List<ItemData> list = new ArrayList<ItemData>();
+            List<ExpandableItemData> list = new ArrayList<>();
             File file = new File(path);
             File[] children = file.listFiles();
-            List<ItemData> fileList = new ArrayList<ItemData>();
+            List<ExpandableItemData> fileList = new ArrayList<>();
             for (File child : children) {
                 if (child.isDirectory()) {
-                    list.add(new ItemData(ExpAdapter.ExpandableViewTypes.ITEM_TYPE_PARENT, child
+                    list.add(new ExpandableItemData(ExpAdapter.ExpandableViewTypes.ITEM_TYPE_PARENT, child
                             .getName(), child.getAbsolutePath(), UUID
                             .randomUUID().toString(), treeDepth, null));
                 } else {
-                    fileList.add(new ItemData(ExpAdapter.ExpandableViewTypes.ITEM_TYPE_CHILD, child
+                    fileList.add(new ExpandableItemData(ExpAdapter.ExpandableViewTypes.ITEM_TYPE_CHILD, child
                             .getName(), child.getAbsolutePath(), UUID
                             .randomUUID().toString(), treeDepth, null));
                 }
