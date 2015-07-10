@@ -12,10 +12,10 @@ import com.hkm.slidingmenulib.advancedtreeview.presnt.system.ChildViewHolder;
 import com.marshalchen.ultimaterecyclerview.UltimateViewAdapter;
 
 /**
- * @Author Zheng Haibo
+ * Author Zheng Haibo
  * enhanced jjHesk 2015
- * @PersonalWebsite http://www.mobctrl.net
- * @Description the constructor of the expandable adapter
+ * PersonalWebsite http://www.mobctrl.net
+ * Description the constructor of the expandable adapter
  */
 public abstract class ExpAdapter<T extends ExpandableItemData> extends UltimateViewAdapter {
 

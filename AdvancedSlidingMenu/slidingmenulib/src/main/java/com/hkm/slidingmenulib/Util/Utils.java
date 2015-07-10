@@ -30,6 +30,8 @@ public class Utils {
      *
      * @param route the full url
      * @param ctx   the resource context
+     * @param clazz the class name
+     * @param <T>   the type extends from singleDetailPost
      */
     public static <T extends singleDetailPost> void routeSinglePage(final String route, final Context ctx, final Class<T> clazz) {
         Intent n = new Intent(ctx, clazz);
@@ -43,8 +45,10 @@ public class Utils {
     /**
      * start the single page with post id
      *
-     * @param pid the post ID
-     * @param ctx the resource context
+     * @param pid   the post ID
+     * @param ctx   the resource context
+     * @param clazz the type class
+     * @param <T>   the type
      */
     public static <T extends singleDetailPost> void routeSinglePage(final int pid, final Context ctx, final Class<T> clazz) {
         Intent n = new Intent(ctx, clazz);

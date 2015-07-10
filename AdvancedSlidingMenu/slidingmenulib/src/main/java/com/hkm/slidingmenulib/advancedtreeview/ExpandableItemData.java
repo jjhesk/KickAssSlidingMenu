@@ -3,9 +3,9 @@ package com.hkm.slidingmenulib.advancedtreeview;
 import java.util.List;
 
 /**
- * @Author Zheng Haibo
- * @PersonalWebsite http://www.mobctrl.net
- * @Description the bundle of the tree view style
+ * Author Zheng Haibo
+ * PersonalWebsite http://www.mobctrl.net
+ * Description the bundle of the tree view style
  */
 public class ExpandableItemData<T extends ExpandableItemData> implements Comparable<T> {
     private String uuid;

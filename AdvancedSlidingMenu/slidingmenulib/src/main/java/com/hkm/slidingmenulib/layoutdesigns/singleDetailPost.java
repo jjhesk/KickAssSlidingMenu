@@ -198,6 +198,7 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
      * setting the first initial fragment at the beginning
      *
      * @return generic type fragment
+     * @throws Exception the exception for the wrongs
      */
     protected abstract Frag getInitFragment() throws Exception;
 

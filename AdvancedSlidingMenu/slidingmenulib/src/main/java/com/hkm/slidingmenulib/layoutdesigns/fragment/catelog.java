@@ -66,6 +66,8 @@ public abstract class catelog<adapter extends easyAdapter, binder extends Ultima
     /**
      * step 2:
      * this is the call for the loading the data stream externally
+     *
+     * @param confirmAdapter the adapter
      */
     protected abstract void loadDataInitial(final adapter confirmAdapter);
 

@@ -38,8 +38,8 @@ if (hasProperty('POM_DEVELOPER_ID')) {
     publish.bintrayUser = property('POM_DEVELOPER_ID')
 }
 
-if (hasProperty('API')) {
-    publish.bintrayKey = property('API')
+if (hasProperty('APIBKI')) {
+    publish.bintrayKey = property('APIBKI')
 }
 
 apply plugin: 'maven'

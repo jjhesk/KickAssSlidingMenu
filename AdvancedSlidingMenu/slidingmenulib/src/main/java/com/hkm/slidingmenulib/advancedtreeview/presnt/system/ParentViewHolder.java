@@ -22,9 +22,9 @@ import com.hkm.slidingmenulib.advancedtreeview.ItemDataClickListener;
 import com.hkm.slidingmenulib.advancedtreeview.ParentVH;
 
 /**
- * @Author Zheng Haibo, jjhesk edit
- * @PersonalWebsite http://www.mobctrl.net
- * @Description the basic framework for the parentviewholder
+ * Author Zheng Haibo, jjhesk edit
+ * PersonalWebsite http://www.mobctrl.net
+ * Description the basic framework for the parentviewholder
  */
 public class ParentViewHolder extends BaseViewHolder implements ParentVH {
 

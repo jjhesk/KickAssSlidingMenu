@@ -17,9 +17,9 @@ import com.hkm.slidingmenulib.advancedtreeview.ChildVH;
 import com.hkm.slidingmenulib.advancedtreeview.customizationbase.child;
 
 /**
- * @Author Zheng Haibo, jjhesk MIT
- * @PersonalWebsite
- * @Description
+ * Author Zheng Haibo, jjhesk MIT
+ * PersonalWebsite
+ * Description
  */
 public class ChildViewHolder extends child {
 

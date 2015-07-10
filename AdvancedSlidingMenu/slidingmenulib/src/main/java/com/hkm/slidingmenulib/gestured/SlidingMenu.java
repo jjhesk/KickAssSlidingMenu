@@ -91,7 +91,7 @@ public class SlidingMenu extends RelativeLayout {
      * The class that is interested in processing a onOpen
      * event implements this interface, and the object created
      * with that class is registered with a component using the
-     * component's <code>addOnOpenListener<code> method. When
+     * component's addOnOpenListener method. When
      * the onOpen event occurs, that object's appropriate
      * method is invoked
      */
@@ -108,11 +108,10 @@ public class SlidingMenu extends RelativeLayout {
      * The class that is interested in processing a onOpened
      * event implements this interface, and the object created
      * with that class is registered with a component using the
-     * component's <code>addOnOpenedListener<code> method. When
+     * component's addOnOpenedListener method. When
      * the onOpened event occurs, that object's appropriate
      * method is invoked.
-     *
-     * @see OnOpenedEvent
+     * see OnOpenedEvent
      */
     @SuppressWarnings("JavadocReference")
     public interface OnOpenedListener {
@@ -128,11 +127,10 @@ public class SlidingMenu extends RelativeLayout {
      * The class that is interested in processing a onClose
      * event implements this interface, and the object created
      * with that class is registered with a component using the
-     * component's <code>addOnCloseListener<code> method. When
+     * component's addOnCloseListener method. When
      * the onClose event occurs, that object's appropriate
      * method is invoked.
-     *
-     * @see OnCloseEvent
+     * OnCloseEvent the event
      */
     @SuppressWarnings("JavadocReference")
     public interface OnCloseListener {
@@ -148,11 +146,9 @@ public class SlidingMenu extends RelativeLayout {
      * The class that is interested in processing a onClosed
      * event implements this interface, and the object created
      * with that class is registered with a component using the
-     * component's <code>addOnClosedListener<code> method. When
+     * component's addOnClosedListener method. When
      * the onClosed event occurs, that object's appropriate
      * method is invoked.
-     *
-     * @see OnClosedEvent
      */
     @SuppressWarnings("JavadocReference")
     public interface OnClosedListener {
@@ -697,7 +693,7 @@ public class SlidingMenu extends RelativeLayout {
     /**
      * Set the touch mode margin threshold
      *
-     * @param touchmodeMarginThreshold
+     * @param touchmodeMarginThreshold see the object
      */
     public void setTouchmodeMarginThreshold(int touchmodeMarginThreshold) {
         mViewBehind.setMarginThreshold(touchmodeMarginThreshold);

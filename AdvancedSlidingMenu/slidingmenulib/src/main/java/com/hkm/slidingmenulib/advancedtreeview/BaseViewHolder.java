@@ -16,9 +16,9 @@ import com.marshalchen.ultimaterecyclerview.UltimateRecyclerviewViewHolder;
 import java.util.List;
 
 /**
- * @Author Zheng Haibo
- * @PersonalWebsite http://www.mobctrl.net
- * @Description
+ * Author Zheng Haibo
+ * PersonalWebsite http://www.mobctrl.net
+ * Description
  */
 public class BaseViewHolder extends UltimateRecyclerviewViewHolder {
 

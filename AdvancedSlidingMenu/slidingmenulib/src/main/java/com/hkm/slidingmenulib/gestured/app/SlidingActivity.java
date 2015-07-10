@@ -15,10 +15,6 @@ public class SlidingActivity extends Activity implements SlidingActivityBase {
 
     private SlidingActivityHelper mHelper;
 
-
-    /* (non-Javadoc)
-     * @see android.app.Activity#onCreate(android.os.Bundle)
-     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,18 +22,12 @@ public class SlidingActivity extends Activity implements SlidingActivityBase {
         mHelper.onCreate(savedInstanceState);
     }
 
-    /* (non-Javadoc)
-     * @see android.app.Activity#onPostCreate(android.os.Bundle)
-     */
     @Override
     public void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         mHelper.onPostCreate(savedInstanceState);
     }
 
-    /* (non-Javadoc)
-     * @see android.app.Activity#findViewById(int)
-     */
     @Override
     public View findViewById(int id) {
         View v = super.findViewById(id);
@@ -46,57 +36,34 @@ public class SlidingActivity extends Activity implements SlidingActivityBase {
         return mHelper.findViewById(id);
     }
 
-    /* (non-Javadoc)
-     * @see android.app.Activity#onSaveInstanceState(android.os.Bundle)
-     */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         mHelper.onSaveInstanceState(outState);
     }
 
-    /* (non-Javadoc)
-     * @see android.app.Activity#setContentView(int)
-     */
     @Override
     public void setContentView(int id) {
         setContentView(getLayoutInflater().inflate(id, null));
     }
 
-    /* (non-Javadoc)
-     * @see android.app.Activity#setContentView(android.view.View)
-     */
     @Override
     public void setContentView(View v) {
         setContentView(v, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
     }
 
-    /* (non-Javadoc)
-     * @see android.app.Activity#setContentView(android.view.View, android.view.ViewGroup.LayoutParams)
-     */
     @Override
     public void setContentView(View v, LayoutParams params) {
         super.setContentView(v, params);
         mHelper.registerAboveContentView(v, params);
     }
 
-    /**
-     * (non-Javadoc)
-     *
-     * @param id the layout ID
-     * @see com.jeremyfeinstein.slidingmenu.lib.app.SlidingActivityBase#setBehindContentView(int)
-     */
+
     public void setBehindContentView(int id) {
         setBehindContentView(getLayoutInflater().inflate(id, null));
     }
 
-    /**
-     * (non-Javadoc)
-     *
-     * @param v the actual view
-     * @see com.jeremyfeinstein.slidingmenu.lib.app.SlidingActivityBase#setBehindContentView(android.view.View)
-     * set the content view in the behind
-     */
+
     public void setBehindContentView(View v) {
         setBehindContentView(v, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
     }
