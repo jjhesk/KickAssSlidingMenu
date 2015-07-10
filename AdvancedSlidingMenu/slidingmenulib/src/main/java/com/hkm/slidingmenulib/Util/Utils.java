@@ -1,5 +1,6 @@
 package com.hkm.slidingmenulib.Util;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -9,12 +10,17 @@ import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.ViewGroup;
+import android.webkit.MimeTypeMap;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.hkm.slidingmenulib.layoutdesigns.singleDetailPost;
+
+import java.io.File;
 
 public class Utils {
 
@@ -24,26 +30,32 @@ public class Utils {
      *
      * @param route the full url
      * @param ctx   the resource context
+     * @param clazz the class name
+     * @param <T>   the type extends from singleDetailPost
      */
-    public static <T extends singleDetailPost> void routeSinglePage(String route, Context ctx, Class<T> clazz) {
+    public static <T extends singleDetailPost> void routeSinglePage(final String route, final Context ctx, final Class<T> clazz) {
         Intent n = new Intent(ctx, clazz);
         final Bundle b = new Bundle();
         b.putInt(singleDetailPost.Method, singleDetailPost.REQUEST_METHOD_FULL_URL);
         b.putString(singleDetailPost.requestURL, route);
+        n.putExtras(b);
         ctx.startActivity(n);
     }
 
     /**
      * start the single page with post id
      *
-     * @param pid the post ID
-     * @param ctx the resource context
+     * @param pid   the post ID
+     * @param ctx   the resource context
+     * @param clazz the type class
+     * @param <T>   the type
      */
-    public static <T extends singleDetailPost> void routeSinglePage(int pid, Context ctx, Class<T> clazz) {
+    public static <T extends singleDetailPost> void routeSinglePage(final int pid, final Context ctx, final Class<T> clazz) {
         Intent n = new Intent(ctx, clazz);
         final Bundle b = new Bundle();
         b.putInt(singleDetailPost.Method, singleDetailPost.REQUEST_METHOD_POST_ID);
         b.putInt(singleDetailPost.PID, pid);
+        n.putExtras(b);
         ctx.startActivity(n);
     }
 
@@ -163,4 +175,6 @@ public class Utils {
         final LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height_pixel);
         return params;
     }
+
+
 }

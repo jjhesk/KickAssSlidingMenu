@@ -1,5 +1,6 @@
 package com.hkm.slidingmenulib.layoutdesigns;
 
+import android.annotation.TargetApi;
 import android.app.FragmentTransaction;
 import android.os.Build;
 import android.os.Bundle;
@@ -43,8 +44,13 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
         }
     }
 
+    private Toolbar tb;
     protected String url;
     protected int pid;
+
+    protected Toolbar getTB() {
+        return tb;
+    }
 
     protected boolean startIntentArgument() {
         Bundle b = getIntent().getExtras();
@@ -80,12 +86,16 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
      *
      * @param resId the location of the tool bar id
      */
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void initToolBar(final @LayoutRes int resId) {
         if (SlidingAppCompactActivity.BODY_LAYOUT.isToolbarOn(resId) || forceConfigureToolBar()) {
             final Toolbar widgetToolBar = (Toolbar) findViewById(R.id.mxtoolbar);
+            tb = widgetToolBar;
+            widgetToolBar.setElevation(0f);
             configToolBar(widgetToolBar);
             setSupportActionBar(widgetToolBar);
-
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         }
     }
 
@@ -188,6 +198,7 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
      * setting the first initial fragment at the beginning
      *
      * @return generic type fragment
+     * @throws Exception the exception for the wrongs
      */
     protected abstract Frag getInitFragment() throws Exception;
 
@@ -216,6 +227,10 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         onMenuItemSelected(item.getItemId());
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return (true);
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -227,5 +242,22 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
         return true;
     }
 
+    @Override
+    public void onPause() {
+        //  killwebview(mVideo);
+        super.onPause();
+    }
 
+    @Override
+    public void finish() {
+        //  killwebview(mVideo);
+        super.finish();
+    }
+
+    @Override
+    public void onResume() {
+        super.onPause();
+        // if (mVideo.getVisibility() == View.VISIBLE)
+        //  mVideo.onResume();
+    }
 }

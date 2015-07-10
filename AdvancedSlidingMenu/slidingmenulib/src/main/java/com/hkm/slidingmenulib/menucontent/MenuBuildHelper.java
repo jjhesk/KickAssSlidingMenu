@@ -88,6 +88,8 @@ public class MenuBuildHelper<Fragment, customTextView extends TextView, ListSect
 
     /**
      * @param fragment_menu the activity should have classes implemented
+     * @param inflat        the view
+     * @throws Exception the exception
      */
     public void createNewMenu(Fragment fragment_menu, View inflat) throws Exception {
         if (fragment_menu instanceof android.app.Fragment) {
@@ -731,8 +733,10 @@ public class MenuBuildHelper<Fragment, customTextView extends TextView, ListSect
      * @param fragment     AKA
      * @param DrawableIcon AKA
      * @param menu         AKA
-     * @return AKA
+     * @param bottom       the bottom part
+     * @return materialsection
      */
+
     @SuppressLint("ResourceAsDrawable")
     protected MaterialSection newIconSection(final String title, final Fragment fragment, final @DrawableRes int DrawableIcon, final MaterialMenu menu, final boolean bottom) {
         //Drawable icon = activity.getResources().getDrawable(DrawableIcon);

@@ -1,12 +1,38 @@
 # BringItBackAdvanceSlidingMenu 
-[![maven](https://img.shields.io/github/tag/jjhesk/BringItBackAdvanceSlidingMenu.svg?label=maven)][23] [![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg) ][21] [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)][24]
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-BringItBackAdvanceSlidingMenu-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/2099)
+[![maven](https://img.shields.io/github/tag/jjhesk/BringItBackAdvanceSlidingMenu.svg?label=maven)][23]![jitpack](https://img.shields.io/github/release/jjhesk/BringItBackAdvanceSlidingMenu.svg?label=JitPack)[![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg) ][21] [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)][24]
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-BringItBackAdvanceSlidingMenu-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/2099)[![Android Gems](http://www.android-gems.com/badge/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=master)](http://www.android-gems.com/lib/jjhesk/BringItBackAdvanceSlidingMenu)
 
-Master: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg)][22]
+Master: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=master)][22]
 
 BranchV1: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=V1)][22]
 
 I am bringing it back from the good old project sliding menu in the Android Studio. It will be an alternative to the google promoted Drawer Layout.
+
+##Features
+- [x] slide in and slide out options
+- [x] building external fragment swapping support for both v4 and v13
+- [x] precoded fragment support templates
+- [x] precoded fragment menu
+- [x] precoded treeview fragment menu
+- [x] profile view menu
+- [x] fully slacky support menu layout implementations and customizations
+
+###v1.5.5
+- [x] precoded treeview fragment menu
+
+###v1.5.2
+- [x] slide in and slide out options
+- [x] building external fragment swapping support for both v4 and v13
+- [x] precoded fragment support templates
+- [x] precoded fragment menu
+- [x] profile view menu
+- [x] fully slacky support menu layout implementations and customizations
+
+##Coding support
+Please visit out wiki page for more [tutorial informations][28]
+
+###ScreenShots
+[![Android Gems](http://www.android-gems.com/badge/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=master)](http://www.android-gems.com/lib/jjhesk/BringItBackAdvanceSlidingMenu)
 
 ![scn1](scn/device-2015-06-30-110654.png)
 
@@ -27,9 +53,12 @@ dependencies { compile 'com.hkm.slidingmenulib:slidingmenulib:1.5.2'}
 ```
 
 ###Thanks
-* Use sliding menu from  [SlidingMenu](https://github.com/jfeinstein10/SlidingMenu)
+* Use sliding menu from  [SlidingMenu][26]
+* Use embeded advanced recyclerview from [UltimateRecyclerView][25]
+* Use Picasso Image library from [Picasso][27]
 
-## Apps whom use this lib
+
+## Apps whom use this lib also adapted from this technology
 * [Foursquare][15]
 * [LinkedIn][19]
 * [Zappos][20]
@@ -88,3 +117,7 @@ License
 [22]: https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu
 [23]: https://jitpack.io/#jjhesk/BringItBackAdvanceSlidingMenu/
 [24]: https://www.apache.org/licenses/LICENSE-2.0
+[25]: https://github.com/cymcsg/UltimateRecyclerView
+[26]: https://github.com/jfeinstein10/SlidingMenu
+[27]: https://github.com/square/picasso
+[28]: https://github.com/jjhesk/BringItBackAdvanceSlidingMenu/wiki

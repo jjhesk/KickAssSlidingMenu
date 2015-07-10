@@ -35,7 +35,15 @@ public abstract class catelog<adapter extends easyAdapter, binder extends Ultima
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.content_fragment_image_list, container, false);
+        return inflater.inflate(getFragmentResId(), container, false);
+    }
+
+    protected int getUltimate_recycler_viewResId() {
+        return R.id.ultimate_recycler_view;
+    }
+
+    protected int getFragmentResId() {
+        return R.layout.content_fragment_image_list;
     }
 
     protected abstract void onClickItem(final String route);
@@ -58,14 +66,17 @@ public abstract class catelog<adapter extends easyAdapter, binder extends Ultima
     /**
      * step 2:
      * this is the call for the loading the data stream externally
+     *
+     * @param confirmAdapter the adapter
      */
     protected abstract void loadDataInitial(final adapter confirmAdapter);
 
     protected GridLayoutManager mLayoutManager;
     protected adapter madapter;
 
+
     private void renderviewlayout(View view) throws Exception {
-        listview_layout = (UltimateRecyclerView) view.findViewById(R.id.ultimate_recycler_view);
+        listview_layout = (UltimateRecyclerView) view.findViewById(getUltimate_recycler_viewResId());
         mLayoutManager = new GridLayoutManager(view.getContext(), getColumn(), LinearLayoutManager.VERTICAL, false);
         listview_layout.setLayoutManager(mLayoutManager);
         listview_layout.setHasFixedSize(true);

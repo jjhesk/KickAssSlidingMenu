@@ -82,4 +82,10 @@
         <!-- section divider will be using OnPress color -->
         <attr name="sectionDivider" format="boolean" />
     </declare-styleable>
+
+
+    <declare-styleable name="BaseViewHolder">
+        <attr name="itemMargin" format="dimension" />
+        <attr name="offsetMargin" format="dimension" />
+    </declare-styleable>
 </resources>

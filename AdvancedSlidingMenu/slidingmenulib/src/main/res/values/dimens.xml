@@ -20,5 +20,8 @@
     <!-- match_parent = -1dp / wrap_content = -2dp -->
     <dimen name="drawerWidth">100dp</dimen>
 
-
+    <!--tree view -->
+    <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
+    <dimen name="item_margin">8dp</dimen>
+    <dimen name="expand_size">10dp</dimen>
 </resources>
