@@ -72,13 +72,13 @@ public class SlidingAppCompactActivityBase extends AppCompatActivity implements 
     @Deprecated
     @Override
     public void setContentView(View view) {
-
+        mHelper.registerAboveContentView(view, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
     }
 
     @Deprecated
     @Override
     public void setContentView(View view, ViewGroup.LayoutParams params) {
-
+        mHelper.registerAboveContentView(view, params);
     }
 
 
