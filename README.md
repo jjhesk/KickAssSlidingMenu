@@ -20,7 +20,7 @@ I am bringing it back from the good old project sliding menu in the Android Stud
 - [x] catelog abstract for showing grid views of items
 - [x] simple tree list for expandable list item view - allows many customizations
 - [x] menu banners on the list recycler view - allows many customizations
-- 
+
 
 ###v1.6.0
 - [x] newsfeed abstract for instance implementation
