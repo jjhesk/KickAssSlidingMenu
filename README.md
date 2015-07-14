@@ -6,7 +6,7 @@ Master: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingM
 
 BranchV1: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=V1)][22]
 
-I am bringing it back from the good old project sliding menu in the Android Studio. It will be an alternative to the google promoted Drawer Layout.
+I am bringing it back from the good old project sliding menu in the Android Studio. It will be an alternative to the google promoted Drawer Layout. With tons of additional tools and precoded frameworks you can work on the things you want from the scatch. 
 
 ##Features
 - [x] slide in and slide out options
@@ -16,6 +16,17 @@ I am bringing it back from the good old project sliding menu in the Android Stud
 - [x] precoded treeview fragment menu
 - [x] profile view menu
 - [x] fully slacky support menu layout implementations and customizations
+- [x] newsfeed abstract for instance implementation
+- [x] catelog abstract for showing grid views of items
+- [x] simple tree list for expandable list item view - allows many customizations
+- [x] menu banners on the list recycler view - allows many customizations
+- 
+
+###v1.6.0
+- [x] newsfeed abstract for instance implementation
+- [x] catelog abstract for showing grid views of items
+- [x] simple tree list for expandable list item view - allows many customizations
+- [x] menu banners on the list recycler view - allows many customizations
 
 ###v1.5.5
 - [x] precoded treeview fragment menu
