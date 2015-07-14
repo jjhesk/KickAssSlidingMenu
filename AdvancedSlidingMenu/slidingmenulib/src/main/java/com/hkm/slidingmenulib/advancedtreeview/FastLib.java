@@ -67,4 +67,17 @@ public enum FastLib {
     public BaseViewHolder createViewHolderChild(Context mContext, ViewGroup parent) {
         return getHolderC(getView(mContext, parent, childid));
     }
+
+    private View inflatView(Context mcontext, ViewGroup parent, @LayoutRes int d) {
+        return getView(mcontext, parent, d);
+    }
+
+    public View getParentView(Context mcontext, ViewGroup parent) {
+        return inflatView(mcontext, parent, parentid);
+    }
+
+    public View getChildView(Context mcontext, ViewGroup parent) {
+        return inflatView(mcontext, parent, childid);
+    }
+
 }

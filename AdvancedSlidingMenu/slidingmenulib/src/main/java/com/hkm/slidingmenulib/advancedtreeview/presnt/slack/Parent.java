@@ -15,6 +15,7 @@ import com.hkm.slidingmenulib.R;
 import com.hkm.slidingmenulib.advancedtreeview.BaseViewHolder;
 import com.hkm.slidingmenulib.advancedtreeview.ExpandableItemData;
 import com.hkm.slidingmenulib.advancedtreeview.ItemDataClickListener;
+import com.hkm.slidingmenulib.advancedtreeview.SmartItem;
 import com.hkm.slidingmenulib.advancedtreeview.customizationbase.parent;
 import com.hkm.slidingmenulib.menucontent.containers.MaterialRippleLayout;
 
@@ -23,7 +24,7 @@ import com.hkm.slidingmenulib.menucontent.containers.MaterialRippleLayout;
  * Created by hesk on 10/7/15.
  * please help to improve this library
  */
-public class Parent extends parent {
+public class Parent<T extends ExpandableItemData> extends parent<T> {
 
     public ImageView image;
     public TextView text;
@@ -53,7 +54,7 @@ public class Parent extends parent {
     }
 
     @Override
-    public void bindView(final ExpandableItemData itemData, final int position, final ItemDataClickListener imageClickListener) {
+    public void bindView(final T itemData, final int position, final ItemDataClickListener imageClickListener) {
         expand.setLayoutParams(getParamsLayout(expand, itemData));
         text.setText(itemData.getText());
         setHandleInitiatedViewStatus(itemData, expand, count);
@@ -102,8 +103,8 @@ public class Parent extends parent {
      * @return nothing
      */
     @Override
-    protected BaseViewHolder getHolder(View view) {
-        return null;
+    protected Parent getHolder(View view) {
+        return new Parent(view);
     }
 
     /**
@@ -113,6 +114,6 @@ public class Parent extends parent {
      */
     @Override
     protected int getLayout() {
-        return 0;
+        return R.layout.exp_2_item_parent;
     }
 }

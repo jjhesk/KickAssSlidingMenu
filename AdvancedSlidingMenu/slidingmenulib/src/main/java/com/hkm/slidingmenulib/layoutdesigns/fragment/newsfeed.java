@@ -41,7 +41,7 @@ public abstract class newsfeed<adapter extends easyAdapter, binder extends Ultim
         return inflater.inflate(R.layout.content_fragment_image_list, container, false);
     }
 
-    protected abstract void onClickItem(final int routePID);
+    protected abstract void onClickItem(final long routePID);
 
     protected abstract void onClickItem(final String route);
 

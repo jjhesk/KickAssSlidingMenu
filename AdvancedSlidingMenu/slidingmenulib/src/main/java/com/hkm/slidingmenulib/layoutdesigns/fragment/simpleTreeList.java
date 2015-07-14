@@ -2,6 +2,9 @@ package com.hkm.slidingmenulib.layoutdesigns.fragment;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.graphics.Color;
+import android.graphics.DashPathEffect;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
@@ -13,6 +16,7 @@ import com.hkm.slidingmenulib.R;
 import com.hkm.slidingmenulib.advancedtreeview.ExpAdapter;
 import com.hkm.slidingmenulib.advancedtreeview.OnScrollToListener;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
+import com.marshalchen.ultimaterecyclerview.divideritemdecoration.HorizontalDividerItemDecoration;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -64,7 +68,34 @@ public abstract class simpleTreeList<adapter extends ExpAdapter> extends Fragmen
             }
         });
         setUltimateRecyclerViewExtra(listview_layout, madapter);
+        final HorizontalDividerItemDecoration decor = new HorizontalDividerItemDecoration.Builder(getActivity()).paint(getlinestyle()).build();
+        listview_layout.addItemDecoration(decor);
+    }
 
+    protected Paint getdash() {
+        Paint paint = new Paint();
+        float fl = getActivity().getResources().getDimensionPixelSize(R.dimen.divider_stroke_width_treelist_view);
+        paint.setStrokeWidth(fl);
+        paint.setColor(Color.BLUE);
+        paint.setAntiAlias(true);
+        paint.setPathEffect(new DashPathEffect(new float[]{25.0f, 25.0f}, 0));
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
+            listview_layout.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        }
+        return paint;
+    }
+
+    protected Paint getsolid() {
+        Paint paint = new Paint();
+        int color = getResources().getColor(R.color.defaultactionbarColorDark);
+        float fl = getResources().getDimension(R.dimen.divider_stroke_width_treelist_view);
+        paint.setColor(color);
+        paint.setStrokeWidth(fl);
+        return paint;
+    }
+
+    protected Paint getlinestyle() {
+        return getsolid();
     }
 
     @Override

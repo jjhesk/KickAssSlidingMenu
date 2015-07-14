@@ -2,6 +2,7 @@ package com.hkm.slidingmenulib.layoutdesigns.fragment;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
 import com.hkm.slidingmenulib.advancedtreeview.ExpAdapter;
 import com.hkm.slidingmenulib.advancedtreeview.presnt.system.ExpSystem;
@@ -32,6 +33,12 @@ public abstract class treelist<adapter extends ExpAdapter, T extends ExpandableI
         return !adapter_url.equalsIgnoreCase("") || requestType != UNSET;
     }
 
+    /**
+     * corresponding to - LOADMENU
+     * by launching the custom menu. this is the trigger point to get the custom menu out
+     *
+     * @return the List of T
+     */
     protected abstract List<T> loadCustomMenu();
 
     protected void loadDataInitial(final adapter ad) {
@@ -39,7 +46,11 @@ public abstract class treelist<adapter extends ExpAdapter, T extends ExpandableI
             ExpSystem p = (ExpSystem) ad;
             p.startListFromPath("/sdcard/");
         } else {
-            ad.addAll(loadCustomMenu(), 0);
+            try {
+                ad.addAll(loadCustomMenu(), 0);
+            } catch (Exception e) {
+                Log.d(TAG, "there is no items in the customize menu");
+            }
         }
     }
 }

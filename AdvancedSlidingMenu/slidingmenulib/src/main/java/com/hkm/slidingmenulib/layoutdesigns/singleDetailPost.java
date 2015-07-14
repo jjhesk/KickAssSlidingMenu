@@ -46,7 +46,7 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
 
     private Toolbar tb;
     protected String url;
-    protected int pid;
+    protected long pid;
 
     protected Toolbar getTB() {
         return tb;
@@ -61,7 +61,7 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
             loadPageWithFullURL(url = b.getString(requestURL));
         }
         if (method == REQUEST_METHOD_POST_ID) {
-            loadPageWithPID(pid = b.getInt(PID));
+            loadPageWithPID(pid = b.getLong(PID));
         }
 
         return true;
@@ -69,7 +69,7 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
 
     protected abstract void loadPageWithFullURL(final String url);
 
-    protected abstract void loadPageWithPID(final int pid);
+    protected abstract void loadPageWithPID(final long pid);
 
     /**
      * the location to setup and configure the toolbar widget under AppCompat V7
@@ -243,7 +243,7 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
     }
 
     @Override
-    public void onPause() {
+    protected void onPause() {
         //  killwebview(mVideo);
         super.onPause();
     }
@@ -255,7 +255,7 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
     }
 
     @Override
-    public void onResume() {
+    protected void onResume() {
         super.onPause();
         // if (mVideo.getVisibility() == View.VISIBLE)
         //  mVideo.onResume();

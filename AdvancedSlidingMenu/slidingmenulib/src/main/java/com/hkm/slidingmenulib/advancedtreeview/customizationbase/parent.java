@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * Created by hesk on 10/7/15.
  */
-public abstract class parent<bindData extends ExpandableItemData> extends BaseViewHolder implements ParentVH<bindData>, ValueAnimator.AnimatorUpdateListener {
+public abstract class parent<T extends ExpandableItemData> extends BaseViewHolder<T> implements ParentVH<T>, ValueAnimator.AnimatorUpdateListener {
     public parent(View itemView) {
         super(itemView);
     }

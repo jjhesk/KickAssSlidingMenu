@@ -5,5 +5,6 @@ package com.hkm.slidingmenulib.advancedtreeview;
  */
 public interface ChildVH<bindData extends ExpandableItemData> {
     void bindView(final bindData itemData, int position);
-    void onChildItemClick(final String path);
+
+    void onChildItemClick(final String title, final String path);
 }

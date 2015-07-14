@@ -50,11 +50,11 @@ public class Utils {
      * @param clazz the type class
      * @param <T>   the type
      */
-    public static <T extends singleDetailPost> void routeSinglePage(final int pid, final Context ctx, final Class<T> clazz) {
+    public static <T extends singleDetailPost> void routeSinglePage(final long pid, final Context ctx, final Class<T> clazz) {
         Intent n = new Intent(ctx, clazz);
         final Bundle b = new Bundle();
         b.putInt(singleDetailPost.Method, singleDetailPost.REQUEST_METHOD_POST_ID);
-        b.putInt(singleDetailPost.PID, pid);
+        b.putLong(singleDetailPost.PID, pid);
         n.putExtras(b);
         ctx.startActivity(n);
     }
