@@ -45,6 +45,11 @@ public abstract class ExpAdapter<T extends ExpandableItemData, G extends parent<
     public static final int EXPANDABLE_SYSTEM = 0;
     private boolean customObject;
 
+    protected Context getContext() {
+        return mContext;
+    }
+
+
     protected List<T> getSet() {
         return mDataSet;
     }

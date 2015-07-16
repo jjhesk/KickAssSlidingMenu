@@ -71,4 +71,10 @@ public abstract class easyAdapter<T, BINDHOLDER extends UltimateRecyclerviewView
     public void insert(T object) {
         insert(currentlistsource, object, currentlistsource.size());
     }
+
+    public void removeAll() {
+        while (currentlistsource.size() > 0) {
+            remove(currentlistsource, 0);
+        }
+    }
 }

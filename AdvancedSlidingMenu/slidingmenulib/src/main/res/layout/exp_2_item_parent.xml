@@ -6,7 +6,7 @@
     android:layout_height="@dimen/sectionNormalHeight"
     android:layout_margin="0dp"
     android:padding="0dp"
-    app:mrlsxm_rippleColor="#000000"
+    app:mrlsxm_rippleColor="#ffa2a2a2"
     app:mrlsxm_rippleHover="true"
     app:mrlsxm_rippleOverlay="true">
 

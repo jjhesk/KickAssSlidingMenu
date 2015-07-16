@@ -131,6 +131,10 @@ public abstract class SlidingAppCompactActivity<Frag> extends SlidingAppCompactA
     }
 
 
+    public void setinternalChangeNoToggle(Frag section, String title) {
+        setinternalChange(section, title, currentFragmentNow, false);
+    }
+
     @Override
     public void setinternalChange(Frag section, String title) {
         setFragment(section, title);

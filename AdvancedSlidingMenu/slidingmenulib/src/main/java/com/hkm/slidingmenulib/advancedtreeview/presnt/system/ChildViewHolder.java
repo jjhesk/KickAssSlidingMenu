@@ -20,6 +20,7 @@ import com.hkm.slidingmenulib.advancedtreeview.customizationbase.child;
  * Author Zheng Haibo, jjhesk MIT
  * PersonalWebsite
  * Description
+ * Based library: https://github.com/jjhesk/BringItBackAdvanceSlidingMenu
  */
 public class ChildViewHolder extends child {
 

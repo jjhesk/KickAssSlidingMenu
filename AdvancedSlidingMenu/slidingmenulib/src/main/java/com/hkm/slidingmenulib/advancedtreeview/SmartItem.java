@@ -1,5 +1,8 @@
 package com.hkm.slidingmenulib.advancedtreeview;
 
+import android.content.Context;
+import android.support.annotation.StringRes;
+
 import java.util.List;
 import java.util.UUID;
 
@@ -24,8 +27,17 @@ public class SmartItem extends ExpandableItemData {
         return new SmartItem(ExpAdapter.ExpandableViewTypes.ITEM_TYPE_PARENT, title, path, 0, carrying_list);
     }
 
+    public static SmartItem parent(final Context ctx, final @StringRes int title, final String path, final List<SmartItem> carrying_list) {
+        return new SmartItem(ExpAdapter.ExpandableViewTypes.ITEM_TYPE_PARENT,
+                ctx.getResources().getString(title), path, 0, carrying_list);
+    }
+
     public static SmartItem child(final String title, final String path) {
         return new SmartItem(ExpAdapter.ExpandableViewTypes.ITEM_TYPE_CHILD, title, path, 1, null);
+    }
+
+    public static SmartItem child(final Context ctx, final @StringRes int title, final String path) {
+        return new SmartItem(ExpAdapter.ExpandableViewTypes.ITEM_TYPE_CHILD, ctx.getResources().getString(title), path, 1, null);
     }
 
 
