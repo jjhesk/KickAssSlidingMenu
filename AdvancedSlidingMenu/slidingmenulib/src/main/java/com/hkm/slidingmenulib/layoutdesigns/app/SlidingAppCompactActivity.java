@@ -4,7 +4,9 @@ import android.app.FragmentTransaction;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -88,22 +90,33 @@ public abstract class SlidingAppCompactActivity<Frag> extends SlidingAppCompactA
         return -1;
     }
 
-    private void setRightSideFragment(Frag fragment, Bundle savestate) {
-        if (savestate == null) {
-            setBehindContentView(R.layout.menu_frame);
-            setPrimaryMenuFragment(fragment, null);
-        } else {
-            rightMenuFragment = (Frag) this.getFragmentManager().findFragmentById(R.id.menu_frame);
+    private void setRightSideFragment(Frag fragment, @Nullable Bundle savestate) {
+        setBehindContentView(R.layout.menu_frame);
+
+        try {
+            if (savestate != null) {
+                final Frag oldfragment = (Frag) this.getFragmentManager().findFragmentById(R.id.menu_frame);
+                setPrimaryMenuFragment(fragment, oldfragment);
+            } else {
+                setPrimaryMenuFragment(fragment, null);
+            }
+
+        } catch (RuntimeException e) {
+            Log.d("RIGHTSIDE", e.getMessage());
+        } catch (Exception e) {
+            Log.d("RIGHTSIDE", e.getMessage());
         }
+
     }
 
     private void initMainContentFragment(Frag fragment, Bundle savestate) {
+        setContentView(getDefaultMainActivityLayoutId());
+        initToolBar(getDefaultMainActivityLayoutId());
         if (savestate == null) {
-            setContentView(getDefaultMainActivityLayoutId());
-            initToolBar(getDefaultMainActivityLayoutId());
             setFragment(fragment, getTitle().toString(), null, false);
         } else {
-            currentFragmentNow = (Frag) this.getFragmentManager().findFragmentById(R.id.main_frame_body);
+            final Frag oldfragment = (Frag) this.getFragmentManager().findFragmentById(R.id.main_frame_body);
+            setFragment(fragment, getTitle().toString(), oldfragment);
         }
     }
 
@@ -117,6 +130,10 @@ public abstract class SlidingAppCompactActivity<Frag> extends SlidingAppCompactA
         }
     }
 
+
+    public void setinternalChangeNoToggle(Frag section, String title) {
+        setinternalChange(section, title, currentFragmentNow, false);
+    }
 
     @Override
     public void setinternalChange(Frag section, String title) {
@@ -151,7 +168,7 @@ public abstract class SlidingAppCompactActivity<Frag> extends SlidingAppCompactA
      * @param fragment    the unknown typed fragment
      * @param oldFragment the previous fragment
      */
-    private void setPrimaryMenuFragment(Frag fragment, Frag oldFragment) {
+    private void setPrimaryMenuFragment(Frag fragment, Frag oldFragment) throws RuntimeException, Exception {
         rightMenuFragment = fragment;
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
@@ -270,11 +287,11 @@ public abstract class SlidingAppCompactActivity<Frag> extends SlidingAppCompactA
 
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setRightSideFragment(getFirstMenuFragment(), savedInstanceState);
+    public void onCreate(Bundle sved) {
+        super.onCreate(sved);
+        setRightSideFragment(getFirstMenuFragment(), sved);
         customizeSlideMenuEdge(getSlidingMenu());
-        initMainContentFragment(getInitFragment(), savedInstanceState);
+        initMainContentFragment(getInitFragment(), sved);
     }
 
     @Override

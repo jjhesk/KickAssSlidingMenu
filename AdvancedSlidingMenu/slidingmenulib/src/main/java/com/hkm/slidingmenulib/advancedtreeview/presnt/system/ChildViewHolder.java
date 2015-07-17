@@ -20,6 +20,7 @@ import com.hkm.slidingmenulib.advancedtreeview.customizationbase.child;
  * Author Zheng Haibo, jjhesk MIT
  * PersonalWebsite
  * Description
+ * Based library: https://github.com/jjhesk/BringItBackAdvanceSlidingMenu
  */
 public class ChildViewHolder extends child {
 
@@ -46,16 +47,15 @@ public class ChildViewHolder extends child {
             @Override
             public void onClick(View view) {
                 TreeList.openFileInSystem(itemData.getPath(), view.getContext());
-                onChildItemClick(itemData.getPath());
+                onChildItemClick(itemData.getText(), itemData.getPath());
             }
         });
     }
 
     @Override
-    public void onChildItemClick(String path) {
+    public void onChildItemClick(String title, String path) {
 
     }
-
 
 
     /**

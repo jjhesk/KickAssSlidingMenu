@@ -20,7 +20,7 @@ import java.util.List;
  * PersonalWebsite http://www.mobctrl.net
  * Description
  */
-public class BaseViewHolder extends UltimateRecyclerviewViewHolder {
+public class BaseViewHolder<T extends ExpandableItemData> extends UltimateRecyclerviewViewHolder {
 
     public BaseViewHolder(View itemView) {
         super(itemView);
@@ -43,7 +43,7 @@ public class BaseViewHolder extends UltimateRecyclerviewViewHolder {
                 getResources().getDimensionPixelSize(R.dimen.expand_size);
     }
 
-    protected RelativeLayout.LayoutParams getParamsLayoutOffset(ImageView image, ExpandableItemData itemData) {
+    protected RelativeLayout.LayoutParams getParamsLayoutOffset(ImageView image, T itemData) {
         RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) image.getLayoutParams();
         params.leftMargin = itemMargin * itemData.getTreeDepth() + offsetMargin;
         return params;
@@ -55,14 +55,14 @@ public class BaseViewHolder extends UltimateRecyclerviewViewHolder {
         return params;
     }
 
-    protected RelativeLayout.LayoutParams getParamsLayoutOffset(TextView layout, ExpandableItemData itemData) {
+    protected RelativeLayout.LayoutParams getParamsLayoutOffset(TextView layout, T itemData) {
         RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) layout.getLayoutParams();
         params.leftMargin = itemMargin * itemData.getTreeDepth() + offsetMargin;
         return params;
     }
 
 
-    protected RelativeLayout.LayoutParams getParamsLayout(TextView layout, ExpandableItemData itemData) {
+    protected RelativeLayout.LayoutParams getParamsLayout(TextView layout, T itemData) {
         RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) layout.getLayoutParams();
         params.leftMargin = itemMargin * itemData.getTreeDepth();
         //    layout.setLayoutParams();
@@ -70,13 +70,13 @@ public class BaseViewHolder extends UltimateRecyclerviewViewHolder {
         //   layout.setMar
     }
 
-    protected RelativeLayout.LayoutParams getParamsLayout(ImageView image, ExpandableItemData itemData) {
+    protected RelativeLayout.LayoutParams getParamsLayout(ImageView image, T itemData) {
         RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) image.getLayoutParams();
         params.leftMargin = itemMargin * itemData.getTreeDepth();
         return params;
     }
 
-    protected RelativeLayout.LayoutParams getParamsLayout(RelativeLayout layout, ExpandableItemData itemData) {
+    protected RelativeLayout.LayoutParams getParamsLayout(RelativeLayout layout, T itemData) {
         RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) layout.getLayoutParams();
         params.leftMargin = itemMargin * itemData.getTreeDepth();
         return params;

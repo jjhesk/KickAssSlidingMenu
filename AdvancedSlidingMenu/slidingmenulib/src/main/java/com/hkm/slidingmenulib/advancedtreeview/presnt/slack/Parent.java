@@ -15,6 +15,7 @@ import com.hkm.slidingmenulib.R;
 import com.hkm.slidingmenulib.advancedtreeview.BaseViewHolder;
 import com.hkm.slidingmenulib.advancedtreeview.ExpandableItemData;
 import com.hkm.slidingmenulib.advancedtreeview.ItemDataClickListener;
+import com.hkm.slidingmenulib.advancedtreeview.SmartItem;
 import com.hkm.slidingmenulib.advancedtreeview.customizationbase.parent;
 import com.hkm.slidingmenulib.menucontent.containers.MaterialRippleLayout;
 
@@ -23,7 +24,7 @@ import com.hkm.slidingmenulib.menucontent.containers.MaterialRippleLayout;
  * Created by hesk on 10/7/15.
  * please help to improve this library
  */
-public class Parent extends parent {
+public class Parent<T extends ExpandableItemData> extends parent<T> {
 
     public ImageView image;
     public TextView text;
@@ -31,6 +32,7 @@ public class Parent extends parent {
     public TextView count;
 
     public MaterialRippleLayout relativeLayout;
+    private boolean capitalized = false;
 
     public Parent(View itemView) {
         super(itemView);
@@ -41,21 +43,43 @@ public class Parent extends parent {
         itemMargin = itemView.getContext().getResources().getDimensionPixelSize(R.dimen.item_margin);
     }
 
+    private boolean countenabled = true;
+
+    protected void forceTitleCapitalized(boolean b) {
+        capitalized = b;
+    }
+
+    protected void setNotifcationFieldEnabled(boolean b) {
+        countenabled = b;
+        if (!countenabled) {
+            count.setVisibility(View.GONE);
+        } else {
+            if (getItem().isExpand()) {
+                count.setVisibility(View.VISIBLE);
+            }
+        }
+    }
 
     @Override
     protected void setCountVisible(int visibility) {
-        count.setVisibility(visibility);
+        if (countenabled)
+            count.setVisibility(visibility);
     }
 
     @Override
     protected void updateCountNumber(String text) {
-        count.setText(text);
+        if (countenabled)
+            count.setText(text);
     }
 
     @Override
-    public void bindView(final ExpandableItemData itemData, final int position, final ItemDataClickListener imageClickListener) {
+    public void bindView(final T itemData, final int position, final ItemDataClickListener imageClickListener) {
         expand.setLayoutParams(getParamsLayout(expand, itemData));
-        text.setText(itemData.getText());
+        if (capitalized) {
+            text.setText(itemData.getText().toUpperCase());
+        } else {
+            text.setText(itemData.getText());
+        }
         setHandleInitiatedViewStatus(itemData, expand, count);
         setRelativeLayoutClickable(relativeLayout, itemData, imageClickListener, position);
         relativeLayout.setOnLongClickListener(new View.OnLongClickListener() {
@@ -102,8 +126,8 @@ public class Parent extends parent {
      * @return nothing
      */
     @Override
-    protected BaseViewHolder getHolder(View view) {
-        return null;
+    protected Parent getHolder(View view) {
+        return new Parent(view);
     }
 
     /**
@@ -113,6 +137,6 @@ public class Parent extends parent {
      */
     @Override
     protected int getLayout() {
-        return 0;
+        return R.layout.exp_2_item_parent;
     }
 }

@@ -4,20 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
+import android.support.annotation.LayoutRes;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
+import com.hkm.slidingmenulib.advancedtreeview.customizationbase.child;
+import com.hkm.slidingmenulib.advancedtreeview.customizationbase.parent;
+import com.hkm.slidingmenulib.advancedtreeview.presnt.slack.Parent;
 import com.hkm.slidingmenulib.advancedtreeview.presnt.system.ParentViewHolder;
 import com.hkm.slidingmenulib.advancedtreeview.presnt.system.ChildViewHolder;
 import com.marshalchen.ultimaterecyclerview.UltimateViewAdapter;
 
 /**
- * Author Zheng Haibo
- * enhanced jjHesk 2015
+ * Author Zheng Haibo fixed and enhanced by jjHesk 2015
  * PersonalWebsite http://www.mobctrl.net
  * Description the constructor of the expandable adapter
  */
-public abstract class ExpAdapter<T extends ExpandableItemData> extends UltimateViewAdapter {
+public abstract class ExpAdapter<T extends ExpandableItemData, G extends parent<T>, H extends child<T>> extends UltimateViewAdapter {
 
     public class ExpandableViewTypes extends VIEW_TYPES {
 
@@ -35,18 +40,41 @@ public abstract class ExpAdapter<T extends ExpandableItemData> extends UltimateV
     private List<OnScrollToListener> monScrollToListenerList = new ArrayList<>();
     private OnScrollToListener onScrollToListener;
     public static final String TAG = "expAdapter";
+    protected int expandableBehavior = 0;
+    public static final int EXPANDABLE_ITEMS = 1;
+    public static final int EXPANDABLE_SYSTEM = 0;
+    private boolean customObject;
+
+    protected Context getContext() {
+        return mContext;
+    }
+
+
+    protected List<T> getSet() {
+        return mDataSet;
+    }
 
     public void addOnScrollToListener(OnScrollToListener onScrollToListener) {
         this.monScrollToListenerList.add(onScrollToListener);
     }
 
+    @Deprecated
     public void setOnScrollToListener(OnScrollToListener onScrollToListener) {
         this.onScrollToListener = onScrollToListener;
     }
 
-    public ExpAdapter(Context context, FastLib stylePresent) {
-        mContext = context;
-        present = stylePresent;
+    public ExpAdapter(Context context, final FastLib stylePresent, final int clickhandler, final boolean customholder) {
+        this(context, stylePresent, clickhandler);
+        this.customObject = customholder;
+    }
+
+    public ExpAdapter(Context context, final FastLib stylePresent, final int clickhandler) {
+        this(context, stylePresent);
+        expandableBehavior = clickhandler;
+    }
+
+    public ExpAdapter(Context context, final FastLib stylePresent) {
+        this(context);
         mDataSet = new ArrayList<>();
     }
 
@@ -54,17 +82,54 @@ public abstract class ExpAdapter<T extends ExpandableItemData> extends UltimateV
         mContext = context;
         mDataSet = new ArrayList<>();
         present = FastLib.systemStyle;
+        customObject = false;
     }
+
+
+    /**
+     * please do work on this id the custom object is true
+     *
+     * @param parentview the inflated view
+     * @return the actual parent holder
+     */
+    protected abstract G iniCustomParentHolder(View parentview);
+
+    /**
+     * please do work on this if the custom object is true
+     *
+     * @param childview the inflated view
+     * @return the actual child holder
+     */
+    protected abstract H iniCustomChildHolder(View childview);
+
+    private View initiateview(ViewGroup parent, final @LayoutRes int layout) {
+        return LayoutInflater.from(parent.getContext()).inflate(layout, parent, false);
+    }
+
+    protected abstract int getLayoutResParent();
+
+    protected abstract int getLayoutResChild();
 
     @Override
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         switch (viewType) {
             case ExpandableViewTypes.ITEM_TYPE_PARENT:
-                return present.createViewHolderParent(mContext, parent);
+                return iniCustomParentHolder(initiateview(parent, getLayoutResParent()));
+
             case ExpandableViewTypes.ITEM_TYPE_CHILD:
-                return present.createViewHolderChild(mContext, parent);
+                return iniCustomChildHolder(initiateview(parent, getLayoutResChild()));
+
             default:
-                return present.createViewHolderParent(mContext, parent);
+                return null;
+        }
+    }
+
+    private ItemDataClickListener getBehavior() {
+        switch (expandableBehavior) {
+            case EXPANDABLE_ITEMS:
+                return imageSetLoadItems;
+            default:
+                return imageClickListener;
         }
     }
 
@@ -73,7 +138,7 @@ public abstract class ExpAdapter<T extends ExpandableItemData> extends UltimateV
         switch (getItemViewType(position)) {
             case ExpandableViewTypes.ITEM_TYPE_PARENT:
                 ParentVH imageViewHolder = (ParentVH) holder;
-                imageViewHolder.bindView(mDataSet.get(position), position, imageClickListener);
+                imageViewHolder.bindView(mDataSet.get(position), position, getBehavior());
                 break;
             case ExpandableViewTypes.ITEM_TYPE_CHILD:
                 ChildVH textViewHolder = (ChildVH) holder;
@@ -103,37 +168,8 @@ public abstract class ExpAdapter<T extends ExpandableItemData> extends UltimateV
         }
     }
 
-    protected abstract List<T> getChildrenByPath(String path, int depth);
+    protected abstract List<T> getChildrenByPath(String path, int depth, final int position);
 
-    private ItemDataClickListener imageClickListener = new ItemDataClickListener<T>() {
-
-        @Override
-        public void onExpandChildren(T itemData) {
-            int position = getCurrentPosition(itemData.getUuid());
-            List<T> children = getChildrenByPath(itemData.getPath(), itemData.getTreeDepth());
-            if (children == null) {
-                return;
-            }
-
-            addAll(children, position + 1);// 插入到点击点的下方
-            itemData.setChildren(children);
-            triggerSingleEventScrollTo(position + 1);
-            triggerBoardCastEventScrollTo(position + 1);
-        }
-
-        @Override
-        public void onHideChildren(T itemData) {
-            int position = getCurrentPosition(itemData.getUuid());
-            List<T> children = itemData.getChildren();
-            if (children == null) {
-                return;
-            }
-            removeAll(position + 1, getChildrenCount(itemData) - 1);
-            triggerSingleEventScrollTo(position);
-            triggerBoardCastEventScrollTo(position);
-            itemData.setChildren(null);
-        }
-    };
 
     @Override
     public RecyclerView.ViewHolder onCreateHeaderViewHolder(ViewGroup viewGroup) {
@@ -242,4 +278,64 @@ public abstract class ExpAdapter<T extends ExpandableItemData> extends UltimateV
             }
         }
     }
+
+
+    /**
+     * the item click behavior and list item handler cases
+     */
+
+    private ItemDataClickListener imageSetLoadItems = new ItemDataClickListener<T>() {
+        @Override
+        public void onExpandChildren(T itemData) {
+            int position = getCurrentPosition(itemData.getUuid());
+            List<T> children = itemData.getChildren();
+            if (children == null) {
+                return;
+            }
+            addAll(children, position + 1); // 插入到点击点的下方
+            triggerSingleEventScrollTo(position + 1);
+            triggerBoardCastEventScrollTo(position + 1);
+        }
+
+        @Override
+        public void onHideChildren(T itemData) {
+            int position = getCurrentPosition(itemData.getUuid());
+            List<T> children = itemData.getChildren();
+            if (children == null) {
+                return;
+            }
+            removeAll(position + 1, getChildrenCount(itemData) - 1);
+            triggerSingleEventScrollTo(position);
+            triggerBoardCastEventScrollTo(position);
+        }
+    };
+    private ItemDataClickListener imageClickListener = new ItemDataClickListener<T>() {
+
+        @Override
+        public void onExpandChildren(T itemData) {
+            int position = getCurrentPosition(itemData.getUuid());
+            List<T> children = getChildrenByPath(itemData.getPath(), itemData.getTreeDepth(), position);
+            if (children == null) {
+                return;
+            }
+
+            addAll(children, position + 1);// 插入到点击点的下方
+            itemData.setChildren(children);
+            triggerSingleEventScrollTo(position + 1);
+            triggerBoardCastEventScrollTo(position + 1);
+        }
+
+        @Override
+        public void onHideChildren(T itemData) {
+            int position = getCurrentPosition(itemData.getUuid());
+            List<T> children = itemData.getChildren();
+            if (children == null) {
+                return;
+            }
+            removeAll(position + 1, getChildrenCount(itemData) - 1);
+            triggerSingleEventScrollTo(position);
+            triggerBoardCastEventScrollTo(position);
+            itemData.setChildren(null);
+        }
+    };
 }
