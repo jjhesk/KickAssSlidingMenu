@@ -32,6 +32,7 @@ public class Parent<T extends ExpandableItemData> extends parent<T> {
     public TextView count;
 
     public MaterialRippleLayout relativeLayout;
+    private boolean capitalized = false;
 
     public Parent(View itemView) {
         super(itemView);
@@ -42,21 +43,43 @@ public class Parent<T extends ExpandableItemData> extends parent<T> {
         itemMargin = itemView.getContext().getResources().getDimensionPixelSize(R.dimen.item_margin);
     }
 
+    private boolean countenabled = true;
+
+    protected void forceTitleCapitalized(boolean b) {
+        capitalized = b;
+    }
+
+    protected void setNotifcationFieldEnabled(boolean b) {
+        countenabled = b;
+        if (!countenabled) {
+            count.setVisibility(View.GONE);
+        } else {
+            if (getItem().isExpand()) {
+                count.setVisibility(View.VISIBLE);
+            }
+        }
+    }
 
     @Override
     protected void setCountVisible(int visibility) {
-        count.setVisibility(visibility);
+        if (countenabled)
+            count.setVisibility(visibility);
     }
 
     @Override
     protected void updateCountNumber(String text) {
-        count.setText(text);
+        if (countenabled)
+            count.setText(text);
     }
 
     @Override
     public void bindView(final T itemData, final int position, final ItemDataClickListener imageClickListener) {
         expand.setLayoutParams(getParamsLayout(expand, itemData));
-        text.setText(itemData.getText());
+        if (capitalized) {
+            text.setText(itemData.getText().toUpperCase());
+        } else {
+            text.setText(itemData.getText());
+        }
         setHandleInitiatedViewStatus(itemData, expand, count);
         setRelativeLayoutClickable(relativeLayout, itemData, imageClickListener, position);
         relativeLayout.setOnLongClickListener(new View.OnLongClickListener() {

@@ -20,6 +20,7 @@ public class Child<T extends ExpandableItemData> extends child<T> {
     public TextView text;
     public MaterialRippleLayout relativeLayout;
     private int offsetMargin, itemMargin;
+    private boolean capitalized = false;
 
     public Child(View itemView) {
         super(itemView);
@@ -31,9 +32,20 @@ public class Child<T extends ExpandableItemData> extends child<T> {
                 .getDimensionPixelSize(R.dimen.expand_size);
     }
 
+    protected void forceTitleCapitalized(boolean b) {
+        capitalized = b;
+    }
+
     @Override
     public void bindView(final T itemData, int position) {
-        text.setText(itemData.getText());
+
+
+        if (capitalized) {
+            text.setText(itemData.getText().toUpperCase());
+        } else {
+            text.setText(itemData.getText());
+        }
+
         text.setLayoutParams(getParamsLayoutOffset(text, itemData));
         relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -72,6 +72,8 @@ public abstract class parent<T extends ExpandableItemData> extends BaseViewHolde
         }
     }
 
+    private ExpandableItemData item;
+
     protected void setHandleInitiatedViewStatus(final ExpandableItemData itemData, View rotationIndicator, TextView count) {
         if (itemData.isExpand()) {
             rotationIndicator.setRotation(openDegree());
@@ -86,6 +88,11 @@ public abstract class parent<T extends ExpandableItemData> extends BaseViewHolde
             count.setVisibility(View.GONE);
             count.setText("");
         }
+        item = itemData;
+    }
+
+    protected ExpandableItemData getItem() {
+        return item;
     }
 
     protected <V extends View> void setRelativeLayoutClickable(final V clickablelayout, final ExpandableItemData itemData, final ItemDataClickListener imageClickListener, final int position) {
