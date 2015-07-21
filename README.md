@@ -42,6 +42,27 @@ I am bringing it back from the good old project sliding menu in the Android Stud
 ##Coding support
 Please visit out wiki page for more [tutorial informations][28]
 
+Supporting methods availabilities
+
+| methods | explainations|
+| :---- | :---- |
+| mode| left or right |
+| viewAbove| layout reference |
+| viewBehind| layout reference |
+| behindOffset| dimension |
+| behindWidth| dimension |
+| behindScrollScale| float |
+| touchModeAbove| margin or fullscreen or none|
+| touchModeBehind| margin or fullscreen or none|
+| shadowDrawable| the reference of the drawable of the fading shadow|
+| shadowWidth| the dimension of the width of menu|
+| fadeEnabled| enable for fading on the menu|
+| fadeDegree| enable the fading darkenness for the menu|
+| selectorEnabled| 2 |
+| selectorDrawable| 1|
+| contentFadeEnabled| enable for the content fade|
+| contentFadeDegree| the fading degree for the content|
+
 ###ScreenShots
 [![Android Gems](http://www.android-gems.com/badge/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=master)](http://www.android-gems.com/lib/jjhesk/BringItBackAdvanceSlidingMenu)
 
