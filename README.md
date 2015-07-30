@@ -21,6 +21,10 @@ I am bringing it back from the good old project sliding menu in the Android Stud
 - [x] simple tree list for expandable list item view - allows many customizations
 - [x] menu banners on the list recycler view - allows many customizations
 
+###v1.6.3
+- [x] fixed lilpop 5.0 issue
+- [x] full screen and transparent nagivation and status bar configurations
+- [x] building blocks ready for easy fast implementation
 
 ###v1.6.0
 - [x] newsfeed abstract for instance implementation
