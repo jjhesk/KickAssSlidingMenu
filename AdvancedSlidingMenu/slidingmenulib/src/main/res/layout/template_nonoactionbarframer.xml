@@ -5,14 +5,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <View
+        android:id="@id/aslib_statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/statusMargin"
+        android:background="?attr/colorPrimary"
+        android:gravity="top" />
+
     <android.support.v7.widget.Toolbar
-        android:id="@+id/mxtoolbar"
+        android:id="@id/aslib_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary" />
 
     <FrameLayout
-        android:id="@+id/main_frame_body"
+        android:id="@id/aslib_main_frame_body"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

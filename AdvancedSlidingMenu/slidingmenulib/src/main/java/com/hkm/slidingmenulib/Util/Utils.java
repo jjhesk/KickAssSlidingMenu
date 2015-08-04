@@ -13,6 +13,9 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
 import android.widget.LinearLayout;
@@ -176,5 +179,9 @@ public class Utils {
         return params;
     }
 
+    public static View inflatView(Context c, final @LayoutRes int t) {
+        final View u = LayoutInflater.from(c).inflate(t, null, false);
+        return u;
+    }
 
 }

@@ -27,6 +27,8 @@
         <attr name="sxm_fadeDegree" format="float" />
         <attr name="sxm_selectorEnabled" format="boolean" />
         <attr name="sxm_selectorDrawable" format="reference" />
+        <attr name="sxm_contentFadeEnabled" format="boolean" />
+        <attr name="sxm_contentFadeDegree" format="float" />
     </declare-styleable>
 
 

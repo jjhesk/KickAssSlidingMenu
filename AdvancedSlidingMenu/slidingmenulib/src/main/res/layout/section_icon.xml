@@ -2,11 +2,11 @@
 <com.hkm.slidingmenulib.menucontent.containers.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/section_ripple"
-    app:mrlsxm_rippleOverlay="true"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
     app:mrlsxm_rippleColor="#000000"
     app:mrlsxm_rippleHover="true"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content">
+    app:mrlsxm_rippleOverlay="true">
 
     <RelativeLayout
         android:id="@+id/section_relative_layout"

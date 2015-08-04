@@ -3,9 +3,6 @@
 
     <style name="MaterialNavigationDrawerTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="belowToolbar">false</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@color/transparent</item>
         <item name="drawerColor">#111</item>
         <item name="labelColor">#888888</item>
 
@@ -17,6 +14,13 @@
         <item name="actionBarOverlay">false</item>
         <item name="actionBarOverlayAlpha">1.0</item>
         <item name="drawerActionBarStyle">@null</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
     <style name="defaultShowTimeSlidingMenuTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -32,17 +36,17 @@
         <item name="actionBarOverlayAlpha">1.0</item>
         <item name="drawerActionBarStyle">@null</item>
         <item name="sectionStyle">@style/MaterialSectionTheme.Light</item>
+
         <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
         <item name="android:statusBarColor">@color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
     <style name="MaterialNavigationDrawerTheme.Light" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="belowToolbar">false</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@color/transparent</item>
         <item name="drawerColor">#fafafa</item>
         <item name="labelColor">#afafaf</item>
 
@@ -54,13 +58,18 @@
         <item name="actionBarOverlay">false</item>
         <item name="actionBarOverlayAlpha">1.0</item>
         <item name="drawerActionBarStyle">@null</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 
     <style name="MaterialNavigationDrawerTheme.Light.DarkActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="belowToolbar">false</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@color/transparent</item>
         <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
 
         <item name="popupTheme">@style/Base.V21.Theme.AppCompat.Light.Dialog</item>
@@ -74,6 +83,13 @@
         <item name="actionBarOverlay">false</item>
         <item name="actionBarOverlayAlpha">1.0</item>
         <item name="drawerActionBarStyle">@null</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTranslucentNavigation">true</item>-->
     </style>
 
     <style name="MaterialNavigationDrawerTheme.Light.TranslucentKitKatStatusBar" parent="MaterialNavigationDrawerTheme.Light" />

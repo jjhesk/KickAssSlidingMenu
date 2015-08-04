@@ -1,14 +1,9 @@
 package com.hkm.slidingmenulib.advancedtreeview.presnt.slack;
 
-import android.content.Context;
 import android.view.View;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.hkm.slidingmenulib.R;
-import com.hkm.slidingmenulib.Util.TreeList;
-import com.hkm.slidingmenulib.advancedtreeview.BaseViewHolder;
-import com.hkm.slidingmenulib.advancedtreeview.ChildVH;
 import com.hkm.slidingmenulib.advancedtreeview.ExpandableItemData;
 import com.hkm.slidingmenulib.advancedtreeview.customizationbase.child;
 import com.hkm.slidingmenulib.menucontent.containers.MaterialRippleLayout;
@@ -16,16 +11,16 @@ import com.hkm.slidingmenulib.menucontent.containers.MaterialRippleLayout;
 /**
  * Created by hesk on 10/7/15.
  */
-public class Child<T extends ExpandableItemData> extends child<T> {
-    public TextView text;
+public class Child<T extends ExpandableItemData,TE extends TextView> extends child<T> {
+    public TE text;
     public MaterialRippleLayout relativeLayout;
     private int offsetMargin, itemMargin;
     private boolean capitalized = false;
 
     public Child(View itemView) {
         super(itemView);
-        text = (TextView) itemView.findViewById(R.id.section_text);
-        relativeLayout = (MaterialRippleLayout) itemView.findViewById(R.id.container);
+        text = (TE) itemView.findViewById(R.id.exp_section_title);
+        relativeLayout = (MaterialRippleLayout) itemView.findViewById(R.id.exp_section_ripple_wrapper_click);
         itemMargin = itemView.getContext().getResources()
                 .getDimensionPixelSize(R.dimen.item_margin);
         offsetMargin = itemView.getContext().getResources()
@@ -69,14 +64,5 @@ public class Child<T extends ExpandableItemData> extends child<T> {
     }
 
 
-    @Override
-    protected Child getHolder(View view) {
-        return new Child(view);
-    }
-
-    @Override
-    protected int getLayout() {
-        return R.layout.exp_1_item_child;
-    }
 
 }

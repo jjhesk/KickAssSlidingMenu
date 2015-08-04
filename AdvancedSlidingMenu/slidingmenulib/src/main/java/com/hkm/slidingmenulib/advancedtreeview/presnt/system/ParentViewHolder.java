@@ -37,11 +37,11 @@ public class ParentViewHolder extends BaseViewHolder implements ParentVH {
 
     public ParentViewHolder(View itemView) {
         super(itemView);
-        image = (ImageView) itemView.findViewById(R.id.image);
-        text = (TextView) itemView.findViewById(R.id.text);
-        expand = (ImageView) itemView.findViewById(R.id.expand);
-        count = (TextView) itemView.findViewById(R.id.count);
-        relativeLayout = (RelativeLayout) itemView.findViewById(R.id.container);
+        image = (ImageView) itemView.findViewById(R.id.sys_image_icon);
+        text = (TextView) itemView.findViewById(R.id.exp_section_title);
+        expand = (ImageView) itemView.findViewById(R.id.exp_indication_arrow);
+        count = (TextView) itemView.findViewById(R.id.exp_section_notification_number);
+        relativeLayout = (RelativeLayout) itemView.findViewById(R.id.exp_section_ripple_wrapper_click);
         itemMargin = itemView.getContext().getResources().getDimensionPixelSize(R.dimen.item_margin);
     }
 

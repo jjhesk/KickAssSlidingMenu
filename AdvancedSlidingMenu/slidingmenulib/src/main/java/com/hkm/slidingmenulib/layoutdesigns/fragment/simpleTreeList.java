@@ -36,7 +36,7 @@ public abstract class simpleTreeList<adapter extends ExpAdapter> extends Fragmen
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.content_fragment_image_list, container, false);
+        return inflater.inflate(R.layout.sm_list, container, false);
     }
 
     public static String TAG = "catelog";
@@ -100,7 +100,7 @@ public abstract class simpleTreeList<adapter extends ExpAdapter> extends Fragmen
             }
         });
         setUltimateRecyclerViewExtra(listview_layout, madapter);
-        final HorizontalDividerItemDecoration decor = new HorizontalDividerItemDecoration.Builder(getActivity()).paint(getlinestyle()).build();
+        final HorizontalDividerItemDecoration decor = new HorizontalDividerItemDecoration.Builder(getActivity()).paint(getlinestyle()).showLastDivider().build();
         listview_layout.addItemDecoration(decor);
 
         final RelativeLayout rl_before = (RelativeLayout) view.findViewById(R.id.before_list);

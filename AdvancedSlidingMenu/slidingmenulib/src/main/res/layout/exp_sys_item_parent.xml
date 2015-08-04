@@ -6,7 +6,7 @@
     android:background="#ffcecece" >
 
     <ImageView
-        android:id="@+id/expand"
+        android:id="@id/exp_indication_arrow"
         android:layout_width="@dimen/expand_size"
         android:layout_height="@dimen/expand_size"
         android:layout_alignParentLeft="true"
@@ -18,7 +18,7 @@
         android:src="@drawable/expand" />
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@id/sys_image_icon"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_centerVertical="true"
@@ -26,21 +26,21 @@
         android:layout_marginLeft="4dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
-        android:layout_toEndOf="@id/expand"
-        android:layout_toRightOf="@id/expand"
+        android:layout_toEndOf="@id/exp_indication_arrow"
+        android:layout_toRightOf="@id/exp_indication_arrow"
         android:contentDescription="@string/app_name"
         android:scaleType="fitXY"
         android:src="@drawable/folder" />
 
     <TextView
-        android:id="@+id/text"
+        android:id="@id/exp_section_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
-        android:layout_toEndOf="@id/image"
-        android:layout_toRightOf="@id/image"
+        android:layout_toEndOf="@id/sys_image_icon"
+        android:layout_toRightOf="@id/sys_image_icon"
         android:gravity="center"
         android:singleLine="true"
         android:text="/sdcard"
@@ -48,14 +48,14 @@
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/count"
+        android:id="@id/exp_section_notification_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
-        android:layout_toEndOf="@id/text"
-        android:layout_toRightOf="@id/text"
+        android:layout_toEndOf="@id/exp_section_title"
+        android:layout_toRightOf="@id/exp_section_title"
         android:gravity="center"
         android:singleLine="true"
         android:text="(1)"

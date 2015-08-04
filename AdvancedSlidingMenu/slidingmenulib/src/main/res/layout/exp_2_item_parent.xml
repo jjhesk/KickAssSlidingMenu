@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.hkm.slidingmenulib.menucontent.containers.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/section_ripple_wrapper_click"
+    android:id="@id/exp_section_ripple_wrapper_click"
     android:layout_width="fill_parent"
     android:layout_height="@dimen/sectionNormalHeight"
     android:layout_margin="0dp"
@@ -11,7 +11,7 @@
     app:mrlsxm_rippleOverlay="true">
 
     <RelativeLayout
-        android:id="@+id/section_relative_layout"
+        android:id="@id/exp_section_adjustment_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="0dp"
@@ -22,14 +22,14 @@
         <!-- android:foreground="?android:attr/selectableItemBackground"
         -->
         <TextView
-            android:id="@+id/section_text"
+            android:id="@id/exp_section_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="8dp"
-            android:layout_toLeftOf="@+id/section_notification"
-            android:layout_toStartOf="@+id/section_notification"
+            android:layout_toLeftOf="@id/exp_section_notification_number"
+            android:layout_toStartOf="@id/exp_section_notification_number"
             android:lines="1"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="@android:color/black"
@@ -38,13 +38,13 @@
             android:text="sample menu item parent" />
 
         <TextView
-            android:id="@+id/section_notification"
+            android:id="@id/exp_section_notification_number"
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginRight="8dp"
-            android:layout_toLeftOf="@+id/indicatorIcon"
+            android:layout_toLeftOf="@id/exp_indication_arrow"
             android:maxLength="5"
             android:textColor="@android:color/black"
             android:textSize="@dimen/sectionNotificationSize"
@@ -56,7 +56,7 @@
             android:textAlignment="center" />
 
         <ImageView
-            android:id="@+id/indicatorIcon"
+            android:id="@id/exp_indication_arrow"
             android:layout_width="@dimen/sectionSquareIconSize"
             android:layout_height="@dimen/sectionSquareIconSize"
             android:layout_alignParentRight="true"

@@ -37,7 +37,7 @@ public abstract class ExpAdapter<T extends ExpandableItemData, G extends parent<
     private FastLib present;
     private Context mContext;
     private List<T> mDataSet;
-    private List<OnScrollToListener> monScrollToListenerList = new ArrayList<>();
+    private List<OnScrollToListener> monScrollToListenerList = new ArrayList<OnScrollToListener>();
     private OnScrollToListener onScrollToListener;
     public static final String TAG = "expAdapter";
     protected int expandableBehavior = 0;

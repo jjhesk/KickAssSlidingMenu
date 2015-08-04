@@ -5,6 +5,13 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <View
+        android:id="@id/aslib_statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/statusMargin"
+        android:background="?attr/colorPrimary"
+        android:gravity="top" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,7 +36,7 @@
         android:text="@string/hello_world" />
 
     <FrameLayout
-        android:id="@+id/main_frame_body"
+        android:id="@id/aslib_main_frame_body"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

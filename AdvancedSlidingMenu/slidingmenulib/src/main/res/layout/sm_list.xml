@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <View
+        android:id="@id/aslib_statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/statusMargin"
+        android:background="?attr/colorPrimary" />
+
     <RelativeLayout
         android:id="@+id/before_list"
         android:layout_width="match_parent"
@@ -17,6 +23,11 @@
         android:layout_height="match_parent"
         app:recyclerviewClipToPadding="true"
         app:recyclerviewScrollbars="vertical" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#99cecece" />
 
     <RelativeLayout
         android:id="@+id/after_list"

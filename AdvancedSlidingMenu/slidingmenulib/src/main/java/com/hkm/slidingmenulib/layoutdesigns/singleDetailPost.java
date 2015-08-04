@@ -22,6 +22,9 @@ import com.hkm.slidingmenulib.menucontent.materialMenuConstructorFragmentBase;
  * Created by hesk on 2/7/15.
  */
 public abstract class singleDetailPost<Frag> extends AppCompatActivity implements internalChangeInFragment<Frag> {
+    private Toolbar tb;
+    protected String url;
+    protected long pid;
     protected Frag currentFragmentNow, rightMenuFragment;
     public static final String
             PID = "POST_ID",
@@ -33,23 +36,19 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
     public static final int REQUEST_METHOD_FULL_URL = 1;
     public static final int REQUEST_METHOD_POST_ID = 2;
 
+    protected Toolbar getTB() {
+        return tb;
+    }
 
     private void initMainContentFragment(Frag mfragment, Bundle savestate) {
         if (savestate == null) {
             setContentView(getDefaultMainActivityLayoutId());
             initToolBar(getDefaultMainActivityLayoutId());
             setFragment(mfragment, getTitle().toString(), null, false);
+            initalizeOtherUI();
         } else {
-            currentFragmentNow = (Frag) this.getFragmentManager().findFragmentById(R.id.main_frame_body);
+            currentFragmentNow = (Frag) this.getFragmentManager().findFragmentById(R.id.aslib_main_frame_body);
         }
-    }
-
-    private Toolbar tb;
-    protected String url;
-    protected long pid;
-
-    protected Toolbar getTB() {
-        return tb;
     }
 
     protected boolean startIntentArgument() {
@@ -67,6 +66,9 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
         return true;
     }
 
+    protected void initalizeOtherUI() {
+    }
+
     protected abstract void loadPageWithFullURL(final String url);
 
     protected abstract void loadPageWithPID(final long pid);
@@ -77,7 +79,6 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
      * @param v7 Toolbar object
      */
     protected void configToolBar(final Toolbar v7) {
-        // v7.setNavigationIcon(R.drawable.ic_action_menu_drawer);
         v7.setTitle(getTitle());
     }
 
@@ -86,16 +87,21 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
      *
      * @param resId the location of the tool bar id
      */
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void initToolBar(final @LayoutRes int resId) {
-        if (SlidingAppCompactActivity.BODY_LAYOUT.isToolbarOn(resId) || forceConfigureToolBar()) {
-            final Toolbar widgetToolBar = (Toolbar) findViewById(R.id.mxtoolbar);
-            tb = widgetToolBar;
-            widgetToolBar.setElevation(0f);
-            configToolBar(widgetToolBar);
-            setSupportActionBar(widgetToolBar);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+        try {
+            if (SlidingAppCompactActivity.BODY_LAYOUT.isToolbarOn(resId) || forceConfigureToolBar()) {
+                final Toolbar widgetToolBar = (Toolbar) findViewById(R.id.aslib_toolbar);
+                tb = widgetToolBar;
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    widgetToolBar.setElevation(0f);
+                }
+                configToolBar(widgetToolBar);
+                setSupportActionBar(widgetToolBar);
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -152,7 +158,7 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
             if (oldFragment != null && oldFragment != fragment)
                 ft.remove((android.support.v4.app.Fragment) oldFragment);
 
-            ft.replace(R.id.main_frame_body, (android.support.v4.app.Fragment) fragment).commit();
+            ft.replace(R.id.aslib_main_frame_body, (android.support.v4.app.Fragment) fragment).commit();
         } else if (fragment instanceof android.app.Fragment) {
             if (oldFragment instanceof android.support.v4.app.Fragment)
                 throw new RuntimeException("You should use only one type of Fragment");
@@ -161,7 +167,7 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
             if (oldFragment != null && fragment != oldFragment)
                 ft.remove((android.app.Fragment) oldFragment);
 
-            ft.replace(R.id.main_frame_body, (android.app.Fragment) fragment).commit();
+            ft.replace(R.id.aslib_main_frame_body, (android.app.Fragment) fragment).commit();
         } else if (fragment instanceof android.support.v4.app.Fragment) {
             if (oldFragment instanceof android.app.Fragment)
                 throw new RuntimeException("You should use only one type of Fragment");
@@ -169,7 +175,7 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
             android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             if (oldFragment != null && oldFragment != fragment)
                 ft.remove((android.support.v4.app.Fragment) oldFragment);
-            ft.replace(R.id.main_frame_body, (android.support.v4.app.Fragment) fragment).commit();
+            ft.replace(R.id.aslib_main_frame_body, (android.support.v4.app.Fragment) fragment).commit();
         } else
             throw new RuntimeException("Fragment must be android.app.Fragment or android.support.v4.app.Fragment");
 

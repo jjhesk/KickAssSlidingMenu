@@ -24,26 +24,25 @@ import com.hkm.slidingmenulib.menucontent.containers.MaterialRippleLayout;
  * Created by hesk on 10/7/15.
  * please help to improve this library
  */
-public class Parent<T extends ExpandableItemData> extends parent<T> {
+public class Parent<T extends ExpandableItemData, TE extends TextView> extends parent<T> {
 
     public ImageView image;
-    public TextView text;
+    public TE text;
     public ImageView expand;
-    public TextView count;
+    public TE count;
 
     public MaterialRippleLayout relativeLayout;
     private boolean capitalized = false;
+    private boolean countenabled = true;
 
     public Parent(View itemView) {
         super(itemView);
-        text = (TextView) itemView.findViewById(R.id.section_text);
-        expand = (ImageView) itemView.findViewById(R.id.indicatorIcon);
-        count = (TextView) itemView.findViewById(R.id.section_notification);
-        relativeLayout = (MaterialRippleLayout) itemView.findViewById(R.id.section_ripple_wrapper_click);   //clickable
+        text = (TE) itemView.findViewById(R.id.exp_section_title);
+        expand = (ImageView) itemView.findViewById(R.id.exp_indication_arrow);
+        count = (TE) itemView.findViewById(R.id.exp_section_notification_number);
+        relativeLayout = (MaterialRippleLayout) itemView.findViewById(R.id.exp_section_ripple_wrapper_click);   //clickable
         itemMargin = itemView.getContext().getResources().getDimensionPixelSize(R.dimen.item_margin);
     }
-
-    private boolean countenabled = true;
 
     protected void forceTitleCapitalized(boolean b) {
         capitalized = b;
@@ -119,24 +118,4 @@ public class Parent<T extends ExpandableItemData> extends parent<T> {
     }
 
 
-    /**
-     * will not be used
-     *
-     * @param view nothing
-     * @return nothing
-     */
-    @Override
-    protected Parent getHolder(View view) {
-        return new Parent(view);
-    }
-
-    /**
-     * will not be used
-     *
-     * @return nothing
-     */
-    @Override
-    protected int getLayout() {
-        return R.layout.exp_2_item_parent;
-    }
 }

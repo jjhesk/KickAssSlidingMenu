@@ -115,18 +115,21 @@ public abstract class SlidingAppCompactActivity<Frag> extends SlidingAppCompactA
         if (savestate == null) {
             setFragment(fragment, getTitle().toString(), null, false);
         } else {
-            final Frag oldfragment = (Frag) this.getFragmentManager().findFragmentById(R.id.main_frame_body);
+            final Frag oldfragment = (Frag) this.getFragmentManager().findFragmentById(R.id.aslib_main_frame_body);
             setFragment(fragment, getTitle().toString(), oldfragment);
         }
     }
 
 
     private void initToolBar(final @LayoutRes int resId) {
-        if (BODY_LAYOUT.isToolbarOn(resId) || forceConfigureToolBar()) {
-            final Toolbar widgetToolBar = (Toolbar) findViewById(R.id.mxtoolbar);
-            configToolBar(widgetToolBar);
-            setSupportActionBar(widgetToolBar);
-
+        try {
+            if (BODY_LAYOUT.isToolbarOn(resId) || forceConfigureToolBar()) {
+                final Toolbar widgetToolBar = (Toolbar) findViewById(R.id.aslib_toolbar);
+                configToolBar(widgetToolBar);
+                setSupportActionBar(widgetToolBar);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -219,7 +222,7 @@ public abstract class SlidingAppCompactActivity<Frag> extends SlidingAppCompactA
             if (oldFragment != null && oldFragment != fragment)
                 ft.remove((android.support.v4.app.Fragment) oldFragment);
 
-            ft.replace(R.id.main_frame_body, (android.support.v4.app.Fragment) fragment).commit();
+            ft.replace(R.id.aslib_main_frame_body, (android.support.v4.app.Fragment) fragment).commit();
         } else if (fragment instanceof android.app.Fragment) {
             if (oldFragment instanceof android.support.v4.app.Fragment)
                 throw new RuntimeException("You should use only one type of Fragment");
@@ -228,7 +231,7 @@ public abstract class SlidingAppCompactActivity<Frag> extends SlidingAppCompactA
             if (oldFragment != null && fragment != oldFragment)
                 ft.remove((android.app.Fragment) oldFragment);
 
-            ft.replace(R.id.main_frame_body, (android.app.Fragment) fragment).commit();
+            ft.replace(R.id.aslib_main_frame_body, (android.app.Fragment) fragment).commit();
         } else if (fragment instanceof android.support.v4.app.Fragment) {
             if (oldFragment instanceof android.app.Fragment)
                 throw new RuntimeException("You should use only one type of Fragment");
@@ -236,7 +239,7 @@ public abstract class SlidingAppCompactActivity<Frag> extends SlidingAppCompactA
             android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             if (oldFragment != null && oldFragment != fragment)
                 ft.remove((android.support.v4.app.Fragment) oldFragment);
-            ft.replace(R.id.main_frame_body, (android.support.v4.app.Fragment) fragment).commit();
+            ft.replace(R.id.aslib_main_frame_body, (android.support.v4.app.Fragment) fragment).commit();
         } else
             throw new RuntimeException("Fragment must be android.app.Fragment or android.support.v4.app.Fragment");
 
@@ -323,15 +326,22 @@ public abstract class SlidingAppCompactActivity<Frag> extends SlidingAppCompactA
      * - overlayactionbar : there is consist of layout resource IDs of +id(main_frame_body) and +id(mxtoolbar)
      */
     public enum BODY_LAYOUT {
-        overlayactionbar(R.layout.nomoframedactionba),
-        noactionbar(R.layout.noactionbar),
-        actionbar(R.layout.nonoactionbarframer),
-        singelsimple(R.layout.adjustmentsimplelayout);
+        overlayactionbar(R.layout.template_nomoframedactionba, true),
+        noactionbar(R.layout.template_noactionbar, false),
+        actionbar(R.layout.template_nonoactionbarframer, true),
+        singlepullslide(R.layout.template_custom_slideout_single_article, true),
+        singelsimple(R.layout.template_adjus_simple, true);
 
         private int id;
+        private boolean mhastoolbar;
 
-        BODY_LAYOUT(@LayoutRes int layoutId) {
+        BODY_LAYOUT(@LayoutRes int layoutId, boolean hasToolBar) {
             id = layoutId;
+            mhastoolbar = hasToolBar;
+        }
+
+        public boolean hasToolBarInside() {
+            return mhastoolbar;
         }
 
         public int getResID() {
@@ -342,11 +352,19 @@ public abstract class SlidingAppCompactActivity<Frag> extends SlidingAppCompactA
             return symbol.ordinal() == Ordinal;
         }
 
-        public static boolean isToolbarOn(final @LayoutRes int id) {
-            final @LayoutRes int toolbarLayoutId1 = BODY_LAYOUT.actionbar.getResID();
-            final @LayoutRes int toolbarLayoutId2 = BODY_LAYOUT.overlayactionbar.getResID();
-            final @LayoutRes int toolbarLayoutId3 = BODY_LAYOUT.singelsimple.getResID();
-            return toolbarLayoutId1 == id || id == toolbarLayoutId2 || toolbarLayoutId3 == id;
+        public static BODY_LAYOUT fromLayoutId(final @LayoutRes int id) throws Exception {
+            final int e = BODY_LAYOUT.values().length;
+            for (int i = 0; i < e; i++) {
+                final BODY_LAYOUT h = BODY_LAYOUT.values()[i];
+                if (h.getResID() == id) {
+                    return h;
+                }
+            }
+            throw new Exception("not found from this layout Id");
+        }
+
+        public static boolean isToolbarOn(final @LayoutRes int id) throws Exception {
+            return BODY_LAYOUT.fromLayoutId(id).hasToolBarInside();
         }
     }
 
