@@ -3,6 +3,8 @@ package com.hkm.slidingmenulib.layoutdesigns.app;
 import android.app.FragmentTransaction;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.ColorRes;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
@@ -11,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.hkm.slidingmenulib.R;
+import com.hkm.slidingmenulib.Util.xmlViews.ControlableFrame;
 import com.hkm.slidingmenulib.gestured.app.SlidingAppCompactActivityBase;
 import com.hkm.slidingmenulib.menucontent.MenuBuildHelper;
 import com.hkm.slidingmenulib.gestured.SlidingMenu;
@@ -21,7 +24,11 @@ import com.hkm.slidingmenulib.menucontent.materialMenuConstructorFragmentBase;
  * Created by hesk on 22/6/15.
  */
 public abstract class SlidingAppCompactActivity<Frag> extends SlidingAppCompactActivityBase implements internalChangeInFragment<Frag> {
+    /**
+     * the control frame to display the blocked content or not.
+     */
 
+    protected ControlableFrame content_frame;
     protected Frag currentFragmentNow, rightMenuFragment;
 
 
@@ -109,9 +116,31 @@ public abstract class SlidingAppCompactActivity<Frag> extends SlidingAppCompactA
 
     }
 
+    protected void setUnblock() {
+        if (content_frame != null) {
+            content_frame.noBlock();
+        }
+    }
+
+    protected void setBlockEnableWithColor(@ColorRes int mdrawble) {
+        if (content_frame != null) {
+            content_frame.setDimColor(mdrawble);
+        }
+    }
+
+    protected void setBlockEnableWithDrawable(@DrawableRes int mdrawble) {
+        if (content_frame != null) {
+            content_frame.setDimDrawble(mdrawble);
+        }
+    }
+
     private void initMainContentFragment(Frag fragment, Bundle savestate) {
         setContentView(getDefaultMainActivityLayoutId());
         initToolBar(getDefaultMainActivityLayoutId());
+        try {
+            content_frame = (ControlableFrame) findViewById(R.id.aslib_main_frame_body);
+        } catch (Exception e) {
+        }
         if (savestate == null) {
             setFragment(fragment, getTitle().toString(), null, false);
         } else {

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/block"
+        android:orderInCategory="97"
+        android:title="@string/action_settings"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/unblock"
+        android:orderInCategory="98"
+        android:title="@string/action_settings2"
+        app:showAsAction="always" />
+</menu>

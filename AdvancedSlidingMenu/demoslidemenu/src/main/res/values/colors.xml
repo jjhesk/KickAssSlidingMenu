@@ -7,5 +7,6 @@
     <color name="not_pref_v2">#ffab3749</color>
     <color name="second_pref">#ffc2c0c4</color>
     <color name="second_pref_v2">#ffAAAAAA</color>
+    <color name="block_color">#99FFFFFF</color>
 
 </resources>
