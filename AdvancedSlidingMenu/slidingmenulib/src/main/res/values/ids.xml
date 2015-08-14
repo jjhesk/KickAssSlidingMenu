@@ -2,4 +2,15 @@
 <resources>
     <item name="selected_view" type="id" />
     <item name="menu_frame" type="id" />
+    <item name="aslib_toolbar" type="id" />
+    <item name="aslib_statusBar" type="id" />
+    <item name="aslib_main_frame_body" type="id" />
+    <item name="aslib_dragview" type="id" />
+    <item name="aslib_sliding_layout" type="id" />
+    <item name="exp_section_title" type="id" />
+    <item name="exp_indication_arrow" type="id" />
+    <item name="exp_section_notification_number" type="id" />
+    <item name="exp_section_ripple_wrapper_click" type="id" />
+    <item name="exp_section_adjustment_layout" type="id" />
+    <item name="sys_image_icon" type="id" />
 </resources>

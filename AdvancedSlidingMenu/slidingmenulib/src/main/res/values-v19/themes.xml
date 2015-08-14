@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="defaultShowTimeSlidingMenuTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!--   <item name="background">@drawable/actionbar_bg_hb_logo</item>-->
         <item name="indeterminateProgressStyle">@style/Widget.AppCompat.ProgressBar</item>
@@ -14,6 +15,8 @@
         <item name="drawerActionBarStyle">@null</item>
         <item name="sectionStyle">@style/MaterialSectionTheme.Light</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
 
@@ -29,6 +32,9 @@
         <item name="actionBarOverlay">false</item>
         <item name="actionBarOverlayAlpha">1.0</item>
         <item name="drawerActionBarStyle">@null</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
     <style name="MaterialNavigationDrawerTheme.Light" parent="Theme.AppCompat.Light.NoActionBar">
@@ -44,6 +50,9 @@
         <item name="actionBarOverlay">false</item>
         <item name="actionBarOverlayAlpha">1.0</item>
         <item name="drawerActionBarStyle">@null</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
     <style name="MaterialNavigationDrawerTheme.Light.DarkActionBar" parent="Theme.AppCompat.Light.NoActionBar">
@@ -61,6 +70,9 @@
         <item name="actionBarOverlay">false</item>
         <item name="actionBarOverlayAlpha">1.0</item>
         <item name="drawerActionBarStyle">@null</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
     <style name="MaterialNavigationDrawerTheme.Light.TranslucentKitKatStatusBar" parent="MaterialNavigationDrawerTheme.Light">

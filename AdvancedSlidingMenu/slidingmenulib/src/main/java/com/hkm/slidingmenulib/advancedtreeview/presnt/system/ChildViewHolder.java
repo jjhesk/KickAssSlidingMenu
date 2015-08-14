@@ -30,9 +30,9 @@ public class ChildViewHolder extends child {
 
     public ChildViewHolder(View itemView) {
         super(itemView);
-        text = (TextView) itemView.findViewById(R.id.text);
-        image = (ImageView) itemView.findViewById(R.id.image);
-        relativeLayout = (RelativeLayout) itemView.findViewById(R.id.container);
+        text = (TextView) itemView.findViewById(R.id.exp_section_title);
+        image = (ImageView) itemView.findViewById(R.id.sys_image_icon);
+        relativeLayout = (RelativeLayout) itemView.findViewById(R.id.exp_section_ripple_wrapper_click);
         itemMargin = itemView.getContext().getResources()
                 .getDimensionPixelSize(R.dimen.item_margin);
         offsetMargin = itemView.getContext().getResources()
@@ -58,26 +58,6 @@ public class ChildViewHolder extends child {
     }
 
 
-    /**
-     * not in use
-     *
-     * @param view nah
-     * @return nah
-     */
-    @Override
-    protected BaseViewHolder getHolder(View view) {
-        return null;
-    }
-
-    /**
-     * not in use
-     *
-     * @return nah
-     */
-    @Override
-    protected int getLayout() {
-        return 0;
-    }
 
 
 }

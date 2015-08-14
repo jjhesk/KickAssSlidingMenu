@@ -6,7 +6,7 @@
     android:background="#ffcecece" >
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@id/sys_image_icon"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_centerVertical="true"
@@ -19,14 +19,14 @@
         android:src="@drawable/hbbiglogod" />
 
     <TextView
-        android:id="@+id/text"
+        android:id="@id/exp_section_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
-        android:layout_toEndOf="@id/image"
-        android:layout_toRightOf="@id/image"
+        android:layout_toEndOf="@id/sys_image_icon"
+        android:layout_toRightOf="@id/sys_image_icon"
         android:gravity="center"
         android:singleLine="true"
         android:text="taobao"

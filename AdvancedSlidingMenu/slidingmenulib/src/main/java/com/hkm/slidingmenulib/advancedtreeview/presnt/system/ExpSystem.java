@@ -77,15 +77,6 @@ public class ExpSystem extends ExpAdapter<ExpandableItemData, ExpSystem.B, ExpSy
             super(itemView);
         }
 
-        @Override
-        protected BaseViewHolder getHolder(View view) {
-            return null;
-        }
-
-        @Override
-        protected int getLayout() {
-            return 0;
-        }
 
         @Override
         protected void setCountVisible(int visibility) {
@@ -134,15 +125,6 @@ public class ExpSystem extends ExpAdapter<ExpandableItemData, ExpSystem.B, ExpSy
             super(itemView);
         }
 
-        @Override
-        protected BaseViewHolder getHolder(View view) {
-            return null;
-        }
-
-        @Override
-        protected int getLayout() {
-            return 0;
-        }
 
         @Override
         public void bindView(ExpandableItemData itemData, int position) {

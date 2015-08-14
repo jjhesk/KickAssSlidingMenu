@@ -4,7 +4,6 @@
     android:layout_height="48dp"
     android:orientation="horizontal">
 
-
     <TextView
         android:id="@+id/section_label"
         android:layout_width="match_parent"

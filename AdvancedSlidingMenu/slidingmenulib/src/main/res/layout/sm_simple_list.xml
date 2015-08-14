@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/menu_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <RelativeLayout
-        android:id="@+id/before_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
     <com.marshalchen.ultimaterecyclerview.UltimateRecyclerView
         android:id="@+id/ultimate_recycler_view"
@@ -17,9 +11,4 @@
         android:layout_height="match_parent"
         app:recyclerviewClipToPadding="true"
         app:recyclerviewScrollbars="vertical" />
-
-    <RelativeLayout
-        android:id="@+id/after_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 </LinearLayout>

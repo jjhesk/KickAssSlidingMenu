@@ -30,7 +30,6 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
-
 import com.hkm.slidingmenulib.R;
 
 import java.lang.reflect.Method;
@@ -292,6 +291,12 @@ public class SlidingMenu extends RelativeLayout {
         int selectorRes = ta.getResourceId(R.styleable.SlidingMenu_sxm_selectorDrawable, -1);
         if (selectorRes != -1)
             setSelectorDrawable(selectorRes);
+
+        boolean contentFadeEnabled = ta.getBoolean(R.styleable.SlidingMenu_sxm_contentFadeEnabled, true);
+        setContentFadeEnabled(contentFadeEnabled);
+        float contentFadeDeg = ta.getFloat(R.styleable.SlidingMenu_sxm_contentFadeDegree, 0.65f);
+        setContentFadeDegree(contentFadeDeg);
+
         ta.recycle();
 
     }
@@ -835,6 +840,25 @@ public class SlidingMenu extends RelativeLayout {
     }
 
     /**
+     * Enables or disables the SlidingMenu's content view fade in and out
+     *
+     * @param b true to enable fade, false to disable it
+     */
+    public void setContentFadeEnabled(boolean b) {
+        mViewAbove.setFadeEnabled(b);
+    }
+
+    /**
+     * Sets how much the SlidingMenu content fades in and out. Fade must be enabled, see {@link #setContentFadeEnabled(boolean)
+     * setContentFadeEnabled(boolean)}
+     *
+     * @param f the new fade degree, between 0.0f and 1.0f
+     */
+    public void setContentFadeDegree(float f) {
+        mViewAbove.setFadeDegree(f);
+    }
+
+    /**
      * Enables or disables whether the selector is drawn
      *
      * @param b true to draw the selector, false to not draw the selector
@@ -944,6 +968,7 @@ public class SlidingMenu extends RelativeLayout {
         mViewAbove.setOnClosedListener(listener);
     }
 
+
     public static class SavedState extends BaseSavedState {
 
         private final int mItem;
@@ -1006,7 +1031,7 @@ public class SlidingMenu extends RelativeLayout {
     /* (non-Javadoc)
      * @see android.view.ViewGroup#fitSystemWindows(android.graphics.Rect)
      */
-    @SuppressLint("NewApi")
+   /* @SuppressLint("NewApi")
     @Override
     protected boolean fitSystemWindows(Rect insets) {
         if (!mActionbarOverlay) {
@@ -1015,7 +1040,7 @@ public class SlidingMenu extends RelativeLayout {
         }
         return true;
     }
-
+*/
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public void manageLayers(float percentOpen) {
         if (Build.VERSION.SDK_INT < 11) return;
@@ -1043,7 +1068,7 @@ public class SlidingMenu extends RelativeLayout {
      * @return the fixed height from the bar menu
      */
 
-
+/*
     @Override
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public WindowInsets onApplyWindowInsets(WindowInsets insets) {
@@ -1059,7 +1084,7 @@ public class SlidingMenu extends RelativeLayout {
         setExtendPadding(rect);
 
         return insets.consumeSystemWindowInsets();
-    }
+    }*/
 
     private void setExtendPadding(Rect rect) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -1079,7 +1104,7 @@ public class SlidingMenu extends RelativeLayout {
             }
         }
 
-        setPadding(rect.left, rect.top, rect.right, rect.bottom);
+       // setPadding(rect.left, rect.top, rect.right, rect.bottom);
     }
 
     private int getNavBarWidth() {

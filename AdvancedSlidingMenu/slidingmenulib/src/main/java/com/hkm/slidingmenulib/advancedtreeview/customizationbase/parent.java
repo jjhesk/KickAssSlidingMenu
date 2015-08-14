@@ -25,14 +25,6 @@ public abstract class parent<T extends ExpandableItemData> extends BaseViewHolde
         super(itemView);
     }
 
-    protected abstract BaseViewHolder getHolder(final View view);
-
-    protected abstract int getLayout();
-
-    public BaseViewHolder createViewHolder(Context mContext, ViewGroup parent) {
-        return getHolder(getView(mContext, parent, getLayout()));
-    }
-
     protected abstract void setCountVisible(int visibility);
 
     protected abstract void updateCountNumber(final String text);

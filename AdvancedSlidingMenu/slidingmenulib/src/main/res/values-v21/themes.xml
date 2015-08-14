@@ -32,10 +32,12 @@
         <item name="actionBarOverlayAlpha">1.0</item>
         <item name="drawerActionBarStyle">@null</item>
         <item name="sectionStyle">@style/MaterialSectionTheme.Light</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <!--
+           <item name="android:windowDrawsSystemBarBackgrounds">true</item>-->
         <item name="android:statusBarColor">@color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
     <style name="MaterialNavigationDrawerTheme.Light" parent="Theme.AppCompat.Light.NoActionBar">

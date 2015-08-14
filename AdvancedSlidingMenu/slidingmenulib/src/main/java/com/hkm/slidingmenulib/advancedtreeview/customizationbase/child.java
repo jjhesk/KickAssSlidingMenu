@@ -17,15 +17,6 @@ public abstract class child<T extends ExpandableItemData> extends BaseViewHolder
         super(itemView);
     }
 
-    protected abstract BaseViewHolder getHolder(final View view);
-
-    protected abstract int getLayout();
-
-
-    public BaseViewHolder createViewHolder(Context mContext, ViewGroup parent) {
-        return getHolder(getView(mContext, parent, getLayout()));
-    }
-
     protected ChildClickListener listener;
 
     public void setChildListener(ChildClickListener mlistener) {
