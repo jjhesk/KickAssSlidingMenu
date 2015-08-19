@@ -5,26 +5,26 @@
     <item
         android:id="@+id/main"
         android:orderInCategory="97"
-        android:title="@string/action_settings"
+        android:title="main"
         app:showAsAction="never" />
     <item
         android:id="@+id/hbstyle"
         android:orderInCategory="98"
-        android:title="@string/action_settings2"
+        android:title="HB style"
         app:showAsAction="never" />
     <item
         android:id="@+id/system"
         android:orderInCategory="99"
-        android:title="@string/action_settings3"
+        android:title="system tray"
         app:showAsAction="never" />
     <item
         android:id="@+id/profiletype"
         android:orderInCategory="100"
-        android:title="@string/action_settings4"
+        android:title="profile"
         app:showAsAction="never" />
     <item
         android:id="@+id/blocktset"
         android:orderInCategory="100"
-        android:title="@string/action_settings4"
+        android:title="scn block test"
         app:showAsAction="never" />
 </menu>
