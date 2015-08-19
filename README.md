@@ -1,5 +1,6 @@
 # BringItBackAdvanceSlidingMenu 
-[![maven](https://img.shields.io/github/tag/jjhesk/BringItBackAdvanceSlidingMenu.svg?label=maven)][23]![jitpack](https://img.shields.io/github/release/jjhesk/BringItBackAdvanceSlidingMenu.svg?label=JitPack)[![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg) ][21] [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)][24]
+
+[![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg)][23] [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)][24]
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-BringItBackAdvanceSlidingMenu-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/2099)[![Android Gems](http://www.android-gems.com/badge/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=master)](http://www.android-gems.com/lib/jjhesk/BringItBackAdvanceSlidingMenu)
 
 Master: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=master)][22]
@@ -87,11 +88,12 @@ repositories { maven {  url "https://jitpack.io"  }}
 dependencies { compile 'com.github.jjhesk:BringItBackAdvanceSlidingMenu:vX.XX'}
 ```
 ###Bintray Remote 
- ![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg) 
+[![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg)][23]
 ```gradle
 repositories { maven {  url "http://dl.bintray.com/jjhesk/maven"  }}
-dependencies { compile 'com.hkm.slidingmenulib:slidingmenulib:1.5.2'}
+dependencies { compile 'com.hkm.slidingmenulib:slidingmenulib:x.x.x'}
 ```
+Please see the version number.
 
 ###Thanks
 * Use sliding menu from  [SlidingMenu][26]
@@ -156,7 +158,7 @@ License
 [20]: https://play.google.com/store/apps/details?id=com.zappos.android
 [21]: https://bintray.com/jjhesk/maven/slidingmenulib/_latestVersion
 [22]: https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu
-[23]: https://jitpack.io/#jjhesk/BringItBackAdvanceSlidingMenu/
+[23]: https://bintray.com/jjhesk/maven/slidingmenulib/_latestVersion
 [24]: https://www.apache.org/licenses/LICENSE-2.0
 [25]: https://github.com/cymcsg/UltimateRecyclerView
 [26]: https://github.com/jfeinstein10/SlidingMenu
