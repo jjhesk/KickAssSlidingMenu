@@ -65,7 +65,6 @@
     </style>
 
 
-
     <style name="defaultShowTimeSlidingMenuTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!--   <item name="background">@drawable/actionbar_bg_hb_logo</item>-->
         <item name="indeterminateProgressStyle">@style/Widget.AppCompat.ProgressBar</item>

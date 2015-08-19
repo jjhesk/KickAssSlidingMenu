@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="homepageModernBar" parent="SlidingMenu.CustomActionBar.Light">
+    <style name="homepageModernBar" parent="defaultShowTimeSlidingMenuTheme">
         <item name="colorPrimary">@color/primary_pref</item>
         <item name="colorPrimaryDark">@color/second_pref</item>
         <item name="actionBarSize">48dp</item>

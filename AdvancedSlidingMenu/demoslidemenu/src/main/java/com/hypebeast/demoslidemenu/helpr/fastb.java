@@ -10,12 +10,14 @@ import android.support.v7.app.AppCompatActivity;
 import com.hypebeast.demoslidemenu.MainActivityDemo;
 import com.hypebeast.demoslidemenu.R;
 import com.hypebeast.demoslidemenu.demohb;
+import com.hypebeast.demoslidemenu.testblock;
 
 /**
  * Created by hesk on 10/7/15.
  */
 public enum fastb {
     main(R.id.main, MainActivityDemo.class),
+    blocktest(R.id.blocktset, testblock.class),
     hb(R.id.hbstyle, demohb.class),
     sys(R.id.system, MainActivityDemo.class),
     profile(R.id.profiletype, MainActivityDemo.class);

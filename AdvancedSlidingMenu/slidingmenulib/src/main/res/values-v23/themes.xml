@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MaterialNavigationDrawerTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="belowToolbar">false</item>
+        <item name="drawerColor">#111</item>
+        <item name="labelColor">#888888</item>
+
+        <item name="sectionStyle">@style/MaterialSectionTheme</item>
+        <!--<item name="subheaderStyle">@style/MaterialSubheaderTheme</item>-->
+
+        <item name="multipaneSupport">false</item>
+        <item name="autoDarkStatusBar">true</item>
+        <item name="actionBarOverlay">false</item>
+        <item name="actionBarOverlayAlpha">1.0</item>
+        <item name="drawerActionBarStyle">@null</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="defaultShowTimeSlidingMenuTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--   <item name="background">@drawable/actionbar_bg_hb_logo</item>-->
+        <item name="indeterminateProgressStyle">@style/Widget.AppCompat.ProgressBar</item>
+        <item name="elevation">0dp</item>
+        <item name="drawerColor">@color/bright_foreground_disabled_material_dark</item>
+        <item name="belowToolbar">false</item>
+        <item name="labelColor">#afafaf</item>
+        <item name="multipaneSupport">false</item>
+        <item name="autoDarkStatusBar">true</item>
+        <item name="actionBarOverlay">false</item>
+        <item name="actionBarOverlayAlpha">1.0</item>
+        <item name="drawerActionBarStyle">@null</item>
+        <item name="sectionStyle">@style/MaterialSectionTheme.Light</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="MaterialNavigationDrawerTheme.Light" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="belowToolbar">false</item>
+        <item name="drawerColor">#fafafa</item>
+        <item name="labelColor">#afafaf</item>
+
+        <item name="sectionStyle">@style/MaterialSectionTheme.Light</item>
+        <!--<item name="subheaderStyle">@style/MaterialSubheaderTheme.Light</item>-->
+
+        <item name="multipaneSupport">false</item>
+        <item name="autoDarkStatusBar">true</item>
+        <item name="actionBarOverlay">false</item>
+        <item name="actionBarOverlayAlpha">1.0</item>
+        <item name="drawerActionBarStyle">@null</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="MaterialNavigationDrawerTheme.Light.DarkActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="belowToolbar">false</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+
+        <item name="popupTheme">@style/Base.V21.Theme.AppCompat.Light.Dialog</item>
+        <item name="drawerColor">#fafafa</item>
+        <item name="labelColor">#afafaf</item>
+        <item name="sectionStyle">@style/MaterialSectionTheme.Light</item>
+        <!-- <item name="subheaderStyle">@style/MaterialSubheaderTheme.Light</item>-->
+
+        <item name="multipaneSupport">false</item>
+        <item name="autoDarkStatusBar">true</item>
+        <item name="actionBarOverlay">false</item>
+        <item name="actionBarOverlayAlpha">1.0</item>
+        <item name="drawerActionBarStyle">@null</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTranslucentNavigation">true</item>-->
+    </style>
+
+    <style name="MaterialNavigationDrawerTheme.Light.TranslucentKitKatStatusBar" parent="MaterialNavigationDrawerTheme.Light" />
+
+    <style name="MaterialNavigationDrawerTheme.TranslucentKitKatStatusBar" parent="MaterialNavigationDrawerTheme" />
+
+    <style name="MaterialNavigationDrawerTheme.Light.DarkActionBar.TranslucentKitKatStatusBar" parent="MaterialNavigationDrawerTheme.Light.DarkActionBar" />
+
+
+</resources>
