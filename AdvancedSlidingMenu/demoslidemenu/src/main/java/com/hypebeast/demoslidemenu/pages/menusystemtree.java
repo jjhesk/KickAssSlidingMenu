@@ -14,8 +14,6 @@ import java.util.List;
  * Created by hesk on 10/7/15.
  */
 public class menusystemtree extends treelist<ExpSystem, ExpandableItemData> {
-
-
     public static Bundle from(final int e) {
         final Bundle n = new Bundle();
         n.putInt(REQUEST_TYPE, e);

@@ -65,4 +65,12 @@ public class testblock extends SlidingAppCompactActivity<Fragment> {
             return true;
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
+
+
 }

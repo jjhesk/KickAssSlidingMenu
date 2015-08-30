@@ -8,8 +8,8 @@ android {
         applicationId "com.hkm.demoslidemenu"
         minSdkVersion 17
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "1.4"
     }
     buildTypes {
         release {

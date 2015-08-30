@@ -1,14 +1,8 @@
 <resources>
-
     <style name="homepageModernBar" parent="defaultShowTimeSlidingMenuTheme">
         <item name="colorPrimary">@color/primary_pref</item>
         <item name="colorPrimaryDark">@color/second_pref</item>
         <item name="actionBarSize">48dp</item>
     </style>
-
-    <style name="traditionalActionBar" parent="SlidingMenu.OldActionBar.Light">
-
-    </style>
-
-
+    <style name="traditionalActionBar" parent="SlidingMenu.OldActionBar.Light"/>
 </resources>
