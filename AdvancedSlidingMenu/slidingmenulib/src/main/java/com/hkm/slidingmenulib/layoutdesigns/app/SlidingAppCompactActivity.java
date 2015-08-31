@@ -1,10 +1,12 @@
 package com.hkm.slidingmenulib.layoutdesigns.app;
 
+import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
@@ -97,23 +99,29 @@ public abstract class SlidingAppCompactActivity<Frag> extends SlidingAppCompactA
         return -1;
     }
 
+    private Frag getOldFragment(Frag fragment, @IdRes int frame_location) throws Exception {
+        if (fragment instanceof Fragment) {
+            return (Frag) this.getFragmentManager().findFragmentById(frame_location);
+        } else if (fragment instanceof android.support.v4.app.Fragment) {
+            return (Frag) this.getSupportFragmentManager().findFragmentById(frame_location);
+        } else {
+            throw new Exception("The input fragment is not a valid Fragment. ");
+        }
+    }
+
     private void setRightSideFragment(Frag fragment, @Nullable Bundle savestate) {
         setBehindContentView(R.layout.menu_frame);
-
         try {
             if (savestate != null) {
-                final Frag oldfragment = (Frag) this.getFragmentManager().findFragmentById(R.id.menu_frame);
-                setPrimaryMenuFragment(fragment, oldfragment);
+                setPrimaryMenuFragment(fragment, getOldFragment(fragment, R.id.menu_frame));
             } else {
                 setPrimaryMenuFragment(fragment, null);
             }
-
         } catch (RuntimeException e) {
             Log.d("RIGHTSIDE", e.getMessage());
         } catch (Exception e) {
             Log.d("RIGHTSIDE", e.getMessage());
         }
-
     }
 
     protected void setUnblock() {
