@@ -22,30 +22,12 @@ I am bringing it back from the good old project sliding menu in the Android Stud
 - [x] simple tree list for expandable list item view - allows many customizations
 - [x] menu banners on the list recycler view - allows many customizations
 
+###v1.6.6
+- [x] add the transparent support on 5.1.1 Android
+
 ###v1.6.4
 - [x] add screen control that it will able to block the screen and its touch interactions
 
-###v1.6.3
-- [x] fixed lilpop 5.0 issue
-- [x] full screen and transparent nagivation and status bar configurations
-- [x] building blocks ready for easy fast implementation
-
-###v1.6.0
-- [x] newsfeed abstract for instance implementation
-- [x] catelog abstract for showing grid views of items
-- [x] simple tree list for expandable list item view - allows many customizations
-- [x] menu banners on the list recycler view - allows many customizations
-
-###v1.5.5
-- [x] precoded treeview fragment menu
-
-###v1.5.2
-- [x] slide in and slide out options
-- [x] building external fragment swapping support for both v4 and v13
-- [x] precoded fragment support templates
-- [x] precoded fragment menu
-- [x] profile view menu
-- [x] fully slacky support menu layout implementations and customizations
 
 ##Coding support
 Please visit out wiki page for more [tutorial informations][28]
