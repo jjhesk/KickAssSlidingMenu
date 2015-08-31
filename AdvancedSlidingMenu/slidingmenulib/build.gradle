@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 22
-        versionCode 46
-        versionName "1.5.5"
+        versionCode 47
+        versionName "1.5.6"
     }
     buildTypes {
         release {
@@ -29,7 +29,7 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.squareup.okhttp:okhttp:2.2.0'
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.2.0'
-    compile 'com.squareup.retrofit:retrofit:1.7.1'
+    compile 'com.squareup.retrofit:retrofit:2.0.0-beta1'
     compile 'com.sothree.slidinguppanel:library:3.0.0'
 }
 

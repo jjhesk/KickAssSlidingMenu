@@ -355,6 +355,37 @@ public class SlidingMenu extends RelativeLayout {
                     content.setBackgroundResource(background);
                 break;
         }
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
+            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+            // activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            // activity.getWindow().addFlags(WindowManager.LayoutParams.);
+            // activity.getWindow().setStatusBarColor(getResources().getColor(R.color.transparent));
+        }
+    }
+
+    private void hideStatusBar(Activity activity) {
+        WindowManager.LayoutParams attrs = activity.getWindow().getAttributes();
+        attrs.flags |= WindowManager.LayoutParams.FLAG_FULLSCREEN;
+        activity.getWindow().setAttributes(attrs);
+    }
+
+    private void showStatusBar(Activity activity) {
+        WindowManager.LayoutParams attrs = activity.getWindow().getAttributes();
+        attrs.flags &= ~WindowManager.LayoutParams.FLAG_FULLSCREEN;
+        activity.getWindow().setAttributes(attrs);
+    }
+
+    private void hideStatusBar2(Activity activity) {
+        activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
+    }
+
+    private void showStatusBar2(Activity activity) {
+        activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
     }
 
     /**
@@ -1085,7 +1116,6 @@ public class SlidingMenu extends RelativeLayout {
 
         return insets.consumeSystemWindowInsets();
     }*/
-
     private void setExtendPadding(Rect rect) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             WindowManager manager = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
@@ -1104,7 +1134,7 @@ public class SlidingMenu extends RelativeLayout {
             }
         }
 
-       // setPadding(rect.left, rect.top, rect.right, rect.bottom);
+        // setPadding(rect.left, rect.top, rect.right, rect.bottom);
     }
 
     private int getNavBarWidth() {
