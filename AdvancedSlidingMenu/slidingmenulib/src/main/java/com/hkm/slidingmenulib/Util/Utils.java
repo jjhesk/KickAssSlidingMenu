@@ -28,7 +28,7 @@ import java.io.File;
 
 public class Utils {
 
-    public static final int RESULTSINGLE = -10692;
+    public static final int RESULTSINGLE = 692;
 
     /**
      * start the single page with full route URL
