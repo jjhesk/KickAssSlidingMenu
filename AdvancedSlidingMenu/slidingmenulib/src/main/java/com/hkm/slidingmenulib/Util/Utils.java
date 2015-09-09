@@ -1,6 +1,7 @@
 package com.hkm.slidingmenulib.Util;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -27,6 +28,7 @@ import java.io.File;
 
 public class Utils {
 
+    public static final int RESULTSINGLE = -10692;
 
     /**
      * start the single page with full route URL
@@ -60,6 +62,40 @@ public class Utils {
         b.putLong(singleDetailPost.PID, pid);
         n.putExtras(b);
         ctx.startActivity(n);
+    }
+
+    /**
+     * start the route single in the page with result prompt as it is finished
+     *
+     * @param pid   Page ID
+     * @param ctx   the Context
+     * @param clazz the class name
+     * @param <T>   the generic type
+     */
+    public static <T extends singleDetailPost> void routeSinglePage(final long pid, final Activity ctx, final Class<T> clazz) {
+        Intent n = new Intent(ctx, clazz);
+        final Bundle b = new Bundle();
+        b.putInt(singleDetailPost.Method, singleDetailPost.REQUEST_METHOD_POST_ID);
+        b.putLong(singleDetailPost.PID, pid);
+        n.putExtras(b);
+        ctx.startActivityForResult(n, RESULTSINGLE);
+    }
+
+    /**
+     * start the route single in the page with result prompt as it is finished
+     *
+     * @param route the string in url
+     * @param ctx   the Context
+     * @param clazz the class name
+     * @param <T>   the generic type
+     */
+    public static <T extends singleDetailPost> void routeSinglePage(final String route, final Activity ctx, final Class<T> clazz) {
+        Intent n = new Intent(ctx, clazz);
+        final Bundle b = new Bundle();
+        b.putInt(singleDetailPost.Method, singleDetailPost.REQUEST_METHOD_FULL_URL);
+        b.putString(singleDetailPost.requestURL, route);
+        n.putExtras(b);
+        ctx.startActivityForResult(n, RESULTSINGLE);
     }
 
     public static int getDrawerWidth(Resources res, int ownDP) {
