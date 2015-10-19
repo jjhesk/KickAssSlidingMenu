@@ -5,4 +5,21 @@
     <color name="defaultactionbarColorDark">#ffcbcbcb</color>
     <color name="defaultactionbarColorThree">#ffcb4e41</color>
     <color name="hb_grey_light">#eee</color>
+    <color name="link_text_material_light">#94eeee</color>
+
+
+ <!--   <color name="background_material_light">#eee</color>
+    <color name="bright_foreground_material_light">#eee</color>
+    <color name="bright_foreground_material_dark">#eee</color>
+    <color name="abc_background_cache_hint_selector_material_light">#eee</color>
+    <color name="abc_primary_text_material_light">#eee</color>
+    <color name="abc_primary_text_material_dark">#eee</color>
+    <color name="abc_secondary_text_material_light">#eee</color>
+    <color name="abc_secondary_text_material_dark">#eee</color>
+    <color name="abc_primary_text_disable_only_material_light">#eee</color>
+    <color name="abc_primary_text_disable_only_material_dark">#eee</color>
+    <color name="hint_foreground_material_light">#eee</color>
+    <color name="hint_foreground_material_dark">#eee</color>
+    <color name="highlighted_text_material_light">#eee</color>
+    <color name="link_text_material_light">#eee</color>-->
 </resources>

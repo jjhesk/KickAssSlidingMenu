@@ -4,5 +4,5 @@
         <item name="colorPrimaryDark">@color/second_pref</item>
         <item name="actionBarSize">48dp</item>
     </style>
-    <style name="traditionalActionBar" parent="SlidingMenu.OldActionBar.Light"/>
+    <!--<style name="traditionalActionBar" parent="SlidingMenu.OldActionBar.Light"/>-->
 </resources>
