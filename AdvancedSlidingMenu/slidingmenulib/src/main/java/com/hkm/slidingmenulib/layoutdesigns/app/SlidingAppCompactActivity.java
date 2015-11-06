@@ -159,14 +159,19 @@ public abstract class SlidingAppCompactActivity<Frag> extends SlidingAppCompactA
 
 
     private void initToolBar(final @LayoutRes int resId) {
+        final Toolbar widgetToolBar = (Toolbar) findViewById(R.id.aslib_toolbar);
         try {
             if (BODY_LAYOUT.isToolbarOn(resId) || forceConfigureToolBar()) {
-                final Toolbar widgetToolBar = (Toolbar) findViewById(R.id.aslib_toolbar);
-                configToolBar(widgetToolBar);
-                setSupportActionBar(widgetToolBar);
+                if (widgetToolBar != null) {
+                    configToolBar(widgetToolBar);
+                    setSupportActionBar(widgetToolBar);
+                }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            if (forceConfigureToolBar() && widgetToolBar != null) {
+                //this will be using the custom layouts
+                configToolBar(widgetToolBar);
+            }
         }
     }
 

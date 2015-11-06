@@ -17,9 +17,10 @@
         </activity>
         <activity android:name=".demohb" />
         <activity android:name=".demosys" />
-        <activity android:name=".testblock">
+        <activity android:name=".testblock" />
+        <activity android:name=".CommonSingle" />
 
-        </activity>
+
     </application>
 
 </manifest>

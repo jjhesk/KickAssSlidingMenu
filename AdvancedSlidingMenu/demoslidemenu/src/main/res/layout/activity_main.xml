@@ -35,4 +35,13 @@
         android:layout_marginTop="150dp"
         android:text="Main Button Testing in here." />
 
+
+    <Button
+        android:id="@+id/openNewIntent"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/demo_main_tab"
+        android:layout_marginTop="150dp"
+        android:text="Now New Intent." />
+
 </RelativeLayout>

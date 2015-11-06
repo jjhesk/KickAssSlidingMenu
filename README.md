@@ -1,4 +1,4 @@
-# BringItBackAdvanceSlidingMenu 
+# BringItBackAdvanceSlidingMenu
 
 [![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg)][23] [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)][24]
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-BringItBackAdvanceSlidingMenu-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/2099)[![Android Gems](http://www.android-gems.com/badge/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=master)](http://www.android-gems.com/lib/jjhesk/BringItBackAdvanceSlidingMenu)
@@ -7,7 +7,7 @@ Master: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingM
 
 BranchV1: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=V1)][22]
 
-I am bringing it back from the good old project sliding menu in the Android Studio. It will be an alternative to the google promoted Drawer Layout. With tons of additional tools and precoded frameworks you can work on the things you want from the scatch. 
+I am bringing it back from the good old project sliding menu in the Android Studio. It will be an alternative to the google promoted Drawer Layout. With tons of additional tools and precoded frameworks you can work on the things you want from the scatch.
 
 ##Features
 - [x] slide in and slide out options
@@ -66,19 +66,23 @@ Supporting methods availabilities
 ## Installations
 Please check with supported repo mavens
 
+
+###Bintray Remote
+[![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg)][23]
+```gradle
+repositories { maven {  url "http://dl.bintray.com/jjhesk/maven"  }}
+dependencies { compile 'com.hkm.slidingmenulib:slidingmenulib:1.7.0'}
+```
+Please see the version number.
+
+
 ###jitpack remote
 [![maven](https://img.shields.io/github/tag/jjhesk/BringItBackAdvanceSlidingMenu.svg?label=maven)][23]
 ```gradle
 repositories { maven {  url "https://jitpack.io"  }}
 dependencies { compile 'com.github.jjhesk:BringItBackAdvanceSlidingMenu:vX.XX'}
 ```
-###Bintray Remote 
-[![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg)][23]
-```gradle
-repositories { maven {  url "http://dl.bintray.com/jjhesk/maven"  }}
-dependencies { compile 'com.hkm.slidingmenulib:slidingmenulib:x.x.x'}
-```
-Please see the version number.
+
 
 ###Thanks
 * Use sliding menu from  [SlidingMenu][26]

@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.hkm.slidingmenulib.R;
 import com.hkm.slidingmenulib.layoutdesigns.app.SlidingAppCompactActivity;
@@ -66,7 +67,17 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
         return true;
     }
 
+    protected boolean hasStatusBarPadding() {
+        return true;
+    }
+
     protected void initalizeOtherUI() {
+        if (!hasStatusBarPadding()) {
+            View hv = (View) findViewById(R.id.aslib_statusBar);
+            if (hv != null) {
+                hv.setVisibility(View.GONE);
+            }
+        }
     }
 
     protected abstract void loadPageWithFullURL(final String url);
