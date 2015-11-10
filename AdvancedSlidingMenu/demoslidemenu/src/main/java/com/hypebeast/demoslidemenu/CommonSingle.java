@@ -3,12 +3,14 @@ package com.hypebeast.demoslidemenu;
 import android.support.annotation.IdRes;
 
 import com.hkm.slidingmenulib.layoutdesigns.singleDetailPost;
+import com.hypebeast.demoslidemenu.pages.DemoFrag2;
+import com.hypebeast.demoslidemenu.pages.mainpageDemo;
 import com.hypebeast.demoslidemenu.pages.menusystemtree;
 
 /**
  * Created by hesk on 9/9/15.
  */
-public class CommonSingle extends singleDetailPost {
+public class CommonSingle extends singleDetailPost<DemoFrag2>{
     @Override
     protected void loadPageWithFullURL(String url) {
 
@@ -26,8 +28,8 @@ public class CommonSingle extends singleDetailPost {
      * @throws Exception the exception for the wrongs
      */
     @Override
-    protected menusystemtree getInitFragment() throws Exception {
-        return new menusystemtree();
+    protected DemoFrag2 getInitFragment() throws Exception {
+        return new DemoFrag2();
     }
 
     @Override

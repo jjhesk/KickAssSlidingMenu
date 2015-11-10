@@ -90,8 +90,16 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
      * @param v7 Toolbar object
      */
     protected void configToolBar(final Toolbar v7) {
-        v7.setTitle(getTitle());
+        classicToolbarConfig(v7);
     }
+
+    protected void classicToolbarConfig(final Toolbar v7) {
+        v7.setTitle(getTitle());
+        setSupportActionBar(v7);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+    }
+
 
     /**
      * init the tool bar configuration
@@ -99,21 +107,14 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
      * @param resId the location of the tool bar id
      */
     private void initToolBar(final @LayoutRes int resId) {
-        try {
-            if (SlidingAppCompactActivity.BODY_LAYOUT.isToolbarOn(resId) || forceConfigureToolBar()) {
-                final Toolbar widgetToolBar = (Toolbar) findViewById(R.id.aslib_toolbar);
-                tb = widgetToolBar;
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    widgetToolBar.setElevation(0f);
-                }
-                configToolBar(widgetToolBar);
-                setSupportActionBar(widgetToolBar);
-                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-                getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        final Toolbar widgetToolBar = (Toolbar) findViewById(R.id.aslib_toolbar);
+        if (widgetToolBar != null) {
+            //toolbar is found
+            configToolBar(widgetToolBar);
         }
+        //  if (SlidingAppCompactActivity.BODY_LAYOUT.isToolbarOn(resId) || forceConfigureToolBar()) {
+        // }
+
     }
 
 
@@ -207,6 +208,7 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
     /**
      * @return when @link{getDefaultMainActivityLayoutId} is using user specified layout and such layout contains custom action bar or custom action tool bar then this function must return TRUE to enable the configuration of the tool bar
      */
+    @Deprecated
     protected boolean forceConfigureToolBar() {
         return false;
     }
@@ -270,11 +272,5 @@ public abstract class singleDetailPost<Frag> extends AppCompatActivity implement
         //  killwebview(mVideo);
         super.finish();
     }
-
-    @Override
-    protected void onResume() {
-        super.onPause();
-        // if (mVideo.getVisibility() == View.VISIBLE)
-        //  mVideo.onResume();
-    }
+    
 }

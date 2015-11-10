@@ -24,7 +24,7 @@ public class TreeList {
     public final static String TAG = "TreeList";
 
     /**
-     * 根据路径获取子目录或文件
+     * retrieve the directory list from the system path
      *
      * @param path      path
      * @param treeDepth treedepth

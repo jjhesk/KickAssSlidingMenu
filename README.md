@@ -3,9 +3,6 @@
 [![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg)][23] [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)][24]
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-BringItBackAdvanceSlidingMenu-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/2099)[![Android Gems](http://www.android-gems.com/badge/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=master)](http://www.android-gems.com/lib/jjhesk/BringItBackAdvanceSlidingMenu)
 
-Master: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=master)][22]
-
-BranchV1: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=V1)][22]
 
 I am bringing it back from the good old project sliding menu in the Android Studio. It will be an alternative to the google promoted Drawer Layout. With tons of additional tools and precoded frameworks you can work on the things you want from the scatch.
 
@@ -21,12 +18,6 @@ I am bringing it back from the good old project sliding menu in the Android Stud
 - [x] catelog abstract for showing grid views of items
 - [x] simple tree list for expandable list item view - allows many customizations
 - [x] menu banners on the list recycler view - allows many customizations
-
-###v1.6.6
-- [x] add the transparent support on 5.1.1 Android
-
-###v1.6.4
-- [x] add screen control that it will able to block the screen and its touch interactions
 
 
 ##Coding support
@@ -71,7 +62,7 @@ Please check with supported repo mavens
 [![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg)][23]
 ```gradle
 repositories { maven {  url "http://dl.bintray.com/jjhesk/maven"  }}
-dependencies { compile 'com.hkm.slidingmenulib:slidingmenulib:1.7.0'}
+dependencies { compile 'com.hkm.slidingmenulib:slidingmenulib:1.7.7'}
 ```
 Please see the version number.
 
@@ -82,6 +73,10 @@ Please see the version number.
 repositories { maven {  url "https://jitpack.io"  }}
 dependencies { compile 'com.github.jjhesk:BringItBackAdvanceSlidingMenu:vX.XX'}
 ```
+
+Master: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=master)][22]
+
+BranchV1: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=V1)][22]
 
 
 ###Thanks

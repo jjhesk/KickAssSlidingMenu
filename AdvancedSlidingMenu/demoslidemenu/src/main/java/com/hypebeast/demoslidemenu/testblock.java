@@ -7,7 +7,6 @@ import com.hkm.slidingmenulib.gestured.SlidingMenu;
 import com.hkm.slidingmenulib.layoutdesigns.app.SlidingAppCompactActivity;
 import com.hypebeast.demoslidemenu.helpr.fastb;
 import com.hypebeast.demoslidemenu.pages.mainpageDemo;
-import com.hypebeast.demoslidemenu.pages.menupageDemo;
 
 
 public class testblock extends SlidingAppCompactActivity<Fragment> {
