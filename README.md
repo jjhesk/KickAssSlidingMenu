@@ -47,8 +47,8 @@ Supporting methods availabilities
 ###ScreenShots
 [![Android Gems](http://www.android-gems.com/badge/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=master)](http://www.android-gems.com/lib/jjhesk/BringItBackAdvanceSlidingMenu)
 
-![scn1](scn/device-2015-06-30-110654.png)
 
+<img src="scn/device-2015-06-30-110654.png" width="300px"/>
 ![Example application looks on phone][29]
 ![Example application looks on phone][31]
 ![Example application looks on tablet][30]
