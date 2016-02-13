@@ -12,8 +12,6 @@ import android.view.ViewGroup;
 
 import com.hkm.slidingmenulib.R;
 import com.hkm.slidingmenulib.menucontent.sectionPlate.touchItems.easyAdapter;
-import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
-import com.marshalchen.ultimaterecyclerview.UltimateRecyclerviewViewHolder;
 import com.squareup.picasso.Picasso;
 
 /**

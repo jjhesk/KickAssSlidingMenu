@@ -3,7 +3,6 @@ package com.hkm.slidingmenulib.layoutdesigns.fragment;
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +10,6 @@ import android.view.ViewGroup;
 
 import com.hkm.slidingmenulib.R;
 import com.hkm.slidingmenulib.menucontent.sectionPlate.touchItems.easyAdapter;
-import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
-import com.marshalchen.ultimaterecyclerview.UltimateRecyclerviewViewHolder;
-import com.marshalchen.ultimaterecyclerview.Utils.ScrollSmoothLineaerLayoutManager;
 import com.squareup.picasso.Picasso;
 
 /**

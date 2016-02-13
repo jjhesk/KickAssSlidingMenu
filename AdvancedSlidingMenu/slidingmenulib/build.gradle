@@ -17,24 +17,8 @@ android {
         }
     }
 }
-repositories {
-    maven { url 'https://dl.bintray.com/jjhesk/maven/' }
-    flatDir {
-        dirs 'libs'
-    }
-}
-fileTree(dir: 'libs', include: '**/*.aar')
-        .each { File file ->
-    dependencies.add("compile", [name: file.name.lastIndexOf('.').with {
-        it != -1 ? file.name[0..<it] : file.name
-    }, ext                           : 'aar'])
-}
 
 dependencies {
-    //https://www.numetriclabz.com/distribute-android-library-through-jcenter-from-android-studio/
-    //compile (name: 'ultimaterecyclerview', ext: 'aar')
-    // compile files('com.ultimaterecyclerview-release.aar')
-    // compile 'com.marshalchen.ultimaterecyclerview:library:0.4.0@aar'
     compile 'com.android.support:support-annotations:23.1.1'
     compile 'com.android.support:support-v13:23.1.1'
     compile 'com.android.support:appcompat-v7:23.1.1'
@@ -42,7 +26,8 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.2.0'
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.2.0'
     compile 'com.sothree.slidinguppanel:library:3.0.0'
+    compile 'com.marshalchen.ultimaterecyclerview:library:0.4.0'
 }
 
 //apply from: './gradle-mvn-push.gradle'
-apply from: './br.gradle'
+//apply from: './br.gradle'

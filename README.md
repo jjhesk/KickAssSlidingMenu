@@ -59,13 +59,15 @@ Please check with supported repo mavens
 
 
 ###Bintray Remote
+JCenter is the place to find and share popular Apache Maven packages for use by Maven, Gradle, Ivy, SBT, etc. 
+For the most comprehensive collection of artifacts, point your Maven at: `http://jcenter.bintray.com` 
+
 [![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg)][23]
 ```gradle
-repositories { maven {  url "http://dl.bintray.com/jjhesk/maven"  }}
 dependencies { compile 'com.hkm.slidingmenulib:slidingmenulib:1.7.7'}
 ```
-Please see the version number.
 
+Please see the version number.
 
 ###jitpack remote
 [![maven](https://img.shields.io/github/tag/jjhesk/BringItBackAdvanceSlidingMenu.svg?label=maven)][23]

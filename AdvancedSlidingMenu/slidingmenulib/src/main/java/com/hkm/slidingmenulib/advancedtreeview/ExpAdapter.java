@@ -1,28 +1,24 @@
 package com.hkm.slidingmenulib.advancedtreeview;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
 import android.support.annotation.LayoutRes;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.hkm.slidingmenulib.advancedtreeview.customizationbase.child;
 import com.hkm.slidingmenulib.advancedtreeview.customizationbase.parent;
-import com.hkm.slidingmenulib.advancedtreeview.presnt.slack.Parent;
-import com.hkm.slidingmenulib.advancedtreeview.presnt.system.ParentViewHolder;
-import com.hkm.slidingmenulib.advancedtreeview.presnt.system.ChildViewHolder;
-import com.marshalchen.ultimaterecyclerview.UltimateViewAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Author Zheng Haibo fixed and enhanced by jjHesk 2015
  * PersonalWebsite http://www.mobctrl.net
  * Description the constructor of the expandable adapter
  */
-public abstract class ExpAdapter<T extends ExpandableItemData, G extends parent<T>, H extends child<T>> extends UltimateViewAdapter {
+public abstract class ExpAdapter<T extends ExpandableItemData, G extends parent<T>, H extends child<T>>
+        extends UltimateViewAdapter {
 
     public class ExpandableViewTypes extends VIEW_TYPES {
 
