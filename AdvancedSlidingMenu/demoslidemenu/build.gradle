@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '23.0.1'
+    buildToolsVersion '23.0.2'
 
     defaultConfig {
         applicationId "com.hkm.demoslidemenu"
         minSdkVersion 17
-        targetSdkVersion 22
+        targetSdkVersion 23
         versionCode 4
         versionName "1.4"
     }
@@ -20,9 +20,9 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:support-annotations:23.0.1'
-    compile 'com.android.support:support-v13:23.0.1'
-    compile 'com.android.support:appcompat-v7:23.0.1'
-    compile project(':slidingmenulib')
+   // compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:support-annotations:23.1.1'
+    compile 'com.android.support:support-v13:23.1.1'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile project(':kickmenu')
 }

@@ -1,1 +1,1 @@
-include ':slidingmenulib', ':demoslidemenu'
+include ':kickmenu' , ':demoslidemenu'

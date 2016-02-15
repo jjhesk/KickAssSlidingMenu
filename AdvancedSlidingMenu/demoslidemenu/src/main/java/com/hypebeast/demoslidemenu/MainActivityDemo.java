@@ -5,13 +5,9 @@ import android.view.MenuItem;
 
 import com.hkm.slidingmenulib.gestured.SlidingMenu;
 import com.hkm.slidingmenulib.layoutdesigns.app.SlidingAppCompactActivity;
-import com.hkm.slidingmenulib.menucontent.LAYOUT_DRAWER;
 import com.hypebeast.demoslidemenu.helpr.fastb;
-import com.hypebeast.demoslidemenu.pages.SubItem;
-import com.hypebeast.demoslidemenu.pages.mainpageDemo;
-import com.hypebeast.demoslidemenu.pages.menupageDemo;
-
-import java.util.List;
+import com.hypebeast.demoslidemenu.content.mainpageDemo;
+import com.hypebeast.demoslidemenu.content.menupageDemo;
 
 
 public class MainActivityDemo extends SlidingAppCompactActivity<Fragment> {

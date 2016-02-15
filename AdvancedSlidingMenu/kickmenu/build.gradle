@@ -1,0 +1,16 @@
+apply plugin: 'com.android.library'
+apply from: 'setup.gradle'
+
+dependencies {
+   // compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:support-annotations:23.1.1'
+    compile 'com.android.support:support-v13:23.1.1'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.squareup.okhttp:okhttp:2.2.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.2.0'
+    compile 'com.sothree.slidinguppanel:library:3.0.0'
+    compile 'com.marshalchen.ultimaterecyclerview:library:0.4.0'
+}
+apply from: 'br.gradle'
