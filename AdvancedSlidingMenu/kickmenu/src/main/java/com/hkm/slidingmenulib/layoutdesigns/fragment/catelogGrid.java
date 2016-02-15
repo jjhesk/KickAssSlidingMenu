@@ -15,14 +15,13 @@ import android.view.ViewGroup;
 import com.hkm.slidingmenulib.R;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerviewViewHolder;
-import com.marshalchen.ultimaterecyclerview.uiUtils.ScrollSmoothLineaerLayoutManager;
-import com.squareup.picasso.Picasso;
 import com.marshalchen.ultimaterecyclerview.quickAdapter.easyRegularAdapter;
+import com.squareup.picasso.Picasso;
 
 /**
- * Created by hesk on 30/6/15.
+ * Created by hesk on 15/2/16.
  */
-public abstract class catelogLinear<adapter extends easyRegularAdapter, binder extends UltimateRecyclerviewViewHolder> extends paginator {
+public abstract class catelogGrid<adapter extends easyRegularAdapter, binder extends UltimateRecyclerviewViewHolder> extends paginator {
     public static String TAG = "catelog";
     public final static String BRAND_NAME = "BrandName", SLUG = "slug", REQUEST_TYPE = "typerequest";
     public UltimateRecyclerView listview_layout;
@@ -82,7 +81,7 @@ public abstract class catelogLinear<adapter extends easyRegularAdapter, binder e
      */
     protected abstract void loadDataInitial(final adapter confirmAdapter);
 
-    protected LinearLayoutManager mLayoutManager;
+    protected GridLayoutManager mLayoutManager;
     protected adapter madapter;
 
 
@@ -95,13 +94,9 @@ public abstract class catelogLinear<adapter extends easyRegularAdapter, binder e
         getProgressbar(view);
         setUltimateRecyclerViewExtra(listview_layout, madapter);
         if (mLayoutManager == null) {
-            mLayoutManager = new ScrollSmoothLineaerLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false, getSmoothDuration());
+            mLayoutManager = new GridLayoutManager(view.getContext(), getColumn(), LinearLayoutManager.VERTICAL, false);
         }
         listview_layout.setLayoutManager(mLayoutManager);
-    }
-
-    protected int getSmoothDuration() {
-        return 300;
     }
 
 
@@ -121,6 +116,5 @@ public abstract class catelogLinear<adapter extends easyRegularAdapter, binder e
         }
 
     }
-
 
 }
