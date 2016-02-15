@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AdvancedSlidingMenu.iml" filepath="$PROJECT_DIR$/AdvancedSlidingMenu.iml" />
       <module fileurl="file://$PROJECT_DIR$/demoslidemenu/demoslidemenu.iml" filepath="$PROJECT_DIR$/demoslidemenu/demoslidemenu.iml" />
-      <module fileurl="file://$PROJECT_DIR$/slidingmenulib/slidingmenulib.iml" filepath="$PROJECT_DIR$/slidingmenulib/slidingmenulib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kickmenu/kickmenu.iml" filepath="$PROJECT_DIR$/kickmenu/kickmenu.iml" />
     </modules>
   </component>
 </project>

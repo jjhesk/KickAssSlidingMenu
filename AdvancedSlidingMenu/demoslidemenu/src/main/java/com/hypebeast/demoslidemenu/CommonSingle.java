@@ -3,9 +3,7 @@ package com.hypebeast.demoslidemenu;
 import android.support.annotation.IdRes;
 
 import com.hkm.slidingmenulib.layoutdesigns.singleDetailPost;
-import com.hypebeast.demoslidemenu.pages.DemoFrag2;
-import com.hypebeast.demoslidemenu.pages.mainpageDemo;
-import com.hypebeast.demoslidemenu.pages.menusystemtree;
+import com.hypebeast.demoslidemenu.content.DemoFrag2;
 
 /**
  * Created by hesk on 9/9/15.

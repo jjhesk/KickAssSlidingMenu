@@ -4,9 +4,8 @@ import android.app.Fragment;
 
 import com.hkm.slidingmenulib.gestured.SlidingMenu;
 import com.hkm.slidingmenulib.layoutdesigns.app.SlidingAppCompactActivity;
-import com.hypebeast.demoslidemenu.pages.mainpageDemo;
-import com.hypebeast.demoslidemenu.pages.menupageDemo;
-import com.hypebeast.demoslidemenu.pages.treemenu;
+import com.hypebeast.demoslidemenu.content.mainpageDemo;
+import com.hypebeast.demoslidemenu.content.treemenu;
 
 /**
  * Created by hesk on 10/7/15.
