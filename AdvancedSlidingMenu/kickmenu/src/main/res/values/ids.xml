@@ -13,4 +13,35 @@
     <item name="exp_section_ripple_wrapper_click" type="id" />
     <item name="exp_section_adjustment_layout" type="id" />
     <item name="sys_image_icon" type="id" />
+
+    <item name="lylib_main_screen" type="id" />
+    <item name="lylib_toolbar" type="id" />
+    <item name="lylib_toolbar_stub" type="id" />
+    <item name="lylib_statusBar" type="id" />
+    <item name="lylib_main_frame_body" type="id" />
+    <item name="lylib_main_frame_body_secondary" type="id" />
+    <item name="lylib_bottom_frame_menu" type="id" />
+    <item name="lylib_main_viewpager" type="id" />
+    <item name="lylib_dragview" type="id" />
+    <item name="lylib_sliding_layout" type="id" />
+    <!--SmartTabLayout || HKM tab-->
+    <item name="lylib_bottom_tab_smart_layout" type="id" />
+    <!--SlideUp holder-->
+    <item name="lylib_hidden_panel" type="id" />
+    <item name="lylib_bottom_fragment_holder_framelayout" type="id" />
+    <item name="lylib_ui_loading_progress_bottom_up_frame" type="id" />
+    <item name="lylib_ui_loading_circle" type="id" />
+    <item name="lylib_list_uv" type="id" />
+    <item name="lylib_before" type="id" />
+    <item name="lylib_after" type="id" />
+    <item name="lylib_menu_container" type="id" />
+    <!--Main Bottom Tab-->
+    <item name="lylib_main_bottom_tab_icon" type="id" />
+    <item name="lylib_main_bottom_tab_text" type="id" />
+    <!-- the root frame is now on -->
+    <item name="lylib_root_frame" type="id" />
+    <item name="lylib_root_swappable_frame" type="id" />
+    <!-- search engine component-->
+    <item name="lylib_search_view" type="id" />
+
 </resources>
