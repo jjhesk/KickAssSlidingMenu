@@ -1,7 +1,6 @@
 package com.hkm.slidingmenulib.layoutdesigns.fragment;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -12,19 +11,17 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 
 import com.hkm.slidingmenulib.R;
-import com.hkm.slidingmenulib.menucontent.sectionPlate.touchItems.easyAdapter;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerviewViewHolder;
 import com.squareup.picasso.Picasso;
-
+import com.marshalchen.ultimaterecyclerview.quickAdapter.easyRegularAdapter;
 
 /**
  * Created by hesk on 30/6/15.
  */
-public abstract class catelogLinear<adapter extends easyAdapter, binder extends UltimateRecyclerviewViewHolder> extends paginator {
+public abstract class catelogLinear<adapter extends easyRegularAdapter, binder extends UltimateRecyclerviewViewHolder> extends paginator {
     public static String TAG = "catelog";
     public final static String BRAND_NAME = "BrandName", SLUG = "slug", REQUEST_TYPE = "typerequest";
     public UltimateRecyclerView listview_layout;
@@ -58,6 +55,8 @@ public abstract class catelogLinear<adapter extends easyAdapter, binder extends 
     protected abstract int getFragmentResId();
 
     protected abstract void onClickItem(final String route);
+
+    protected abstract void onClickItem(final long route_id);
 
     protected abstract int getColumn();
 
