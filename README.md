@@ -1,4 +1,4 @@
-# BringItBackAdvanceSlidingMenu
+# BringItBackAdvanceSlidingMenu is now KickAssSlidingMenu
 
 [![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg)][23] [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)][24]
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-BringItBackAdvanceSlidingMenu-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/2099)[![Android Gems](http://www.android-gems.com/badge/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=master)](http://www.android-gems.com/lib/jjhesk/BringItBackAdvanceSlidingMenu)
