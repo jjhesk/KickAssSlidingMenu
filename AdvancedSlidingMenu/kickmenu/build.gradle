@@ -11,6 +11,7 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.2.0'
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.2.0'
     compile 'com.sothree.slidinguppanel:library:3.0.0'
-    compile 'com.marshalchen.ultimaterecyclerview:library:0.4.0'
+    //compile 'com.marshalchen.ultimaterecyclerview:library:0.4.0'
+    compile project(':URview')
 }
 apply from: 'br.gradle'

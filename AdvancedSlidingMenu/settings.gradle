@@ -1,1 +1,1 @@
-include ':kickmenu' , ':demoslidemenu'
+include ':kickmenu', ':demoslidemenu', ':URview'
