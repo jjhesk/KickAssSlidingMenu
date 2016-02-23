@@ -4,8 +4,8 @@ import android.app.Fragment;
 
 import com.hkm.slidingmenulib.gestured.SlidingMenu;
 import com.hkm.slidingmenulib.layoutdesigns.app.SlidingAppCompactActivity;
+import com.hypebeast.demoslidemenu.content.expandablemenu.MenuFragment;
 import com.hypebeast.demoslidemenu.content.mainpageDemo;
-import com.hypebeast.demoslidemenu.content.treesystem;
 
 /**
  * Created by hesk on 10/7/15.
@@ -18,8 +18,8 @@ public class demosys extends SlidingAppCompactActivity<Fragment> {
     }
 
     @Override
-    protected treesystem getFirstMenuFragment() {
-        return new treesystem();
+    protected MenuFragment getFirstMenuFragment() {
+        return new MenuFragment();
     }
 
 

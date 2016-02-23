@@ -25,4 +25,5 @@ dependencies {
     compile 'com.android.support:support-v13:23.1.1'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile project(':kickmenu')
+
 }

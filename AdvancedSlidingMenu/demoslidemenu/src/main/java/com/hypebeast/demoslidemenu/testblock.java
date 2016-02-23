@@ -5,7 +5,7 @@ import android.view.MenuItem;
 
 import com.hkm.slidingmenulib.gestured.SlidingMenu;
 import com.hkm.slidingmenulib.layoutdesigns.app.SlidingAppCompactActivity;
-import com.hypebeast.demoslidemenu.helpr.fastb;
+import com.hypebeast.demoslidemenu.helpr.structurebind;
 import com.hypebeast.demoslidemenu.content.mainpageDemo;
 
 
@@ -57,7 +57,7 @@ public class testblock extends SlidingAppCompactActivity<Fragment> {
                 setBlockEnableWithColor(R.color.block_color);
             }
 
-            fastb.startfromSelectionMenu(t, this, null);
+            structurebind.startfromSelectionMenu(t, this, null);
             return super.onOptionsItemSelected(item);
         } else {
             toggle();

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AdvancedSlidingMenu.iml" filepath="$PROJECT_DIR$/AdvancedSlidingMenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/URview/URview.iml" filepath="$PROJECT_DIR$/URview/URview.iml" />
       <module fileurl="file://$PROJECT_DIR$/demoslidemenu/demoslidemenu.iml" filepath="$PROJECT_DIR$/demoslidemenu/demoslidemenu.iml" />
       <module fileurl="file://$PROJECT_DIR$/kickmenu/kickmenu.iml" filepath="$PROJECT_DIR$/kickmenu/kickmenu.iml" />
     </modules>

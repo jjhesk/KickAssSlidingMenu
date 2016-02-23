@@ -24,6 +24,7 @@ import com.hkm.slidingmenulib.menucontent.ImaterialBinder;
 import com.marshalchen.ultimaterecyclerview.CustomLinearLayoutManager;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerviewViewHolder;
+import com.marshalchen.ultimaterecyclerview.quickAdapter.easyRegularAdapter;
 
 import java.util.List;
 
@@ -41,6 +42,9 @@ public class MaterialListSection<TD, CustomTextView extends TextView, RenderBind
     private View mContainer;
     private int mContainerOriginalHeight, itemcounts, bottomNavigationHeight;
     private LockableScrollView scrollcontainer;
+    private int DURATION = 900;
+    private ValueAnimator anim;
+
 
     public MaterialListSection() {
         mstatusShown = false;
@@ -121,8 +125,6 @@ public class MaterialListSection<TD, CustomTextView extends TextView, RenderBind
         return this;
     }
 
-    private int DURATION = 900;
-    private ValueAnimator anim;
 
     private void animateIndicator(final boolean open) {
         if (animate_indicator) {
@@ -200,7 +202,7 @@ public class MaterialListSection<TD, CustomTextView extends TextView, RenderBind
         anim.start();
     }
 
-    public static class RenderViewBindAdapter<TD> extends easyAdapter<TD, RowBinder> {
+    public static class RenderViewBindAdapter<TD> extends easyRegularAdapter<TD, RowBinder> {
 
         public static RenderViewBindAdapter newInstance(List<?> list) {
             return new RenderViewBindAdapter(list);
@@ -240,24 +242,4 @@ public class MaterialListSection<TD, CustomTextView extends TextView, RenderBind
 
     }
 
-    public static class RowBinder extends UltimateRecyclerviewViewHolder {
-        public TextView text;
-        public RelativeLayout section_relative_layout;
-
-        public RowBinder(View itemView) {
-            super(itemView);
-            text = (TextView) itemView.findViewById(R.id.section_text);
-            section_relative_layout = (RelativeLayout) itemView.findViewById(R.id.section_relative_layout);
-        }
-
-        public void setOnSelectItem(final int position) {
-            section_relative_layout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.d(TAG, "touch on position:" + position);
-                }
-            });
-        }
-
-    }
 }
