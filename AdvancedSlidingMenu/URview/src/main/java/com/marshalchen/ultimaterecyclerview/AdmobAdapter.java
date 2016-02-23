@@ -5,13 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.marshalchen.ultimaterecyclerview.quickAdapter.easyRegularAdapter;
+
 import java.util.List;
 
 /**
  * Enhanced Google Admob implementation
  * Created by hesk on 20/5/15.
  */
-public abstract class AdmobAdapter<Adv extends ViewGroup, T, V extends UltimateRecyclerviewViewHolder> extends UltimateViewAdapter<UltimateRecyclerviewViewHolder> {
+public abstract class AdmobAdapter<Adv extends ViewGroup, T, V extends UltimateRecyclerviewViewHolder> extends easyRegularAdapter<T, V> {
     public interface AdviewListener<Adv extends ViewGroup> {
         Adv onGenerateAdview();
     }
@@ -25,7 +27,6 @@ public abstract class AdmobAdapter<Adv extends ViewGroup, T, V extends UltimateR
      * The ad is only insert once and no more.
      */
     protected boolean once;
-    protected List<T> list;
     protected AdviewListener adviewlistener;
 
     public static final int POSITION_ON_AD = -1;
@@ -55,6 +56,7 @@ public abstract class AdmobAdapter<Adv extends ViewGroup, T, V extends UltimateR
      * @param listener    The listener for the admob cell to reveal when the cell is close to appear on the screen
      */
     public AdmobAdapter(Adv adview, boolean insertOnce, int setInterval, List<T> L, AdviewListener listener) {
+        super(L);
         advertise_view = adview;
         // setHasStableIds(true);
 
@@ -69,14 +71,6 @@ public abstract class AdmobAdapter<Adv extends ViewGroup, T, V extends UltimateR
 
         once = insertOnce;
         adfrequency = setInterval + 1;
-        /*  registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
-            @Override
-            public void onChanged() {
-                super.onChanged();
-                notifyDataSetChanged();
-            }
-        });*/
-        list = L;
     }
 
     /**
@@ -136,7 +130,7 @@ public abstract class AdmobAdapter<Adv extends ViewGroup, T, V extends UltimateR
             }
             return adview_holder;
         } else {
-            return super.onCreateViewHolder(parent, viewType);
+            return (UltimateRecyclerviewViewHolder) super.onCreateViewHolder(parent, viewType);
         }
     }
 
@@ -159,16 +153,6 @@ public abstract class AdmobAdapter<Adv extends ViewGroup, T, V extends UltimateR
     }*/
 
     /**
-     * Returns the number of items in the adapter bound to the parent RecyclerView.
-     *
-     * @return The number of items in the bound adapter
-     */
-    @Override
-    public int getAdapterItemCount() {
-        return list.size();
-    }
-
-    /**
      * get the display item count
      *
      * @return the final items for display
@@ -189,51 +173,6 @@ public abstract class AdmobAdapter<Adv extends ViewGroup, T, V extends UltimateR
         }
     }
 
-    public void insert(List<T> new_data) {
-        insertInternal(new_data, list);
-    }
-
-    public void removeAll() {
-        clearInternal(list);
-    }
-
-    public void insertFirst(T item) {
-        insertFirstInternal(list, item);
-    }
-
-    public void insertLast(T item) {
-        insertLastInternal(list, item);
-    }
-
-    public void removeLast() {
-        removeLastInternal(list);
-    }
-
-    public void removeFirst() {
-        removeFirstInternal(list);
-    }
-
-    public void removeAt(int position) {
-        removeInternal(list, position);
-    }
-
-   /* @Override
-
-    public final <T> void insert(final List<T> list, final T object, final int first_insert_data_pos) {
-        try {
-            list.add(first_insert_data_pos, object);
-            final int offset = getReverseDataArrayPosition(first_insert_data_pos);
-            if (isOnAdView(offset) && first_insert_data_pos > 0) {
-                notifyItemRangeChanged(offset, offset + 1);
-            } else {
-                notifyItemInserted(offset);
-            }
-        } catch (ArrayIndexOutOfBoundsException e) {
-            Log.d("admobErrorMr3", e.getMessage());
-        } catch (IndexOutOfBoundsException e) {
-            Log.d("admobErrorMr3", e.getMessage());
-        }
-    }*/
 
     /**
      * to insert data with a new list
@@ -312,8 +251,8 @@ public abstract class AdmobAdapter<Adv extends ViewGroup, T, V extends UltimateR
     }
 
 
-    protected T getItem(int pos) {
-        return list.get(getDataArrayPosition(pos));
+    protected T getTouchItemPosToDataPos(int pos) {
+        return getItem(getDataArrayPosition(pos));
     }
 
     /**

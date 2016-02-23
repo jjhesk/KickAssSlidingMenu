@@ -81,12 +81,12 @@ public abstract class catelogLinear<adapter extends easyRegularAdapter, binder e
         listview_layout = (UltimateRecyclerView) view.findViewById(getUltimate_recycler_viewResId());
         listview_layout.setHasFixedSize(true);
         listview_layout.setSaveEnabled(true);
-        listview_layout.setAdapter(madapter = getAdatperWithdata());
+
         if (mLayoutManager == null) {
             mLayoutManager = new ScrollSmoothLineaerLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false, getSmoothDuration());
         }
         listview_layout.setLayoutManager(mLayoutManager);
-        getProgressbar(view, R.id.urv_main_progress_bar);
+        listview_layout.setAdapter(madapter = getAdatperWithdata());
         setUltimateRecyclerViewExtra(listview_layout, madapter);
     }
 
