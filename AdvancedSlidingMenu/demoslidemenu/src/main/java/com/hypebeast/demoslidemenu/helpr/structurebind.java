@@ -15,7 +15,7 @@ import com.hypebeast.demoslidemenu.testblock;
 /**
  * Created by hesk on 10/7/15.
  */
-public enum fastb {
+public enum structurebind {
     main(R.id.main, MainActivityDemo.class),
     blocktest(R.id.blocktset, testblock.class),
     hb(R.id.hbstyle, demohb.class),
@@ -24,7 +24,7 @@ public enum fastb {
     private final Class<? extends AppCompatActivity> internalClazz;
     private final int menu_id;
 
-    fastb(final @IdRes int menuid, final Class<? extends AppCompatActivity> triggerclassname) {
+    structurebind(final @IdRes int menuid, final Class<? extends AppCompatActivity> triggerclassname) {
         this.internalClazz = triggerclassname;
         this.menu_id = menuid;
     }
@@ -38,9 +38,9 @@ public enum fastb {
     }
 
     public static void startfromSelectionMenu(final @IdRes int menuID, final Context mcontext, @Nullable final Bundle mbundle) {
-        final int g = fastb.values().length;
+        final int g = structurebind.values().length;
         for (int i = 0; i < g; i++) {
-            fastb bind = fastb.values()[i];
+            structurebind bind = structurebind.values()[i];
             if (bind.getId() == menuID) {
                 if (mbundle != null) {
                     bind.newapp(mcontext, mbundle);

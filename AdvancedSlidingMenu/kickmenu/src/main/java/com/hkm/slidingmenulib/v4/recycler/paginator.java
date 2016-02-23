@@ -1,10 +1,11 @@
-package com.hkm.slidingmenulib.layoutdesigns.fragment;
+package com.hkm.slidingmenulib.v4.recycler;
 
-import android.app.Fragment;
+import android.os.Build;
+import android.support.annotation.IdRes;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.ProgressBar;
 
-import com.hkm.slidingmenulib.R;
 
 /**
  * Created by hesk on 15/2/16.
@@ -15,9 +16,9 @@ public class paginator extends Fragment {
     private boolean enable_load_more, is_new_search;
     protected ProgressBar mProgress;
 
-    protected void getProgressbar(View view) {
+    protected void getProgressbar(View view, @IdRes final int progress_bar_id) {
         try {
-            mProgress = (ProgressBar) view.findViewById(R.id.lylib_ui_loading_circle);
+            mProgress = (ProgressBar) view.findViewById(progress_bar_id);
         } catch (Exception e) {
             //unable to find loading progress bar
         }
@@ -32,12 +33,16 @@ public class paginator extends Fragment {
 
     protected void hideLoadingCircle() {
         if (mProgress != null && mProgress.getVisibility() == View.VISIBLE) {
-            mProgress.animate().alpha(0f).withEndAction(new Runnable() {
-                @Override
-                public void run() {
-                    mProgress.setVisibility(View.INVISIBLE);
-                }
-            });
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                mProgress.animate().alpha(0f).withEndAction(new Runnable() {
+                    @Override
+                    public void run() {
+                        mProgress.setVisibility(View.INVISIBLE);
+                    }
+                });
+            } else {
+                mProgress.setVisibility(View.INVISIBLE);
+            }
         }
     }
 
@@ -51,7 +56,6 @@ public class paginator extends Fragment {
         pagePerItems = getItemsShownPerPage();
         enable_load_more = false;
         is_new_search = false;
-
     }
 
 

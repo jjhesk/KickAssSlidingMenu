@@ -8,4 +8,15 @@
     <color name="second_pref">#ffc2c0c4</color>
     <color name="second_pref_v2">#ffAAAAAA</color>
     <color name="block_color">#99FFFFFF</color>
+    <color name="google_colorsc">#36eeff</color>
+    <color name="google_colorse">#3cffae</color>
+    <color name="google_colorsf">#de4eff37</color>
+    <color name="google_colorsh">#dec8ff30</color>
+
+    <integer-array name="google_colors">
+        <item>@color/google_colorsc</item>
+        <item>@color/google_colorse</item>
+        <item>@color/google_colorsf</item>
+        <item>@color/google_colorsh</item>
+    </integer-array>
 </resources>

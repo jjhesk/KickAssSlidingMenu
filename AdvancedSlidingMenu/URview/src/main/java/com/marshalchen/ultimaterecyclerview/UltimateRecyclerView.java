@@ -179,16 +179,16 @@ public class UltimateRecyclerView extends FrameLayout implements Scrollable {
 
     protected void initViews() {
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.ultimate_recycler, this);
+        View view = inflater.inflate(R.layout.ultimate_recycler_view_layout, this);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.ultimate_list);
 
         /**
          * enable refresh
          */
         mSwipeRefreshLayout = null;
-     /*   mSwipeRefreshLayout = (VerticalSwipeRefreshLayout) view.findViewById(R.id.swipe_refresh_layout);
+        mSwipeRefreshLayout = (VerticalSwipeRefreshLayout) view.findViewById(R.id.swipe_refresh_layout);
         setScrollbars();
-        mSwipeRefreshLayout.setEnabled(false);*/
+        mSwipeRefreshLayout.setEnabled(false);
 
         if (mRecyclerView != null) {
             mRecyclerView.setClipToPadding(mClipToPadding);

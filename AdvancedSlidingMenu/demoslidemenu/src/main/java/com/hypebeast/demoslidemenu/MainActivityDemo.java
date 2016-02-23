@@ -5,9 +5,9 @@ import android.view.MenuItem;
 
 import com.hkm.slidingmenulib.gestured.SlidingMenu;
 import com.hkm.slidingmenulib.layoutdesigns.app.SlidingAppCompactActivity;
-import com.hypebeast.demoslidemenu.helpr.fastb;
+import com.hypebeast.demoslidemenu.content.expandablemenu.MenuFragment;
+import com.hypebeast.demoslidemenu.helpr.structurebind;
 import com.hypebeast.demoslidemenu.content.mainpageDemo;
-import com.hypebeast.demoslidemenu.content.menupageDemo;
 
 
 public class MainActivityDemo extends SlidingAppCompactActivity<Fragment> {
@@ -19,10 +19,9 @@ public class MainActivityDemo extends SlidingAppCompactActivity<Fragment> {
     }
 
     @Override
-    protected menupageDemo getFirstMenuFragment() {
-        return new menupageDemo();
+    protected MenuFragment getFirstMenuFragment() {
+        return new MenuFragment();
     }
-
 
     @Override
     protected int getRmenu() {
@@ -50,7 +49,7 @@ public class MainActivityDemo extends SlidingAppCompactActivity<Fragment> {
     public boolean onOptionsItemSelected(MenuItem item) {
         final int t = item.getItemId();
         if (t != android.R.id.home) {
-            fastb.startfromSelectionMenu(t, this, null);
+            structurebind.startfromSelectionMenu(t, this, null);
             return super.onOptionsItemSelected(item);
         } else {
             toggle();

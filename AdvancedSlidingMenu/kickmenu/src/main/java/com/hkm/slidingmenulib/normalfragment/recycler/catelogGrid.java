@@ -1,4 +1,4 @@
-package com.hkm.slidingmenulib.layoutdesigns.fragment;
+package com.hkm.slidingmenulib.normalfragment.recycler;
 
 import android.app.Activity;
 import android.content.Context;
@@ -15,22 +15,18 @@ import android.view.ViewGroup;
 import com.hkm.slidingmenulib.R;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerviewViewHolder;
-import com.marshalchen.ultimaterecyclerview.uiUtils.ScrollSmoothLineaerLayoutManager;
-import com.squareup.picasso.Picasso;
 import com.marshalchen.ultimaterecyclerview.quickAdapter.easyRegularAdapter;
 
+
 /**
- * Created by hesk on 30/6/15.
+ * Created by hesk on 15/2/16.
  */
-public abstract class catelogLinear<adapter extends easyRegularAdapter, binder extends UltimateRecyclerviewViewHolder> extends paginator {
+public abstract class catelogGrid<adapter extends easyRegularAdapter, binder extends UltimateRecyclerviewViewHolder>
+        extends
+        paginator {
     public static String TAG = "catelog";
-    public final static String BRAND_NAME = "BrandName", SLUG = "slug", REQUEST_TYPE = "typerequest";
     public UltimateRecyclerView listview_layout;
-    protected Picasso picasso;
-    public static String URL = "data_url";
-    public static String FRAGMENTTITLE = "fragment_title";
-    public static String SAVELOADDATA = "item_list";
-    public static String HASSAVEFILTER = "filter";
+
 
     @Override
     public void onAttach(Activity activity) {
@@ -49,7 +45,7 @@ public abstract class catelogLinear<adapter extends easyRegularAdapter, binder e
 
     @IdRes
     protected int getUltimate_recycler_viewResId() {
-        return R.id.lylib_list_uv;
+        return R.id.urv_main_list;
     }
 
     @LayoutRes
@@ -82,7 +78,7 @@ public abstract class catelogLinear<adapter extends easyRegularAdapter, binder e
      */
     protected abstract void loadDataInitial(final adapter confirmAdapter);
 
-    protected LinearLayoutManager mLayoutManager;
+    protected GridLayoutManager mLayoutManager;
     protected adapter madapter;
 
 
@@ -90,18 +86,12 @@ public abstract class catelogLinear<adapter extends easyRegularAdapter, binder e
         listview_layout = (UltimateRecyclerView) view.findViewById(getUltimate_recycler_viewResId());
         listview_layout.setHasFixedSize(true);
         listview_layout.setSaveEnabled(true);
-        picasso = Picasso.with(getActivity());
-        listview_layout.setAdapter(madapter = getAdatperWithdata());
-        getProgressbar(view);
-        setUltimateRecyclerViewExtra(listview_layout, madapter);
         if (mLayoutManager == null) {
-            mLayoutManager = new ScrollSmoothLineaerLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false, getSmoothDuration());
+            mLayoutManager = new GridLayoutManager(view.getContext(), getColumn(), LinearLayoutManager.VERTICAL, false);
         }
         listview_layout.setLayoutManager(mLayoutManager);
-    }
-
-    protected int getSmoothDuration() {
-        return 300;
+        listview_layout.setAdapter(madapter = getAdatperWithdata());
+        setUltimateRecyclerViewExtra(listview_layout, madapter);
     }
 
 
@@ -121,6 +111,5 @@ public abstract class catelogLinear<adapter extends easyRegularAdapter, binder e
         }
 
     }
-
 
 }
