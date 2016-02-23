@@ -21,6 +21,7 @@ I am bringing it back from the good old project sliding menu in the Android Stud
 
 ##Demo / Screen shot
 ![screen](http://i.giphy.com/zkgxuf3TFYOFW.gif)
+![screendemo2](http://i.giphy.com/JbZ6ljV75RBok.gif)
 
 ##Coding support
 Please visit out wiki page for more [tutorial informations][28]
