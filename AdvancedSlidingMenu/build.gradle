@@ -18,9 +18,8 @@ allprojects {
     }
 
 }
-
 /*
-project(':slidingmenulib') {
+project(':kickmenu') {
     repositories {
         maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
         maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local' }

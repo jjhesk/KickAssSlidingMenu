@@ -5,15 +5,14 @@ publish {
     userOrg = project.POM_DEVELOPER_ID
     groupId = project.PUBLISH_GROUP_ID
     artifactId = project.POM_ARTIFACT_ID
-    version = project.VERSION_NAME_MAIN_LIB
+    version = project.VERSION_NAME_URV
     uploadName =  project.POM_NAME
-    description = project.POM_DESCRIPTION
+    description = "The super recycler for the menu"
     website = project.POM_URL
     autoPublish = true
     dryRun = false
     issueTracker = "${website}/issues"
     licences = [project.POM_LICENCE_NAME]
-
 }
 
 if (hasProperty('POM_DEVELOPER_ID')) {

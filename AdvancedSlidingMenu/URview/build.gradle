@@ -1,14 +1,14 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion  23
-    buildToolsVersion '23.0.2'
+    compileSdkVersion  project.ANDROID_BUILD_SDK_VERSION as int
+    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 23
-        versionCode 20
-        versionName '0.4.1'
+        targetSdkVersion project.ANDROID_BUILD_TARGET_SDK_VERSION  as int
+        versionCode project.VERSION_CODE_URV as int
+        versionName project.VERSION_NAME_MAIN_LIB
     }
     buildTypes {
         release {
@@ -22,24 +22,21 @@ android {
 }
 
 dependencies {
-
-  //  compile fileTree(dir: 'libs', include: ['*.jar'])
- /*   compile supportDependencies.appCompat
-    compile supportDependencies.annotation
-    compile supportDependencies.support
-    compile supportDependencies.recycler*/
+    //  compile fileTree(dir: 'libs', include: ['*.jar'])
+    /*   compile supportDependencies.appCompat
+            compile supportDependencies.annotation
+            compile supportDependencies.support
+            compile supportDependencies.recycler*/
     compile 'com.android.support:support-annotations:23.1.1'
     compile 'com.android.support:support-v13:23.1.1'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:recyclerview-v7:23.1.1'
-
-
-   // compile 'com.nineoldandroids:library:2.4.0'
+    // compile 'com.nineoldandroids:library:2.4.0'
     compile 'jp.wasabeef:recyclerview-animators:2.2.0'
     compile 'in.srain.cube:ultra-ptr:1.0.11'
     compile 'com.github.bumptech.glide:glide:3.6.0'
 }
-
 //apply from: 'android-release-aar.gradle'
 //apply from: 'maven-push.gradle'
 //apply from: 'bintray-release-aar.gradle'
+apply from: 'br.gradle'
