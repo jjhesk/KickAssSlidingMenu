@@ -19,6 +19,8 @@ I am bringing it back from the good old project sliding menu in the Android Stud
 - [x] simple tree list for expandable list item view - allows many customizations
 - [x] menu banners on the list recycler view - allows many customizations
 
+##Demo / Screen shot
+![screen](http://i.giphy.com/zkgxuf3TFYOFW.gif)
 
 ##Coding support
 Please visit out wiki page for more [tutorial informations][28]
