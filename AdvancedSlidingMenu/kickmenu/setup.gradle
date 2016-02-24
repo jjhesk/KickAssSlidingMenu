@@ -1,12 +1,12 @@
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion project.ANDROID_BUILD_SDK_VERSION as int
+    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
         minSdkVersion 17
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion project.ANDROID_BUILD_TARGET_SDK_VERSION  as int
+        versionCode project.VERSION_CODE_MAIN_LIB as int
+        versionName project.VERSION_NAME_MAIN_LIB
     }
     buildTypes {
         release {
