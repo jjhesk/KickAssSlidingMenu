@@ -181,11 +181,6 @@ public class UltimateRecyclerView extends FrameLayout implements Scrollable {
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.ultimate_recycler_view_layout, this);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.ultimate_list);
-
-        /**
-         * enable refresh
-         */
-        mSwipeRefreshLayout = null;
         mSwipeRefreshLayout = (VerticalSwipeRefreshLayout) view.findViewById(R.id.swipe_refresh_layout);
         setScrollbars();
         mSwipeRefreshLayout.setEnabled(false);
@@ -270,17 +265,6 @@ public class UltimateRecyclerView extends FrameLayout implements Scrollable {
     public final void setEmptyView(@LayoutRes int emptyResourceId, final int emptyViewPolicy, final int emptyViewInitPolicy, final emptyViewOnShownListener listener) {
         setEmptyView(emptyResourceId, emptyViewPolicy, emptyViewInitPolicy);
         mEmptyViewListener = listener;
-    }
-
-    public final void initEmptyView() {
-        if (mAdapter != null) {
-            if (mAdapter.getAdapterItemCount() == 0 && mAdapter.getEmptyViewInitPolicy() == STARTWITH_OFFLINE_ITEMS) {
-                // mEmpty.setVisibility(View.VISIBLE);
-                //setRefreshing(true);
-                // isFirstLoadingOnlineAdapter = true;
-                showEmptyView();
-            }
-        }
     }
 
 
@@ -489,9 +473,7 @@ public class UltimateRecyclerView extends FrameLayout implements Scrollable {
         if (mAdapter != null && mAdapter.getCustomLoadMoreView() == null && mLoadMoreView != null) {
             mAdapter.setCustomLoadMoreView(mLoadMoreView);
             mAdapter.enableLoadMore(true);
-            if (mAdapter.getAdapterItemCount() > 0) {
-                mAdapter.notifyDataSetChanged();
-            }
+            mAdapter.notifyDataSetChanged();
         } else {
 
         }
@@ -721,7 +703,7 @@ public class UltimateRecyclerView extends FrameLayout implements Scrollable {
      * @param listener SwipeRefreshLayout
      */
     public void setDefaultOnRefreshListener(SwipeRefreshLayout.OnRefreshListener listener) {
-        if (mSwipeRefreshLayout == null) return;
+
         mSwipeRefreshLayout.setEnabled(true);
         if (defaultSwipeToDismissColors != null && defaultSwipeToDismissColors.length > 0) {
             mSwipeRefreshLayout.setColorSchemeColors(defaultSwipeToDismissColors);
@@ -782,10 +764,8 @@ public class UltimateRecyclerView extends FrameLayout implements Scrollable {
     public void setAdapter(UltimateViewAdapter adapter) {
         mAdapter = adapter;
         mRecyclerView.setAdapter(mAdapter);
-
         if (mSwipeRefreshLayout != null)
             mSwipeRefreshLayout.setRefreshing(false);
-
         if (mAdapter != null)
             mAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
                 @Override
@@ -818,6 +798,13 @@ public class UltimateRecyclerView extends FrameLayout implements Scrollable {
                     updateHelperDisplays();
                 }
             });
+        if (mAdapter.getAdapterItemCount() == 0 && adapter.getEmptyViewInitPolicy() == STARTWITH_OFFLINE_ITEMS) {
+            // mEmpty.setVisibility(View.VISIBLE);
+            //setRefreshing(true);
+            // isFirstLoadingOnlineAdapter = true;
+            showEmptyView();
+        }
+
 
         mRecyclerViewHelper = RecyclerViewPositionHelper.createHelper(mRecyclerView);
     }
