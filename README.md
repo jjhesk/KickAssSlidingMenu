@@ -50,11 +50,7 @@ Supporting methods availabilities
 ###ScreenShots
 [![Android Gems](http://www.android-gems.com/badge/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=master)](http://www.android-gems.com/lib/jjhesk/BringItBackAdvanceSlidingMenu)
 
-
 <img src="scn/device-2015-06-30-110654.png" width="300px"/>
-![Example application looks on phone][29]
-![Example application looks on phone][31]
-![Example application looks on tablet][30]
 
 
 ## Installations
@@ -153,6 +149,3 @@ License
 [26]: https://github.com/jfeinstein10/SlidingMenu
 [27]: https://github.com/square/picasso
 [28]: https://github.com/jjhesk/BringItBackAdvanceSlidingMenu/wiki
-[29]: https://lh5.ggpht.com/jDdm1FbB13aXq11J61__URorAlT-h12kvU0VlaaDdL1PF5wNrUOVJmdKMqlz506hIg
-[30]: https://lh6.ggpht.com/yYy24DPwltmo1Xp0SPAyWzpKOIF7azoTvlveH3X4XWkHo_xm0UQ1lcT-1NJl8QUWBCDA
-[31]: https://lh4.ggpht.com/98rCqlg4r2aUJCFKZ-_-yTJpVd2OAN4SMzqpiDAvDX-IM0IDTXcvoPEKfQJWQM1IXUU-
