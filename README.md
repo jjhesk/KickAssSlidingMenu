@@ -66,22 +66,11 @@ For the most comprehensive collection of artifacts, point your Maven at: `http:/
 dependencies { compile 'com.hkm.slidingmenulib:slidingmenulib:1.7.7'}
 ```
 
-Please see the version number.
-
-###jitpack remote
-[![maven](https://img.shields.io/github/tag/jjhesk/BringItBackAdvanceSlidingMenu.svg?label=maven)][23]
-```gradle
-repositories { maven {  url "https://jitpack.io"  }}
-dependencies { compile 'com.github.jjhesk:BringItBackAdvanceSlidingMenu:vX.XX'}
-```
-
 Master: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=master)][22]
-
 BranchV1: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=V1)][22]
 
-
 ###Thanks
-* Use sliding menu from  [SlidingMenu][26]
+* Use sliding menu from [SlidingMenu][26]
 * Use embeded advanced recyclerview from [UltimateRecyclerView][25]
 * Use Picasso Image library from [Picasso][27]
 
