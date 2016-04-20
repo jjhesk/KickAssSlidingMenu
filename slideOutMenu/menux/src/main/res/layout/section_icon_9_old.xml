@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.hkm.slidingmenulib.menucontent.containers.MaterialRippleLayoutNineOld xmlns:android="http://schemas.android.com/apk/res/android"
+<mxh.kickassmenu.menucontent.containers.MaterialRippleLayoutNineOld xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/section_ripple"
     android:layout_width="fill_parent"
@@ -52,4 +52,4 @@
             android:textStyle="bold" />
 
     </RelativeLayout>
-</com.hkm.slidingmenulib.menucontent.containers.MaterialRippleLayoutNineOld>
+</mxh.kickassmenu.menucontent.containers.MaterialRippleLayoutNineOld>

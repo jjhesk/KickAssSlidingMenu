@@ -7,7 +7,7 @@
     android:focusable="false"
     android:orientation="vertical">
 
-    <com.hkm.slidingmenulib.menucontent.containers.MaterialRippleLayout
+    <mxh.kickassmenu.menucontent.containers.MaterialRippleLayout
         android:id="@+id/section_ripple"
         android:layout_width="fill_parent"
         android:layout_height="@dimen/sectionNormalHeight"
@@ -67,7 +67,7 @@
                 android:src="@drawable/ic_action_right" />
         </RelativeLayout>
 
-    </com.hkm.slidingmenulib.menucontent.containers.MaterialRippleLayout>
+    </mxh.kickassmenu.menucontent.containers.MaterialRippleLayout>
 
     <com.marshalchen.ultimaterecyclerview.UltimateRecyclerView
         android:id="@+id/ultimate_recycler_view"

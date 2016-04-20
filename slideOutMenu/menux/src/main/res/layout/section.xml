@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.hkm.slidingmenulib.menucontent.containers.MaterialPlain xmlns:android="http://schemas.android.com/apk/res/android"
+<mxh.kickassmenu.menucontent.containers.MaterialPlain
+ xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/section_ripple"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <include layout="@layout/inside_section" />
-</com.hkm.slidingmenulib.menucontent.containers.MaterialPlain>
+</mxh.kickassmenu.menucontent.containers.MaterialPlain>

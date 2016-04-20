@@ -2,8 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:orientation="vertical">
 
     <View
         android:id="@id/aslib_statusBar"
@@ -35,7 +34,7 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
-    <com.hkm.slidingmenulib.Util.xmlViews.ControlableFrame
+    <mxh.kickassmenu.Util.xmlViews.ControlableFrame
         android:id="@id/aslib_main_frame_body"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

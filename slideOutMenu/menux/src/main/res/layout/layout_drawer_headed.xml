@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
-    <com.hkm.slidingmenulib.Util.LockableScrollView
+    <mxh.kickassmenu.Util.LockableScrollView
         android:id="@+id/scrollviewcomponent"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -143,7 +143,7 @@
                 android:background="@null" />
 
         </RelativeLayout>
-    </com.hkm.slidingmenulib.Util.LockableScrollView>
+    </mxh.kickassmenu.Util.LockableScrollView>
     <!-- this is the View -->
     <View
         android:id="@+id/separator"

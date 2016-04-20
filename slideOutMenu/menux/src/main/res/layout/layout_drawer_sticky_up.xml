@@ -30,7 +30,7 @@
         android:background="?android:attr/listDivider" />
     <!-- this is the bottom menu section -->
 
-    <com.hkm.slidingmenulib.Util.LockableScrollView
+    <mxh.kickassmenu.Util.LockableScrollView
         android:id="@+id/scrollviewcomponent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
             android:layout_marginTop="8dp"
             android:orientation="vertical" />
 
-    </com.hkm.slidingmenulib.Util.LockableScrollView>
+    </mxh.kickassmenu.Util.LockableScrollView>
     <!-- this is the LinearLayout -->
     <View
         android:layout_width="match_parent"
