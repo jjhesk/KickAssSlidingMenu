@@ -35,4 +35,7 @@ proguard/
 .DS_Store
 /build
 /captures
+**/*/build/
+**/.idea
+**/*.iml
 

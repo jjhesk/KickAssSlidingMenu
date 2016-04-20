@@ -9,7 +9,13 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/URview" />
+            <option value="$PROJECT_DIR$/demoslidemenu" />
+            <option value="$PROJECT_DIR$/kickmenu" />
+          </set>
+        </option>
+        <option name="myModules">
+          <set>
+            <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/demoslidemenu" />
             <option value="$PROJECT_DIR$/kickmenu" />
           </set>

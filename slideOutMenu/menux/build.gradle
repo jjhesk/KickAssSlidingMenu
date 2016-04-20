@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion project.ANDROID_BUILD_SDK_VERSION as int
+    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion project.ANDROID_BUILD_TARGET_SDK_VERSION  as int
+        versionCode project.VERSION_CODE_MAIN_LIB as int
+        versionName project.VERSION_NAME_MAIN_LIB
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+}
+
+repositories {
+    maven { url 'http://dl.bintray.com/jjhesk/maven' }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+}
+
+dependencies {
+    // compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile supportDependencies.annotation
+    compile supportDependencies.support
+    compile supportDependencies.appCompat
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.squareup.okhttp:okhttp:2.2.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.2.0'
+    compile 'com.sothree.slidinguppanel:library:3.0.0'
+    compile 'com.hkm.ui:ultimaterecyclerview:0.5.4'
+}
+apply from: 'br.gradle'
