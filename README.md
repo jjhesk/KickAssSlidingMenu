@@ -63,7 +63,7 @@ For the most comprehensive collection of artifacts, point your Maven at: `http:/
 
 [![Download](https://api.bintray.com/packages/jjhesk/maven/slidingmenulib/images/download.svg)][23]
 ```gradle
-dependencies { compile 'com.hkm.slidingmenulib:slidingmenulib:1.7.7'}
+dependencies { compile 'com.hkm.slidingmenulib:slidingmenulib:2.1.0’}
 ```
 
 Master: [![Build Status](https://travis-ci.org/jjhesk/BringItBackAdvanceSlidingMenu.svg?branch=master)][22]
